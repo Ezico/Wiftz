@@ -2,8 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB532-wQJNfVR8URzSI92KVbOj2jWm5rQ4",
+  apiKey: "process.env.REACT_APP_FIREBASE_API_KEY",
   authDomain: "wiftz-podcasts.firebaseapp.com",
   projectId: "wiftz-podcasts",
   storageBucket: "wiftz-podcasts.appspot.com",
