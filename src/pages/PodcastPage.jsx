@@ -88,12 +88,7 @@ const PodcastPage = ({ featured }) => {
   return (
     <>
       <Header />
-      <div
-        className="heroP"
-        style={{
-          backgroundImage: `url(https://previews.dropbox.com/p/thumb/ABtHpo2cwJXCBbxnLEI9clG6aw3VWZ7nzqHUdo7FWjCnMeJGIBnzJlggDJHOMrP3yRJTKci9wF7UfaUxJxue7JpbHxKZeV1nrwGyWUPYqlG5-nhNaYPIFPxtocndWassLomPsqsFhBzukYoBmxVMAK1KmfYwEK53vCScOjP1qRMeg5qhLs_ql3PJgQR9Roe0ANuyXg0FA5fDn4lLBmBwEO_Jr130R2lyH4tPVzvaTlfJefeYXVJi97QCl0EqDQDB2teZVVdABOfFXn4qDTJv5gpAbiKeESZNiGAl81tiM9LWi474VWlnpMUSV60qdDOEz8760XcYhO8c7AqI4XlWT-sjb0LwgibOr8FEJdPQv6E8Ol8n-YlSW6NBtUBhieVaeDY/p.png)`,
-        }}
-      >
+      <div className="heroP">
         <div className="container">
           <br />
           <img
