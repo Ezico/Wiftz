@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Banner from "../assets/images/Banner.png";
 import Ico from "../assets/images/icos.png";
 import __ from "../assets/images/__.png";
 import Modal from "../components/Modal";
+import { Link } from "react-router-dom";
 function Hero({ data }) {
   const [screen, setScreen] = useState();
   const [openModal, setOpenModel] = useState(false);
@@ -47,9 +47,11 @@ function Hero({ data }) {
                   </button>
                 </div>
                 <div className="col-8">
-                  <button className="secondary btn large">
-                    Current Episodes
-                  </button>
+                  <Link to="/podcasts">
+                    <button className="secondary btn large">
+                      Current Episodes
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

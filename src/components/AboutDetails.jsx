@@ -2,7 +2,6 @@ import React from "react";
 import Bg from "../assets/images/AboutBg.png";
 import __ from "../assets/images/__.png";
 const AboutDetails = ({ data }) => {
-  console.log(data);
   return (
     <>
       <section className="bgb latest-podcast pb-90 pt-90">
@@ -14,7 +13,7 @@ const AboutDetails = ({ data }) => {
                 <h2>
                   {data?.title2}
 
-                  <img className="hero-tick2" src={__} alt="tick" />
+                  <img className="ahero-tick2" src={__} alt="tick" />
                 </h2>
                 <p>{data?.subtitle2}</p>
               </div>

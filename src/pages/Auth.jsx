@@ -28,7 +28,6 @@ const Auth = () => {
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
-    // console.log(password, confirmPassword);
   };
   const handleAuth = async (e) => {
     e.preventDefault();

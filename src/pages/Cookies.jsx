@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
 
-const Cookies = () => {
+const Cookies = ({ data }) => {
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,88 +27,12 @@ const Cookies = () => {
           </div>
           <br />
           <div className="innerContent">
-            <p className="text-light">
-              Do the talking, while we help you earn. Do the talking, while we
-              you earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn. Do the talking, while we help you earn.Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn.Do the talking, while we help
-              you earn. Do the talking, while we you earn. Do the talking, while
-              we help you earn. Do the talking, while we help you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn.Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn.Do the talking, while we help you earn. Do the talking,
-              while we you earn. Do the talking, while we help you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn.Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn. Do the talking, while we help you earn.Do the talking,
-              while we help you earn. Do the talking, while we you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn.Do the talking, while we help
-              you earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn.Do the talking, while we help you earn. Do
-              the talking, while we you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn.Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn.Do
-              the talking, while we help you earn. Do the talking, while we you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn. Do the talking, while we help you earn.Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn.Do the talking, while we help
-              you earn. Do the talking, while we you earn. Do the talking, while
-              we help you earn. Do the talking, while we help you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn.Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn.Do the talking, while we help you earn. Do the talking,
-              while we you earn. Do the talking, while we help you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn.Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn. Do the talking, while we help you earn.Do the talking,
-              while we help you earn. Do the talking, while we you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn.Do the talking, while we help
-              you earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn.Do the talking, while we help you earn. Do
-              the talking, while we you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn.Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn.Do
-              the talking, while we help you earn. Do the talking, while we you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn. Do the talking, while we help you earn.Do the talking,
-              while we help you earn. Do the talking, while we help you earn. Do
-              the talking, while we help you earn.Do the talking, while we help
-              you earn. Do the talking, while we you earn. Do the talking, while
-              we help you earn. Do the talking, while we help you earn. Do the
-              talking, while we help you earn. Do the talking, while we help you
-              earn. Do the talking, while we help you earn. Do the talking,
-              while we help you earn.Do the talking, while we help you earn. Do
-              the talking, while we help you earn. Do the talking, while we help
-              you earn.
-            </p>
+            <div
+              className="text-light"
+              dangerouslySetInnerHTML={{
+                __html: data?.cookies,
+              }}
+            />
           </div>
         </div>
       </section>

@@ -37,7 +37,6 @@ const CreateBlog = ({ user, handleLogout }) => {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   };
 
   const handleTags = (tags) => {
@@ -46,7 +45,6 @@ const CreateBlog = ({ user, handleLogout }) => {
 
   const handleImages = (FeaturedImage) => {
     setForm({ ...form, FeaturedImage });
-    console.log(form);
   };
 
   const handleTrending = (e) => {
@@ -64,7 +62,7 @@ const CreateBlog = ({ user, handleLogout }) => {
       ...form,
       description: formatedDescrition,
     };
-    console.log(newDoc);
+
     if (category && tags && title && FeaturedImage && trending) {
       try {
         await addDoc(collection(db, "Posts"), {

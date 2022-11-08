@@ -52,7 +52,7 @@ const PodcastPage = ({ featured }) => {
         tags.push(doc.data().category);
       });
       const uniqueTags = [...new Set(tags)];
-      console.log(uniqueTags);
+
       setData(topList);
       setSelected(uniqueTags[0]);
       setTags(uniqueTags);
@@ -73,7 +73,6 @@ const PodcastPage = ({ featured }) => {
           topList.push({ id: doc.id, ...doc.data() });
           setData(topList);
         });
-        console.log(topList);
       },
       (error) => {
         console.log(error);

@@ -53,14 +53,14 @@ const BlogPage = () => {
         tags.push(doc.data().category);
       });
       const uniqueTags = [...new Set(tags)];
-      // console.log(topList);
+
       setData(topList);
       setSelected(uniqueTags[0]);
       setTags(uniqueTags);
     };
     getData();
   }, []);
-  console.log(data);
+
   // get one post
   useEffect(() => {
     const collectionRef = collection(db, "Posts");
@@ -102,7 +102,6 @@ const BlogPage = () => {
           topList.push({ id: doc.id, ...doc.data() });
           setData(topList);
         });
-        // console.log(topList);
       },
       (error) => {
         console.log(error);

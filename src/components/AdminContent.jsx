@@ -1,7 +1,6 @@
 import React from "react";
 
 const AdminContent = ({ user }) => {
-  //   console.log(user);
   const username = user?.displayName;
   const email = user?.email;
   return (

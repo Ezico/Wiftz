@@ -51,18 +51,18 @@ const Header = () => {
             </div>
             <div className="col-6">
               <ul className="desktop-navigation">
-                <a href="/podcasts">
+                <Link to="/podcasts">
                   <li className="nav-item">PODCASTS</li>
-                </a>
-                <a href="/blog">
+                </Link>
+                <Link to="/blog">
                   <li className="nav-item">BLOG</li>
-                </a>
-                <a href="/about">
+                </Link>
+                <Link to="/about">
                   <li className="nav-item">ABOUT</li>
-                </a>
-                <a href="/contact">
+                </Link>
+                <Link to="/contact">
                   <li className="nav-item">CONTACT</li>
-                </a>
+                </Link>
                 <button
                   data-bs-toggle="modal"
                   data-bs-target="#kt_modal_1"

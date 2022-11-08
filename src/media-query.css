@@ -23,9 +23,10 @@
   .pd-intro h2 {
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 45px;
     color: white;
+    margin-bottom: 40px;
   }
   .hero {
     height: 134vh;
@@ -216,6 +217,18 @@
     color: white;
     background: black;
     border: none;
+  }
+  .ahero-tick {
+    position: absolute;
+    width: 196px;
+    left: 0px;
+    bottom: -14px;
+  }
+  .ahero-tick2 {
+    width: 98px;
+    position: absolute;
+    left: 159px;
+    bottom: 74px;
   }
   /* .heroP {
     display: none;

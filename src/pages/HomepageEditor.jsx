@@ -61,7 +61,6 @@ const HomepageEditor = ({ user, handleLogout }) => {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   };
 
   const handleSubmit = async (e) => {
@@ -71,7 +70,6 @@ const HomepageEditor = ({ user, handleLogout }) => {
       ...form,
       bannerText: formatedDescrition,
     };
-    console.log(newDoc);
 
     try {
       await updateDoc(doc(db, "HomeDetails", id), {

@@ -39,9 +39,8 @@ const PodcastDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // console.log(podcast);
   const bds = podcast?.behindTheScene;
-  console.log(bds);
+
   return (
     <>
       <Header />

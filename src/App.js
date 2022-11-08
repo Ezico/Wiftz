@@ -32,6 +32,7 @@ import {
   onSnapshot,
   orderBy,
   query,
+  getDoc,
   where,
 } from "firebase/firestore";
 import Spinner from "./components/Spinner";
@@ -43,6 +44,19 @@ import Cookies from "./pages/Cookies";
 function App() {
   const [user, setUser] = useState(null);
 
+  const [legaldata, setLegalData] = useState();
+  const id = "m0Yce9AiqSl8y0WGCuu1";
+  useEffect(() => {
+    id && getHomeDataFromDB();
+  }, [id]);
+
+  const getHomeDataFromDB = async () => {
+    const docRef = doc(db, "LegalContents", id);
+    const snapshot = await getDoc(docRef);
+    if (snapshot.exists()) {
+      setLegalData({ ...snapshot.data() });
+    }
+  };
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,7 +67,6 @@ function App() {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         setUser(authUser);
-        // console.log(user);
       } else {
         setUser(null);
       }
@@ -73,9 +86,7 @@ function App() {
   const [blog, setBlog] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
   const [featured, setFeatured] = useState([]);
-  const [featuredpost, setFeaturedPost] = useState([]);
   const [topList, setTopList] = useState([]);
-  const [tags, setTags] = useState([]);
 
   // get all blog posts
   useEffect(() => {
@@ -170,7 +181,6 @@ function App() {
           featuredList.push({ id: doc.id, ...doc.data() });
         });
         setFeatured(featuredList);
-        // console.log(featuredList);
       },
       (error) => {
         console.log(error);
@@ -218,16 +228,14 @@ function App() {
           element={<Home topList={topList} featured={featured} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/policy" element={<Policy />} />
-        <Route path="/cookies" element={<Cookies />} />
+        <Route path="/terms" element={<Terms data={legaldata} />} />
+        <Route path="/policy" element={<Policy data={legaldata} />} />
+        <Route path="/cookies" element={<Cookies data={legaldata} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Podcast/:id" element={<PodcastDetails />} />
         <Route
           path="/podcasts"
-          element={
-            <PodcastPage topList={topList} featured={featured} tags={tags} />
-          }
+          element={<PodcastPage topList={topList} featured={featured} />}
         />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/blog" element={<BlogPage />} />
@@ -236,7 +244,14 @@ function App() {
         {/* admin */}
         <Route
           path="/admin"
-          element={<AdminHome user={user} handleLogout={handleLogout} />}
+          element={
+            <PodcastListpage
+              podcasts={podcasts}
+              handleLogout={handleLogout}
+              user={user}
+              handlePodcastDelete={handlePodcastDelete}
+            />
+          }
         />
 
         <Route

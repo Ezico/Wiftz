@@ -170,6 +170,18 @@ section.mt-107 {
   left: 0;
   bottom: 62px;
 }
+.ahero-tick {
+  position: absolute;
+  width: 175px;
+  left: 250px;
+  bottom: -2px;
+}
+.ahero-tick2 {
+  width: 202px;
+  position: absolute;
+  left: 0;
+  bottom: 62px;
+}
 .hero-content {
   position: relative;
 }

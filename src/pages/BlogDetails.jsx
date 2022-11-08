@@ -24,7 +24,6 @@ const BlogDetails = () => {
     const postDetail = await getDoc(docRef);
     setPosts(postDetail.data());
   };
-  console.log(posts);
 
   return (
     <>

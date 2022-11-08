@@ -39,7 +39,9 @@ const TopPodcast = ({ topList, data }) => {
           </h2>
           <p>{data?.topPodcastSubHeading}</p>
           <br />
-          <button class="secondary btn large">View all Episodes</button>
+          <Link to="/podcasts">
+            <button class="secondary btn large">View all Episodes</button>
+          </Link>
         </div>
 
         <div className=" pt-90">

@@ -20,32 +20,32 @@ const Modal = ({ open, onClose }) => {
             </p>
             <div className="row pop">
               <div className="col-sm-6 ">
-                <a href="">
+                <a href="https://spotify.com" target="_blank">
                   <img className="modal-img" src={spotify_small} alt="" />
                 </a>
               </div>
               <div className="col-sm-6 ">
-                <a href="">
+                <a href="https://apple.com" target="_blank">
                   <img className="modal-img" src={apple} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="">
+                <a href="https://google.com" target="_blank">
                   <img className="modal-img" src={google} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="">
+                <a href="https://podbean.com" target="_blank">
                   <img className="modal-img" src={pod} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="">
+                <a href="https://amazon.com" target="_blank">
                   <img className="modal-img" src={amazon} alt="" />
                 </a>
               </div>
               <div className="col-sm-6 ">
-                <a href="">
+                <a href="https://youtube.com" target="_blank">
                   <img
                     style={{ width: "100%" }}
                     className=""

@@ -47,11 +47,6 @@ const LegalPageEditor = ({ user, handleLogout }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const handleChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  //   console.log(e.target, e.value);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

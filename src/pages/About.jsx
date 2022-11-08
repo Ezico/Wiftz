@@ -74,7 +74,7 @@ const About = () => {
                 <h2>
                   {data?.title1}
 
-                  <img className="hero-tick" src={__} alt="tick" />
+                  <img className="ahero-tick" src={__} alt="tick" />
                 </h2>
               </div>
 

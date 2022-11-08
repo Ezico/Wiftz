@@ -59,13 +59,11 @@ const EditPodcast = ({ user, handleLogout }) => {
       setForm({ ...snapshot.data() });
       setDescriptionValue(snapshot.data().description);
       setResourcesValue(snapshot.data().resources);
-      console.log(snapshot.data());
     }
   };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   };
 
   const navigate = useNavigate();
@@ -75,7 +73,6 @@ const EditPodcast = ({ user, handleLogout }) => {
   };
   const handleBehindTheScene = (behindTheScene) => {
     setForm({ ...form, behindTheScene });
-    console.log(form);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();

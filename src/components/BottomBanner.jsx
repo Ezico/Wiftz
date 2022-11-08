@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const BottomBanner = ({ data }) => {
-  console.log(data);
   return (
     <section
       style={{ backgroundImage: `url(${data?.midPageBanner})` }}

@@ -73,7 +73,7 @@ const EditBlog = ({ user, handleLogout }) => {
       ...form,
       description: formatedDescrition,
     };
-    console.log(newDoc);
+
     if (category && tags && title && trending) {
       try {
         await updateDoc(doc(db, "Posts", id), {

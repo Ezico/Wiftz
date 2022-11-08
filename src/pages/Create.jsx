@@ -53,12 +53,10 @@ const Create = ({ user, handleLogout }) => {
   const navigate = useNavigate();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   };
 
   const handleBehindTheScene = (behindTheScene) => {
     setForm({ ...form, behindTheScene });
-    console.log(form);
   };
   const handleSUbmit = async (e) => {
     e.preventDefault();
@@ -70,7 +68,7 @@ const Create = ({ user, handleLogout }) => {
       resources: formatedResources,
       ...form,
     };
-    console.log(newDoc);
+
     if (title && featured) {
       try {
         await addDoc(collection(db, "Podcasts"), {
