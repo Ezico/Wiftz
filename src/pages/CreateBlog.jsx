@@ -30,6 +30,10 @@ const CreateBlog = ({ user, handleLogout }) => {
   const { title, tags, trending, category, FeaturedImage } = form;
 
   const navigate = useNavigate();
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

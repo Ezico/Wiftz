@@ -24,6 +24,10 @@ const initialState = {
 
 const AboutPageEditor = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const {
     title1,

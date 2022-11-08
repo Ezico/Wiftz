@@ -43,6 +43,11 @@ import Cookies from "./pages/Cookies";
 function App() {
   const [user, setUser] = useState(null);
 
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // check signin
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {

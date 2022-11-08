@@ -8,6 +8,11 @@ import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 
 const BlogDetails = () => {
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { id } = useParams();
   const [posts, setPosts] = useState();
   useEffect(() => {

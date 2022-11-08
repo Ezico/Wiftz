@@ -48,6 +48,10 @@ const EditBlog = ({ user, handleLogout }) => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleTags = (tags) => {
     setForm({ ...form, tags });

@@ -34,6 +34,11 @@ const PodcastDetails = () => {
     const podcastDetail = await getDoc(docRef);
     setPodcast(podcastDetail.data());
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // console.log(podcast);
   const bds = podcast?.behindTheScene;
   console.log(bds);

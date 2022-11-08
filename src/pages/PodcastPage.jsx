@@ -80,6 +80,11 @@ const PodcastPage = ({ featured }) => {
       }
     );
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />

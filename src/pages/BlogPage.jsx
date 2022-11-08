@@ -23,9 +23,11 @@ const BlogPage = () => {
   const [selected, setSelected] = useState([]);
   const [pagedata, setPageData] = useState();
   const [featured, setFeatured] = useState();
-  const cm = {
-    width: "31.333333%",
-  };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // setSelected("Technology");
   const id = "tjHV4GSUrph8aGt8Rj0x";
   useEffect(() => {

@@ -24,6 +24,10 @@ const Home = ({ featured, topList }) => {
       setData({ ...snapshot.data() });
     }
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

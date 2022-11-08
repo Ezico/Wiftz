@@ -1,9 +1,14 @@
-import React from "react";
+import { React, useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
 
 const Policy = () => {
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />

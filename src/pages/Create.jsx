@@ -45,6 +45,10 @@ const Create = ({ user, handleLogout }) => {
     shortDescription,
     category,
   } = form;
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const navigate = useNavigate();
   const handleChange = (e) => {

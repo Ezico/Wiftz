@@ -17,10 +17,15 @@ const initaialState = {
 };
 
 const Auth = () => {
-  const [state, setState] = useState(initaialState);
+  const [state, setState, useEffect] = useState(initaialState);
   const [signUp, setSignUp] = useState(false);
   const { email, password, firstName, lastName, confirmPassword } = state;
   const navigate = useNavigate();
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
     // console.log(password, confirmPassword);

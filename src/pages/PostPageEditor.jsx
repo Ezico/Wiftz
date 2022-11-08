@@ -103,6 +103,10 @@ const PostPageEditor = ({ user, handleLogout }) => {
     }
     navigate("/admin/podcasts/editor");
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

@@ -103,6 +103,11 @@ const EditPodcast = ({ user, handleLogout }) => {
     }
     navigate("/admin");
   };
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />

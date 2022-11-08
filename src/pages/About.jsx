@@ -18,6 +18,11 @@ const About = () => {
   const id = "Cw1TrtdA382NCnAzNcIu";
   const id2 = "TgcagxHqMIpvRTMnsjU4";
   const [screen, setScreen] = useState();
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     if (window.screen.availWidth < 760) {
       setScreen("Mobile");

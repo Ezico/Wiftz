@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { Link } from "react-router-dom";
@@ -9,6 +9,11 @@ const PodcastListPage = ({
   podcasts,
   handlePodcastDelete,
 }) => {
+  // push to top page after loading
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
