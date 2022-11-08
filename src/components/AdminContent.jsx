@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AdminContent = ({ user }) => {
   const username = user?.displayName;
@@ -58,8 +59,8 @@ const AdminContent = ({ user }) => {
                   {/* <!--begin::User menu--> */}
                   <div class="me-n2">
                     {/* <!--begin::Action--> */}
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       class="btn btn-icon btn-sm btn-active-color-primary mt-n2"
                       data-kt-menu-trigger="click"
                       data-kt-menu-placement="bottom-start"
@@ -68,7 +69,7 @@ const AdminContent = ({ user }) => {
                       {/* <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg--> */}
                       <span class="svg-icon svg-icon-muted svg-icon-1"></span>
                       {/* <!--end::Svg Icon--> */}
-                    </a>
+                    </Link>
 
                     {/* <!--end::Action--> */}
                   </div>
@@ -143,9 +144,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/create?podcast-new">
+                    <Link to="/admin/create?podcast-new">
                       <span class="menu-title">Create Podcasts</span>
-                    </a>
+                    </Link>
                   </span>
                 </div>
 
@@ -184,9 +185,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/create-podcast?podcast-new">
+                    <Link to="/admin/create-podcast?podcast-new">
                       <span class="menu-title">Create Podcast</span>
-                    </a>
+                    </Link>
                   </span>
 
                   {/* <!--end:Menu sub--> */}
@@ -226,9 +227,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/podcasts">
+                    <Link to="/admin/podcasts">
                       <span class="menu-title">All Podcasts</span>
-                    </a>
+                    </Link>
                   </span>
 
                   {/* <!--end:Menu sub--> */}
@@ -287,9 +288,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="admin/create-blog?blog-new">
+                    <Link to="admin/create-blog?blog-new">
                       <span class="menu-title">Create Blog</span>
-                    </a>
+                    </Link>
                   </span>
                 </div>
 
@@ -328,9 +329,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/create-blog?blog-new">
+                    <Link to="/admin/create-blog?blog-new">
                       <span class="menu-title">Create Blog</span>
-                    </a>
+                    </Link>
                   </span>
 
                   {/* <!--end:Menu sub--> */}
@@ -370,9 +371,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/blogs">
+                    <Link to="/admin/blogs">
                       <span class="menu-title">All Posts</span>
-                    </a>
+                    </Link>
                   </span>
 
                   {/* <!--end:Menu sub--> */}
@@ -429,9 +430,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/homepage/editor">
+                    <Link to="/admin/homepage/editor">
                       <span class="menu-title">Homepage</span>
-                    </a>
+                    </Link>
                   </span>
                 </div>
 
@@ -470,9 +471,9 @@ const AdminContent = ({ user }) => {
                         </svg>
                       </span>
                     </span>
-                    <a href="/admin/podcasts/editor">
+                    <Link to="/admin/podcasts/editor">
                       <span class="menu-title">Podcast & Blog Page</span>
-                    </a>
+                    </Link>
                   </span>
 
                   {/* <!--end:Menu sub--> */}
@@ -480,7 +481,7 @@ const AdminContent = ({ user }) => {
 
                 <div class="menu-item">
                   {/* <!--begin:Menu link--> */}
-                  <a class="menu-link" href="/admin/about/editor">
+                  <Link class="menu-link" to="/admin/about/editor">
                     <span class="menu-icon">
                       {/* <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg--> */}
                       <span class="svg-icon svg-icon-2">
@@ -508,17 +509,17 @@ const AdminContent = ({ user }) => {
                       </span>
                       {/* <!--end::Svg Icon--> */}
                     </span>
-                    <a href="/admin/about/editor">
+                    <Link to="/admin/about/editor">
                       <span class="menu-title">About & contact Page</span>
-                    </a>
-                  </a>
+                    </Link>
+                  </Link>
                   {/* <!--end:Menu link--> */}
                 </div>
                 <div class="menu-item">
                   {/* <!--begin:Menu link--> */}
-                  <a
+                  <Link
                     class="menu-link"
-                    href="/metronic8/demo8/../demo8/apps/calendar.html"
+                    to="/metronic8/demo8/../demo8/apps/calendar.html"
                   >
                     <span class="menu-icon">
                       {/* <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg--> */}
@@ -547,10 +548,10 @@ const AdminContent = ({ user }) => {
                       </span>
                       {/* <!--end::Svg Icon--> */}
                     </span>
-                    <a href="/admin/legal/editor">
+                    <Link to="/admin/legal/editor">
                       <span class="menu-title">Legal Page</span>
-                    </a>
-                  </a>
+                    </Link>
+                  </Link>
                   {/* <!--end:Menu link--> */}
                 </div>
               </div>

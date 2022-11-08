@@ -75,9 +75,9 @@ const LegalPageEditor = ({ user, handleLogout }) => {
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-              <div className="w-75  p-10">
+              <div className="w-100  p-5">
                 <div className="text-center mb-11">
                   <h1 className=" text-light fw-bolder mb-3">
                     Legal Pages Content

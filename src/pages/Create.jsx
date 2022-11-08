@@ -97,7 +97,7 @@ const Create = ({ user, handleLogout }) => {
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-5 order-2 order-lg-1">
             <div className="card card-custom">
               <div className="card-header">
                 <div className="card-title">
@@ -113,7 +113,7 @@ const Create = ({ user, handleLogout }) => {
               </div>
               <div className="card-body card-scroll">
                 <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-                  <div className="p-10" style={{ width: "100%" }}>
+                  <div className="" style={{ width: "100%" }}>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <input
                         type="text"
@@ -242,7 +242,7 @@ const Create = ({ user, handleLogout }) => {
 
           {/* side two */}
 
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-25 p-10 order-2 order-lg-2">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-25 p-5 order-2 order-lg-2">
             <div className="card card-custom">
               <div className="card-header">
                 <h3 className="card-title">ADD NEW PODCAST</h3>

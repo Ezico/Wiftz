@@ -1,6 +1,60 @@
-import React from "react";
+import { React, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AdminHeader = ({ handleLogout }) => {
+  const [showMenu, setShowMenu] = useState(false);
+  let menu;
+  if (showMenu) {
+    menu = (
+      <div className="container">
+        <div className="navigation-menu">
+          <ul>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/create-podcast?podcast-new">
+                CREATE PODCAST
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/podcasts">
+                ALL PODCASTS
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/create-blog?blog-new">
+                CREATE POST
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/blogs">
+                ALL POSTS
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/homepage/editor">
+                HOMEPAGE EDITOR
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/podcasts/editor">
+                PODCAST PAGE EDITOR
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/about/editor">
+                ABOUT PAGE EDITOR
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin/legal/editor">
+                LEGAL PAGE EDITOR
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <div id="kt_header" class="header align-items-stretch">
@@ -16,6 +70,7 @@ const AdminHeader = ({ handleLogout }) => {
             <div
               class="btn btn-icon btn-active-color-primary w-30px h-30px"
               id="kt_aside_mobile_toggle"
+              onClick={() => setShowMenu(!showMenu)}
             >
               <span class="svg-icon svg-icon-1">
                 <svg
@@ -39,7 +94,7 @@ const AdminHeader = ({ handleLogout }) => {
             </div>
           </div>
         </div>
-
+        {menu}
         <div className="signout">
           <span
             style={{ textAlign: "right", zIndex: "1", color: "white" }}

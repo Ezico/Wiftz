@@ -87,9 +87,9 @@ const CreateBlog = ({ user, handleLogout }) => {
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-              <div className="w-lg-75 p-10">
+              <div className="w-lg-75 pt-5">
                 <div className="card card-custom">
                   <div className="card-header">
                     <div className="card-title">

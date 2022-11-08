@@ -88,9 +88,9 @@ const AboutPageEditor = ({ user, handleLogout }) => {
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-              <div className="w-75  p-10">
+              <div className="w-100  p-10">
                 <div className="text-center mb-11">
                   <h1 className=" text-light fw-bolder mb-3">About Content</h1>
                 </div>
@@ -205,7 +205,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                   </div>
 
                   <div className="row mb-8 fv-plugins-icon-container">
-                    <div class="col-4 mb-8 fv-plugins-icon-container">
+                    <div class="col-md-4 col-sm-12 mb-8 fv-plugins-icon-container">
                       <div class="mb-10">
                         {image1 ? (
                           <img className="previewThumbnail" src={image1} />
@@ -223,7 +223,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                         />
                       </div>
                     </div>
-                    <div class="col-4 mb-8 fv-plugins-icon-container">
+                    <div class="col-md-4 col-sm-12 mb-8 fv-plugins-icon-container">
                       <div class="mb-10">
                         {image2 ? (
                           <img className="previewThumbnail" src={image2} />
@@ -241,7 +241,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                         />
                       </div>
                     </div>
-                    <div class="col-4 mb-8 fv-plugins-icon-container">
+                    <div class="col-md-4 col-sm-12 mb-8 fv-plugins-icon-container">
                       <div class="mb-10">
                         {image3 ? (
                           <img className="previewThumbnail" src={image3} />
@@ -259,7 +259,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                         />
                       </div>
                     </div>
-                    <div class="col-4 mb-8 fv-plugins-icon-container">
+                    <div class="col-md-4 col-sm-12 mb-8 fv-plugins-icon-container">
                       <div class="mb-10">
                         {image4 ? (
                           <img className="previewThumbnail" src={image4} />

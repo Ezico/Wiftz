@@ -26,7 +26,7 @@
 
 .text-bg-secondary {
   color: #000000 !important;
-  background-color: #0D0E18 !important;
+  background-color: #0d0e18 !important;
 }
 
 .text-bg-success {
@@ -4152,7 +4152,7 @@
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: #0D0E18!important;
+  background-color: #0d0e18 !important;
 }
 
 .bg-success {
@@ -28009,7 +28009,7 @@ code:not([class*="language-"]) {
 }
 
 .modal {
-  display:block!important;
+  display: block !important;
   --bs-modal-color: var(--kt-modal-content-color);
   --bs-modal-bg: var(--kt-modal-content-bg);
   --bs-modal-border-color: var(--kt-modal-content-border-color);
@@ -28028,7 +28028,7 @@ code:not([class*="language-"]) {
   justify-content: space-between;
   border-top-left-radius: 0.475rem;
   border-top-right-radius: 0.475rem;
-  border-bottom:0px;
+  border-bottom: 0px;
 }
 .modal-header h1,
 .modal-header .h1,
@@ -36686,7 +36686,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon {
 }
 
 .bg-secondary {
-  background-color: #0D0E18!important;
+  background-color: #0d0e18 !important;
 }
 
 .bg-hover-light-secondary {
@@ -38900,6 +38900,8 @@ body {
   }
 }
 .header .header-brand {
+  position: absolute;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
