@@ -596,6 +596,7 @@ button.tags {
   background: #1e1f28;
   border-radius: 10px;
   padding: 15px;
+  color: white;
 }
 .form-container form label {
   margin: 10px;
@@ -609,6 +610,7 @@ button.tags {
   background: #1e1f28;
   border-radius: 10px;
   padding: 15px;
+  color: white;
 }
 .form-content {
   padding: 50px;
