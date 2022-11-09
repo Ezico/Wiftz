@@ -17,11 +17,11 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
-          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+          <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
               <div className="p-10 w-100">
-                <table className="m-10 table table-hover table-rounded table-striped border gy-7 gs-7">
-                  <thead>
+                <table className="scroll-h table table-hover table-rounded table-striped border gy-7 gs-7">
+                  <thead className="hide-small">
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>

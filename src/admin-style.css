@@ -38931,6 +38931,9 @@ body {
     border: white 1px solid;
     line-height: 2.5;
     cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    right: 0;
   }
   .header .header-brand {
     height: 74px;

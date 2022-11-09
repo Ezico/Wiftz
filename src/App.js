@@ -41,6 +41,7 @@ import EditPodcast from "./pages/EditPodcast";
 import Terms from "./pages/Terms";
 import Policy from "./pages/Policy";
 import Cookies from "./pages/Cookies";
+import Protected from "./components/protected";
 function App() {
   const [user, setUser] = useState(null);
 
@@ -77,7 +78,8 @@ function App() {
   const handleLogout = () => {
     signOut(auth).then(() => {
       setUser(null);
-      navigate("/register");
+      navigate("/");
+      console.log("clicked");
     });
   };
 
@@ -139,6 +141,7 @@ function App() {
   }, []);
 
   //
+
   useEffect(() => {
     const collectionRef = collection(db, "Podcasts");
     const featuredQuerry = query(collectionRef, orderBy("timestamp", "desc"));
@@ -191,6 +194,7 @@ function App() {
       unsubx();
     };
   }, []);
+
   if (loading) {
     return <Spinner />;
   }
@@ -245,73 +249,112 @@ function App() {
         <Route
           path="/admin"
           element={
-            <PodcastListpage
-              podcasts={podcasts}
-              handleLogout={handleLogout}
-              user={user}
-              handlePodcastDelete={handlePodcastDelete}
-            />
+            <Protected user={user}>
+              <PodcastListpage
+                podcasts={podcasts}
+                handleLogout={handleLogout}
+                user={user}
+                handlePodcastDelete={handlePodcastDelete}
+              />
+            </Protected>
           }
         />
 
         <Route
-          path="/register"
+          path="/adminstrator-access"
           element={<Auth handleLogout={handleLogout} user={user} />}
         />
         <Route
           path="/admin/create-blog"
-          element={<CreateBlog handleLogout={handleLogout} user={user} />}
+          element={
+            <Protected user={user}>
+              <CreateBlog handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/blogs"
           element={
-            <BlogListPage
-              blogs={blog}
-              handleLogout={handleLogout}
-              user={user}
-              handleBlogDelete={handleBlogDelete}
-            />
+            <Protected user={user}>
+              <BlogListPage
+                blogs={blog}
+                handleLogout={handleLogout}
+                user={user}
+                handleBlogDelete={handleBlogDelete}
+              />
+            </Protected>
           }
         />
         <Route
           path="/admin/create-podcast"
-          element={<Create handleLogout={handleLogout} user={user} />}
+          element={
+            <Protected user={user}>
+              <Create handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/edit-blog/:id"
-          element={<EditBlog handleLogout={handleLogout} user={user} />}
+          element={
+            <Protected user={user}>
+              <EditBlog handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/edit-podcast/:id"
-          element={<EditPodcast handleLogout={handleLogout} user={user} />}
+          element={
+            <Protected user={user}>
+              <EditPodcast handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/podcasts"
           element={
-            <PodcastListpage
-              podcasts={podcasts}
-              handleLogout={handleLogout}
-              user={user}
-              handlePodcastDelete={handlePodcastDelete}
-            />
+            <Protected user={user}>
+              <PodcastListpage
+                podcasts={podcasts}
+                handleLogout={handleLogout}
+                user={user}
+                handlePodcastDelete={handlePodcastDelete}
+              />
+            </Protected>
           }
         />
         {/* editor pages */}
         <Route
           path="/admin/podcasts/editor"
-          element={<PostPageEditor user={user} handleLogout={handleLogout} />}
+          element={
+            <Protected user={user}>
+              <PostPageEditor user={user} handleLogout={handleLogout} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/homepage/editor"
-          element={<HomepageEditor user={user} handleLogout={handleLogout} />}
+          element={
+            <Protected user={user}>
+              <HomepageEditor user={user} handleLogout={handleLogout} />{" "}
+            </Protected>
+          }
         />
         <Route
           path="/admin/about/editor"
-          element={<AboutPageEditor user={user} handleLogout={handleLogout} />}
+          element={
+            <Protected user={user}>
+              {" "}
+              <AboutPageEditor user={user} handleLogout={handleLogout} />
+            </Protected>
+          }
         />
         <Route
           path="/admin/legal/editor"
-          element={<LegalPageEditor user={user} handleLogout={handleLogout} />}
+          element={
+            <Protected user={user}>
+              <LegalPageEditor user={user} handleLogout={handleLogout} />{" "}
+            </Protected>
+          }
         />
       </Routes>
     </div>

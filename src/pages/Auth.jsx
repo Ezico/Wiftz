@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { auth } from "../firebase";
@@ -17,7 +17,7 @@ const initaialState = {
 };
 
 const Auth = () => {
-  const [state, setState, useEffect] = useState(initaialState);
+  const [state, setState] = useState(initaialState);
   const [signUp, setSignUp] = useState(false);
   const { email, password, firstName, lastName, confirmPassword } = state;
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const Auth = () => {
         return toast.error("All fields are mandatory to fill");
       }
     }
-    navigate("/");
+    navigate("/admin");
   };
   return (
     <div className="container-fluid mb-4">
@@ -65,7 +65,7 @@ const Auth = () => {
         <br />
         <br />
         <div className="col-12 text-center">
-          <div className="text-center heading py-2">
+          <div className="text-center heading py-2 text-light">
             {!signUp ? "Sign In" : "Sign Up"}
           </div>
           <div className="row h-100 justify-content-center align-item-center">
@@ -138,7 +138,7 @@ const Auth = () => {
                   </button>
                 </div>
               </form>
-              <div className="">
+              {/* <div className="">
                 {!signUp ? (
                   <>
                     <div className="text-center justify-content-center mt-2 pt-2">
@@ -173,7 +173,7 @@ const Auth = () => {
                     </div>
                   </>
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

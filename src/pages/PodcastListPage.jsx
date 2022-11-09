@@ -25,8 +25,8 @@ const PodcastListPage = ({
           <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
               <div className="p-10 w-100">
-                <table className="m-10 table table-hover table-rounded table-striped border gy-7 gs-7">
-                  <thead>
+                <table className=" table table-hover table-rounded table-striped border gy-7 gs-7">
+                  <thead className="hide-small">
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>
@@ -38,7 +38,7 @@ const PodcastListPage = ({
                   <tbody>
                     {podcasts.map((item) => (
                       <tr key={item.index}>
-                        <td>
+                        <td className="hide-small">
                           {item.FeatureImage ? (
                             <img
                               className="thumbnail-small"
@@ -53,7 +53,7 @@ const PodcastListPage = ({
                           )}
                         </td>
                         <td className="list-title">
-                          <div className="text-start">
+                          <div className="text-start w-75">
                             <h6 className="title">{item.title}</h6>
                           </div>
                         </td>
