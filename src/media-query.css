@@ -96,6 +96,7 @@
   .medias {
     width: 100%;
     gap: 10px;
+    grid-gap: 10px;
   }
   .sm-thumbnail {
     max-width: 48%;
