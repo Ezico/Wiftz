@@ -260,6 +260,7 @@ section.mt-107 {
   font-size: 22px;
   margin-bottom: 0px;
 }
+
 .medias {
   margin: 10px 0px;
 }
@@ -283,6 +284,7 @@ p {
   border-radius: 20px;
   padding: 40px;
   color: white;
+  margin: 25px 0;
 }
 .col-md-7 .content p .col-sm-12 .content p {
   font-size: 14px;
@@ -358,8 +360,9 @@ a {
 
 .podcast-desc {
   padding: 10px 0;
-  color: white;
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 14px;
 }
 .play-ico {
   display: none !important;
@@ -758,6 +761,7 @@ button.primary {
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1)) !important;
   border-radius: 5px !important;
+  height: 37px;
 }
 .text-content {
   font-style: normal;
