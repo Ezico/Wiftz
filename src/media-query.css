@@ -85,7 +85,8 @@
     max-width: 50%;
   }
   .sm-thumbnail > a img {
-    margin: 6px;
+    margin: 0px;
+    padding: 5px;
     width: 100%;
   }
   .col-md-5 .podcast-title {
