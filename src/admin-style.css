@@ -28021,8 +28021,11 @@ code:not([class*="language-"]) {
 
 .modal-dialog {
   outline: none !important;
+  top: 13%;
 }
-
+.modal {
+  background: #00000073;
+}
 .modal-header {
   align-items: center;
   justify-content: space-between;

@@ -42,14 +42,14 @@ const Contact = () => {
                   respond to your message within the shortest time possible.
                 </p>
                 <br />
-                <button class="secondary btn large">
+                {/* <button class="secondary btn large">
                   <span>
                     <img className="ico-contact" src={Call} alt="" />
                   </span>
                   {data?.phone}
                 </button>
                 <br />
-                <br />
+                <br /> */}
                 <button class="secondary btn large">
                   <span>
                     <img className="ico-contact" src={Email} alt="" />
@@ -58,12 +58,12 @@ const Contact = () => {
                 </button>
                 <br />
                 <br />
-                <button class="secondary btn large">
+                {/* <button class="secondary btn large">
                   <span>
                     <img className="ico-contact" src={Web} alt="" />
                   </span>
                   www.wiftzpodcast.com
-                </button>
+                </button> */}
                 <br />
                 <br />
               </div>

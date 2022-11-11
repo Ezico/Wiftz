@@ -62,22 +62,45 @@ const PodcastPage = ({ featured }) => {
 
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
+    // e.target.classList.toggle("active");
     setSelected(targetText);
     const collectionRef = collection(db, "Podcasts");
-    const topQuerry = query(collectionRef, where("category", "==", targetText));
-    onSnapshot(
-      topQuerry,
-      (snapshot) => {
-        let topList = [];
-        snapshot.docs.forEach((doc) => {
-          topList.push({ id: doc.id, ...doc.data() });
-          setData(topList);
-        });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+
+    if (targetText === "All") {
+      const topQuerry = query(collectionRef);
+      onSnapshot(
+        topQuerry,
+        (snapshot) => {
+          let topList = [];
+          snapshot.docs.forEach((doc) => {
+            topList.push({ id: doc.id, ...doc.data() });
+            setData(topList);
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      console.log("All");
+    } else {
+      const topQuerry = query(
+        collectionRef,
+        where("category", "==", targetText)
+      );
+      onSnapshot(
+        topQuerry,
+        (snapshot) => {
+          let topList = [];
+          snapshot.docs.forEach((doc) => {
+            topList.push({ id: doc.id, ...doc.data() });
+            setData(topList);
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   };
   // push to top page after loading
   useEffect(() => {
@@ -104,8 +127,8 @@ const PodcastPage = ({ featured }) => {
       </div>
       <div className="container custom-position">
         <div className="featured-high" style={{ backgroundColor: "#0D0E18" }}>
-          <div className=" latest-podcast pb-20 pt-20">
-            <div className="container">
+          <div className=" latest-podcast  pt-20">
+            <div className="container p-40">
               <div className="latest-container">
                 <h2>Latest Podcast</h2>
                 <p className="text-light">
@@ -114,15 +137,17 @@ const PodcastPage = ({ featured }) => {
                 </p>
               </div>
               <hr style={{ border: "1px solid #404253" }} />
-              <div className="row pt-50">
+              <div className="row pt-50" style={{ margin: "0" }}>
                 {featured.map((item) => (
                   <>
                     <div className="col-md-4 col-sm-12">
-                      <img
-                        className="thumbnail"
-                        src={item?.FeatureImage}
-                        alt="podcast"
-                      />
+                      <Link to={"/podcast/" + item.id}>
+                        <img
+                          className="thumbnail"
+                          src={item?.FeatureImage}
+                          alt="podcast"
+                        />
+                      </Link>
                     </div>
                     <div className="col-md-8 col-sm-12">
                       <div className="">
@@ -138,7 +163,7 @@ const PodcastPage = ({ featured }) => {
                           />
                         </p>
                         <br />
-                        <button className="btn secondary">
+                        <button className="btn secondary featured">
                           Listen or Watch on
                         </button>
                         <br />
@@ -220,18 +245,18 @@ const PodcastPage = ({ featured }) => {
                 help you earn. Do the talking, while we help you earn.
               </p>
               <br />
-              <button className="btn secondary hide-small">
-                View all Episodes
-              </button>
             </div>
-            <div className="tags pt-50 scroll-h">
+            <div className="tags pt-10 scroll-h">
+              <button className="tags" onClick={handleTagSelect}>
+                All
+              </button>
               {tags?.map((tag, index) => (
                 <button className="tags" key={index} onClick={handleTagSelect}>
                   {tag}
                 </button>
               ))}
             </div>
-            <div className="row pt-50">
+            <div className="row pt-10">
               {data?.map((data, index) => (
                 <div key={index} className="x-4 col-sm-12 pod-content">
                   <div className="image-container">

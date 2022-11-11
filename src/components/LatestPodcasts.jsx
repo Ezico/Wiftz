@@ -37,7 +37,9 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     />
                   </p>
                   <br />
-                  <button className="btn secondary">Listen or Watch on</button>
+                  <button className="btn secondary featured">
+                    Listen or Watch on
+                  </button>
                   <br />
                   <div className="medias row">
                     {item.sportify ? (

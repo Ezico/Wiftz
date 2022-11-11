@@ -1,15 +1,17 @@
 import React from "react";
-import apple from "../assets/images/apple.png";
-import google from "../assets/images/google.png";
-import pod from "../assets/images/pod.png";
-import spotify from "../assets/images/spotify.png";
-import amazon from "../assets/images/amazon.png";
-import youtube from "../assets/images/youtube.png";
+// import apple from "../assets/images/apple.png";
+// import google from "../assets/images/google.png";
+// import pod from "../assets/images/pod.png";
+// import spotify from "../assets/images/spotify.png";
+// import amazon from "../assets/images/amazon.png";
+// import youtube from "../assets/images/youtube.png";
+import Listen from "../assets/images/listen.png";
+import ListenM from "../assets/images/listenM.png";
 
 const ListenOn = () => {
   return (
     <section className="mt-107">
-      <div className="listen-on">
+      {/* <div className="listen-on">
         <div className="container">
           <div className="row df">
             <div className="col-md-4 col-sm-12  tac">
@@ -25,7 +27,9 @@ const ListenOn = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <img src={Listen} className="hide-small w-100" />
+      <img src={ListenM} className="hide-large w-100" />
     </section>
   );
 };

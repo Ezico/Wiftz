@@ -275,13 +275,13 @@
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1025px) {
   .hero {
-    height: 90vh;
+    height: 100vh;
   }
 }
 
 /* hi-res laptops and desktops */
 @media (min-width: 1281px) {
   .hero {
-    height: 90vh;
+    height: 100vh;
   }
 }

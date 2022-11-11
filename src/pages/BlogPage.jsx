@@ -92,21 +92,43 @@ const BlogPage = () => {
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
     setSelected(targetText);
-    const collectionRef = collection(db, "Posts");
-    const topQuerry = query(collectionRef, where("category", "==", targetText));
-    onSnapshot(
-      topQuerry,
-      (snapshot) => {
-        let topList = [];
-        snapshot.docs.forEach((doc) => {
-          topList.push({ id: doc.id, ...doc.data() });
-          setData(topList);
-        });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    if (targetText === "All") {
+      console.log("All");
+      const collectionRef = collection(db, "Posts");
+      const topQuerry = query(collectionRef);
+      onSnapshot(
+        topQuerry,
+        (snapshot) => {
+          let topList = [];
+          snapshot.docs.forEach((doc) => {
+            topList.push({ id: doc.id, ...doc.data() });
+            setData(topList);
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else {
+      const collectionRef = collection(db, "Posts");
+      const topQuerry = query(
+        collectionRef,
+        where("category", "==", targetText)
+      );
+      onSnapshot(
+        topQuerry,
+        (snapshot) => {
+          let topList = [];
+          snapshot.docs.forEach((doc) => {
+            topList.push({ id: doc.id, ...doc.data() });
+            setData(topList);
+          });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   };
   return (
     <>
@@ -140,11 +162,16 @@ const BlogPage = () => {
             </div>
             <div className="col-md-6 col-sm-12">
               <div className="article pt-50 pb-50">
-                <button className="btn date">
+                <button className="btn date featured">
                   <span>{featured?.category}</span> &nbsp;|&nbsp;
                   <span>{featured?.timestamp.toDate().toDateString()}</span>
                 </button>
-                <h3 className="podcast-title text-light">{featured?.title}</h3>
+                <h3
+                  className="podcast-title text-light"
+                  style={{ marginTop: "20px" }}
+                >
+                  {featured?.title}
+                </h3>
                 <p className="podcast-desc">
                   <div
                     dangerouslySetInnerHTML={{
@@ -153,7 +180,7 @@ const BlogPage = () => {
                   />
                 </p>
                 <br />
-                <Link to={"/blog/" + featured?.id}>
+                <Link to={"/blog/" + featured?.id} style={{ width: "131px" }}>
                   <button className="btn primary cta">Read More</button>
                 </Link>
                 <br />
@@ -172,6 +199,9 @@ const BlogPage = () => {
       </section>
       <div className="container">
         <div className="tags pt-50 scroll-h">
+          <button className="tags" onClick={handleTagSelect}>
+            All
+          </button>
           {tags?.map((tag, index) => (
             <button className="tags" key={index} onClick={handleTagSelect}>
               {tag}
@@ -208,7 +238,7 @@ const BlogPage = () => {
                   {featured?.timestamp.toDate().toDateString()}
                 </div>
                 <Link className="col ptx-10" to={"/blog/" + data?.id}>
-                  Read More
+                  Read More &gt;
                 </Link>
               </div>
             </div>

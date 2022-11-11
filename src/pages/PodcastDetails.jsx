@@ -50,7 +50,7 @@ const PodcastDetails = () => {
           backgroundImage: `url(${
             screen == "Mobile"
               ? "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/podcastdetailsbg.png?alt=media&token=410f464e-75b7-4b7d-9be0-7b334b0e060a "
-              : "https://previews.dropbox.com/p/thumb/ABuVn4gFQkygvWN0CNXGx8BCHWwvDl3u4yW2LzfwenWsEVqEYCFBSXdRKJPqmKjI8QywZqsOREb6ZNQRQcL8hTdZlKxAthN3Is6o0z4nVPb6DggxQw0ynPJDKFuoaPrXNZdUvlvABfARcgVZVyQlUL2dlBgeYtKw_Y11fuCNIJyNa3SuESyCvgeWamJwEYYtuOSR5c9_dXNKzLrSQyfsC0z7gj6QeUhqhKr1OZb5nMdMruPt-1yoosSdN--yPdiztOAhphP4dr1XZL2ARGUdTiwJ3Iy3Lt7BEYuqn0wY_Hv2r9Hi4rk8_jtsz0Qb0rs9Xh3RLgy8fH0VlozYQmn0nTnDV5LntpC9ccblYohEBHFSMBR4KMNVjbz0OYZPvbk5sxo/p.png"
+              : "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/HPhO8ygY.png?alt=media&token=9b0f0d24-717b-4145-afbc-bc08dfcea477"
           })`,
         }}
       >
@@ -79,7 +79,9 @@ const PodcastDetails = () => {
                   />
                 </p>
                 <br />
-                <button className="btn secondary">Listen or Watch on</button>
+                <button className="btn secondary featured">
+                  Listen or Watch on
+                </button>
                 <br />
                 <div className="medias row">
                   {podcast?.sportify ? (

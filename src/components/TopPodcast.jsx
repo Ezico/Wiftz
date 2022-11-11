@@ -40,11 +40,21 @@ const TopPodcast = ({ topList, data }) => {
           <p>{data?.topPodcastSubHeading}</p>
           <br />
           <Link to="/podcasts">
-            <button class="secondary btn large">View all Episodes</button>
+            <button
+              style={{
+                borderRadius: "5px",
+                height: "42px",
+                padding: "10px 20px",
+                margin: "0",
+              }}
+              class="secondary btn large"
+            >
+              View all Episodes
+            </button>
           </Link>
         </div>
 
-        <div className=" pt-90">
+        <div className=" pt-20">
           <OwlCarousel className="owl-theme hide-small" {...options}>
             {topList.map((item) => (
               <div className="pod-content" key={item.id}>

@@ -12,6 +12,7 @@ const BottomBanner = ({ data }) => {
           <div className="col-md-7 col-sm-12">
             <div className="content">
               <div
+                className="text-content"
                 dangerouslySetInnerHTML={{
                   __html: data?.bannerText,
                 }}

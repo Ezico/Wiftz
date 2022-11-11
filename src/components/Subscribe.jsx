@@ -26,10 +26,12 @@ const Subscribe = () => {
     <section style={{ padding: "10px" }} className="">
       <div className="pt-90"></div>
       <div className="container subscribe">
-        <div className="row">
+        <div className="row aab">
           <div className="col-md-5">
-            <h3 class="podcast-title">{data?.footerTitle}</h3>
-            <p className="subscribe-msg">{data?.footerSubTitle}</p>
+            <div className="s-content">
+              <h3 class="podcast-title">{data?.footerTitle}</h3>
+              <p className="subscribe-msg">{data?.footerSubTitle}</p>
+            </div>
           </div>
           <div className="col-md-7">
             <div className="medias row">

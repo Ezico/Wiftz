@@ -55,6 +55,7 @@ const Modal = ({ open, onClose }) => {
                 </a>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
