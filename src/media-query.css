@@ -49,6 +49,9 @@
   .btn {
     font-size: 12px;
   }
+  .container {
+    padding: 20px;
+  }
   .hero-tick {
     position: absolute;
     width: 163px;
@@ -79,6 +82,7 @@
   }
   .latest-container {
     width: 100%;
+    padding: 0px;
   }
   .podcast-title {
     font-style: normal;

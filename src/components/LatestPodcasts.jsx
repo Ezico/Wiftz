@@ -27,7 +27,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                 />
               </div>
               <div className="col-md-8 col-sm-12">
-                <div className="container">
+                <div className="">
                   <h3 className="podcast-title">{item?.title}</h3>
                   <p className="podcast-desc">
                     <div
