@@ -26,7 +26,6 @@ const PodcastPage = ({ featured }) => {
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
   const [pagedata, setPageData] = useState();
-
   // setSelected("Technology");
   const id = "XvIKnYXnCJQ161PRXBqI";
   useEffect(() => {
@@ -59,7 +58,7 @@ const PodcastPage = ({ featured }) => {
     };
     getData();
   }, []);
-
+  // setSelected("All");
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
     // e.target.classList.toggle("active");

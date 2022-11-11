@@ -38,7 +38,7 @@ function Hero({ data }) {
 
               <p>{data?.heroSubHeading}</p>
               <div className="row">
-                <div className="col-4">
+                <div className="col-4" style={{ width: "27%" }}>
                   <button
                     className="primary btn large"
                     onClick={() => setOpenModel(!openModal)}
