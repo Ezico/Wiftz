@@ -16,7 +16,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
           <p>{data?.latestPodcastSubHeading}</p>
         </div>
         <hr />
-        <div className="row pt-50">
+        <div className="row pt-30">
           {featured.map((item) => (
             <>
               <div className="col-md-4 col-sm-12">

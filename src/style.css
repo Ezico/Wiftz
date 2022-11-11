@@ -145,8 +145,11 @@ ul {
   margin-bottom: 40px;
 }
 button.large {
-  padding: 18px 28px;
+  padding: 16px 44px;
   margin-right: 14px;
+}
+.latest-container p {
+  margin-bottom: 30px;
 }
 section.mt-107 {
   margin-top: var(--mt);
@@ -224,6 +227,9 @@ section.mt-107 {
 }
 .pt-10 {
   padding-top: 10px;
+}
+.pt-30 {
+  padding-top: 30px;
 }
 .pt-90 {
   padding-top: 80px;
