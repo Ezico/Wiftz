@@ -59,9 +59,10 @@
     left: 0;
   }
   button.large {
-    padding: 16px 29px;
+      padding: 18px 30px;
     margin-right: 14px;
     z-index: 99;
+    font-size: 16px;
   }
   .df {
     display: block;
