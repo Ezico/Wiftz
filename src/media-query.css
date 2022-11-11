@@ -1,5 +1,14 @@
 /* portrait tablets, portrait  landscape */
 @media (max-width: 760px) {
+  .s-content {
+    margin-left: 0;
+    width: fit-content;
+  }
+  .sm-thumbnail {
+    max-width: 100%;
+    margin: 0px;
+  }
+
   .desktop-navigation,
   .hide-small {
     display: none !important;
@@ -85,9 +94,9 @@
     max-width: 50%;
   }
   .sm-thumbnail > a img {
-    margin: 0px;
-    padding: 5px;
-    width: 100%;
+    margin: 0px !important;
+    width: 100% !important;
+    padding: 5px !important;
   }
   .col-md-5 .podcast-title {
     font-size: 18px;
@@ -103,8 +112,9 @@
     text-align: center;
   }
   .sm-thumbnail > img {
-    margin: 6px;
-    width: 100%;
+    margin: 0px !important;
+    width: 100% !important;
+    padding: 5px !important;
   }
   .footer-logo img {
     width: 150px;
