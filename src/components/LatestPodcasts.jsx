@@ -42,7 +42,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                 <br />
                 <div className="medias row">
                   {item.sportify ? (
-                    <div className="col-md-4 col-sm-6 sm-thumbnail">
+                    <div className="col-md-4 col-sm-12 sm-thumbnail ">
                       <a href={item.sportify}>
                         <img className="" src={spotify_small} alt="" />
                       </a>
@@ -51,7 +51,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     ""
                   )}
                   {item.apple ? (
-                    <div className="col-md-4 col-sm-6  sm-thumbnail">
+                    <div className="col-md-4 col-sm-12  sm-thumbnail">
                       <a href={item.apple}>
                         <img className="" src={apple} alt="" />
                       </a>
@@ -60,7 +60,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     ""
                   )}
                   {item.amazon ? (
-                    <div className="col-md-4 col-sm-6  sm-thumbnail">
+                    <div className="col-md-4 col-sm-12  sm-thumbnail">
                       <a href={item.amazon}>
                         <img className="" src={amazon} alt="" />
                       </a>
@@ -69,7 +69,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     ""
                   )}
                   {item.google ? (
-                    <div className="col-md-4 col-sm-6  sm-thumbnail">
+                    <div className="col-md-4 col-sm-12  sm-thumbnail">
                       <a href={item.google}>
                         <img className="" src={google} alt="" />
                       </a>
@@ -78,7 +78,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     ""
                   )}
                   {item.pod ? (
-                    <div className="col-md-4 col-sm-6  sm-thumbnail">
+                    <div className="col-md-4 col-sm-12  sm-thumbnail">
                       <a href={item.pod}>
                         <img className="" src={pod} alt="" />
                       </a>
@@ -87,7 +87,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                     ""
                   )}
                   {item.youtube ? (
-                    <div className="col-md-4 col-sm-6  sm-thumbnail">
+                    <div className="col-md-4 col-sm-12  sm-thumbnail">
                       <a href={item.youtube}>
                         <img className="" src={youtube} alt="" />
                       </a>
