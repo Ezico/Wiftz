@@ -66,9 +66,9 @@
     font-size: 40px;
     line-height: 60px;
   }
-  .container {
+  /* .container {
     padding: 0 10px;
-  }
+  } */
   .hero-tick {
     position: absolute;
     width: 163px;
@@ -163,7 +163,7 @@
     top: -200px;
   }
   .featured-high {
-    padding: 5px;
+    padding: 0px;
   }
   .scroll-h {
     display: flex;
@@ -188,8 +188,8 @@
   .behind-img {
     position: absolute;
     z-index: 1;
-    top: 114px;
-    left: 7px;
+    top: 125px;
+    left: 11px;
   }
   .thumbnail {
     z-index: 9;
@@ -244,9 +244,12 @@
   .hero-contentP h2 {
     font-style: normal;
     font-weight: 900;
-    font-size: 26px;
+    font-size: 33px;
     line-height: 40px;
     color: white;
+  }
+  .mw-110 {
+    min-width: 110px;
   }
   .buttom-banner {
     background-size: cover;
@@ -269,9 +272,9 @@
   }
   .ahero-tick {
     position: absolute;
-    width: 196px;
+    width: 144px;
     left: 0px;
-    bottom: -14px;
+    bottom: -10px;
   }
   .ahero-tick2 {
     width: 98px;

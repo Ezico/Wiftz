@@ -321,6 +321,14 @@ a.ptx-10 {
   line-height: 1.9;
 }
 
+.podcast-desc {
+  line-height: 2.1;
+}
+.wrapper {
+  padding: 20px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 a.ptx-10x {
   word-spacing: 4px;
   text-decoration-line: underline;
@@ -708,8 +716,9 @@ button.tags {
   width: 100%;
 }
 .navigation-menu ul {
-  padding: 10%;
+  padding-top: 20%;
   margin-top: 50px;
+  padding-left: 21px;
 }
 .navigation-menu ul li {
   margin: 22px 0;

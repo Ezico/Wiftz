@@ -119,7 +119,7 @@ const PodcastPage = ({ featured }) => {
     <>
       <Header active={active} />
       <div className="heroP">
-        <div className="container">
+        <div className="wrapper">
           <br />
           <img
             className="hide-large"
@@ -133,10 +133,10 @@ const PodcastPage = ({ featured }) => {
           </div>
         </div>
       </div>
-      <div className="container custom-position">
+      <div className="wrapper custom-position">
         <div className="featured-high" style={{ backgroundColor: "#0D0E18" }}>
           <div className=" latest-podcast  pt-20">
-            <div className="container p-40">
+            <div className="wrapper ">
               <div className="latest-container">
                 <h2>Latest Podcast</h2>
                 <p className="text-light">
@@ -241,7 +241,7 @@ const PodcastPage = ({ featured }) => {
           </div>
         </div>
 
-        <section className=" container latest-podcast ">
+        <section className=" latest-podcast ">
           <div className="pt-90">
             <div className="latest-container">
               <h2>
@@ -253,8 +253,8 @@ const PodcastPage = ({ featured }) => {
                 help you earn. Do the talking, while we help you earn.
               </p>
             </div>
-            <div className="tag pt-10 scroll-h">
-              <button className="tags" onClick={handleTagSelect}>
+            <div className="tag  scroll-h">
+              <button className="tags clicked" onClick={handleTagSelect}>
                 All
               </button>
               {tags?.map((tag, index) => (

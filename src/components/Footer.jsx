@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="container">
+        <div className="wraper">
           <div className="row pt-50">
             <div className="hide-small col-md-3 footer-logo">
               <img src={Logo} alt="site logo" />

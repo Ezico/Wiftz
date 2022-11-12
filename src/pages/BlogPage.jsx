@@ -150,7 +150,7 @@ const BlogPage = ({}) => {
           backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/Podcasts%2FBlog%20Banner.png?alt=media&token=093015fd-9dfe-4e82-8a63-0c6bf1a71b19)`,
         }}
       >
-        <div className="container">
+        <div className="wrapper">
           <br />
           <div className="pt-200"></div>
           <div className="hero-contentP">
@@ -160,7 +160,7 @@ const BlogPage = ({}) => {
         </div>
       </div>
       <section className="bg-secondary pt-50 pb-90">
-        <div className="container">
+        <div className="wrapper">
           <div className="row">
             <div className="col-md-6 col-sm-12">
               <div className="thembail-featured">
@@ -172,7 +172,7 @@ const BlogPage = ({}) => {
               </div>
             </div>
             <div className="col-md-6 col-sm-12">
-              <div className="article p-10">
+              <div className="article pt-20">
                 <button className="btn date featured">
                   <span>{featured?.category}</span> &nbsp;|&nbsp;
                   <span>{featured?.timestamp.toDate().toDateString()}</span>
@@ -201,16 +201,16 @@ const BlogPage = ({}) => {
         </div>
       </section>
       <section className="latest-podcast pt-90">
-        <div className="container">
+        <div className="wrapper">
           <div className="latest-container">
             <h2>{pagedata?.BlogsubHeadLine}</h2>
             <p className="text-light">{pagedata?.BlogsubHeadlineText}</p>
           </div>
         </div>
       </section>
-      <div className="container">
-        <div className="tags pt-50 scroll-h">
-          <button className="tags" onClick={handleTagSelect}>
+      <div className="wrapper">
+        <div className="tags scroll-h">
+          <button className="tags clicked" onClick={handleTagSelect}>
             All
           </button>
           {tags?.map((tag, index) => (
@@ -220,8 +220,8 @@ const BlogPage = ({}) => {
           ))}
         </div>
       </div>
-      <div className="container">
-        <div className="row pt-50">
+      <div className="">
+        <div className="row wrapper">
           {data?.map((data, index) => (
             <div key={index} className="x-4 col-sm-12 pod-content">
               <div className="image-container">

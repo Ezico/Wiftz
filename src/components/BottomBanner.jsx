@@ -7,7 +7,7 @@ const BottomBanner = ({ data }) => {
       style={{ backgroundImage: `url(${data?.midPageBanner})` }}
       className="buttom-banner"
     >
-      <div className="container pt-90 pb-90">
+      <div className="wrapper pt-90 pb-90">
         <div className="row">
           <div className="col-md-7 col-sm-12">
             <div className="content">

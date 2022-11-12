@@ -56,7 +56,7 @@ const PodcastDetails = () => {
     <>
       <Header active={active} />
       <div className="heroPD" style={mystyle}>
-        <div className="container innerPodcast">
+        <div className="wrapper innerPodcast">
           <div className="row pt-90"></div>
           <div className="row pt-90 hide-small"></div>
 
@@ -74,7 +74,6 @@ const PodcastDetails = () => {
                 <h3 className="podcast-title text-light">{podcast?.title}</h3>
                 <p className="podcast-desc">
                   <div
-                    className="text-light"
                     dangerouslySetInnerHTML={{
                       __html: podcast?.shortDescription.substring(0, 210),
                     }}
@@ -148,7 +147,7 @@ const PodcastDetails = () => {
         </div>
       </div>
 
-      <section className="container">
+      <section className="wrapper">
         <div className="innerContent">
           <div className="heading text-light">Description</div>
           <div
@@ -175,7 +174,7 @@ const PodcastDetails = () => {
         </div>
       </section>
       <section className="bg-secondary">
-        <div className="container">
+        <div className="wrapper">
           <div className="row">
             {bds?.map((item, index) => (
               <div className="col-md-6 col-sm-12">

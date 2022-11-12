@@ -40,7 +40,7 @@ function Hero({ data }) {
               <div className="row btn-container">
                 <div className="col-4 ">
                   <button
-                    className="primary btn large"
+                    className="primary btn large mw-110"
                     onClick={() => setOpenModel(!openModal)}
                   >
                     Listen

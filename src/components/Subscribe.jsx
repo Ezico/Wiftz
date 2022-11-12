@@ -23,9 +23,10 @@ const Subscribe = () => {
     }
   };
   return (
-    <section style={{ padding: "10px" }} className="">
+    <section className="wrapper">
       <div className="pt-90"></div>
-      <div className="container subscribe">
+      <div className="wrapper subscribe">
+        <div className="subscribe"></div>
         <div className="row aab">
           <div className="col-md-5">
             <div className="s-content">

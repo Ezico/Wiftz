@@ -5,7 +5,7 @@ const AboutDetails = ({ data }) => {
   return (
     <>
       <section className="bgb latest-podcast pb-90 pt-90">
-        <div className="container">
+        <div className="wrapper">
           <div className="row">
             <div className="col-md-4 col-sm-12">
               <div className="hero-content pt-50">

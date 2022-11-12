@@ -32,7 +32,7 @@ const Contact = () => {
     <>
       <Header active={active} />
       <div className="container-fluid pt-90">
-        <div className="container">
+        <div className="wrapper">
           <div className="row">
             <div className="col-md-6 ">
               <div className="contant">

@@ -69,9 +69,9 @@ const About = () => {
         }}
       >
         {/* <img className="hero-img" src={Banner} alt="" /> */}
-        <div className="container">
+        <div className="wrapper">
           <div className="row">
-            <div className="pd-intro col-md-6 col-sm-12">
+            <div className="pd-intro col-md-6 col-sm-12 wrapper">
               <div className="hero-content">
                 <h2 className="abt-text">
                   {data?.title1}
