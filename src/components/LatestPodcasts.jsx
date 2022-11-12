@@ -10,7 +10,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
   // const cleanHtml = cleanHtml.replace(/<[^>]+>/g, "");
   return (
     <section className="bgb latest-podcast pb-90 pt-90">
-      <div className="wrapper">
+      <div className="wrapper w-1100">
         <div className="latest-container">
           <h2>{data?.latestPodcastHeading}</h2>
           <p>{data?.latestPodcastSubHeading}</p>

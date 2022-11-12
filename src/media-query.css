@@ -276,6 +276,9 @@
     left: 0px;
     bottom: -10px;
   }
+  .w-1100 {
+    width: 100%;
+  }
   .ahero-tick2 {
     width: 98px;
     position: absolute;
