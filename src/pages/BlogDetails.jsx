@@ -68,15 +68,6 @@ const BlogDetails = () => {
                 </strong>
                 {posts?.category}
               </span>
-              <span className="text-light">
-                <strong>
-                  <img
-                    className="ico"
-                    src="https://img.icons8.com/ffffff/user"
-                  />
-                </strong>
-                {posts?.author}
-              </span>
             </div>
             <div className="col-6 p-10">
               <span className="text-light">
