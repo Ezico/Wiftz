@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/images/Wiftz-logo.png";
 import Menu from "../assets/images/humburger.png";
 import Modal from "../components/Modal";
-const Header = () => {
+const Header = ({ active }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [openModal, setOpenModel] = useState(false);
   let menu;
@@ -52,16 +52,36 @@ const Header = () => {
             <div className="col-6">
               <ul className="desktop-navigation">
                 <Link to="/podcasts">
-                  <li className="nav-item">PODCASTS</li>
+                  <li
+                    className={`nav-item ${
+                      active === "Podcasts" ? "active" : ""
+                    }`}
+                  >
+                    PODCASTS
+                  </li>
                 </Link>
                 <Link to="/blog">
-                  <li className="nav-item">BLOG</li>
+                  <li
+                    className={`nav-item ${active === "Blog" ? "active" : ""}`}
+                  >
+                    BLOG
+                  </li>
                 </Link>
                 <Link to="/about">
-                  <li className="nav-item">ABOUT</li>
+                  <li
+                    className={`nav-item ${active === "About" ? "active" : ""}`}
+                  >
+                    ABOUT
+                  </li>
                 </Link>
                 <Link to="/contact">
-                  <li className="nav-item">CONTACT</li>
+                  <li
+                    className={`nav-item ${
+                      active === "Contact" ? "active" : ""
+                    }`}
+                  >
+                    CONTACT
+                  </li>
                 </Link>
                 <button
                   data-bs-toggle="modal"

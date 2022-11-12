@@ -15,7 +15,9 @@ const BlogDetails = () => {
 
   const { id } = useParams();
   const [posts, setPosts] = useState();
+  const [active, setActive] = useState(null);
   useEffect(() => {
+    setActive("Blog");
     id && getPodcastDetails();
   }, [id]);
 
@@ -24,10 +26,12 @@ const BlogDetails = () => {
     const postDetail = await getDoc(docRef);
     setPosts(postDetail.data());
   };
+  // setActive("Blog");
+  // console.log(setActive);
 
   return (
     <>
-      <Header />
+      <Header active={active} />
       <div
         className="headx"
         style={{

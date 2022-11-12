@@ -12,13 +12,24 @@ import youtube from "../assets/images/youtube_small.png";
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Behind from "../assets/images/behind.png";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const PodcastDetails = () => {
   const [screen, setScreen] = useState();
   const { id } = useParams();
   const [podcast, setPodcast] = useState();
+  const [active, setActive] = useState(null);
+
+  const mystyle = {
+    top: "-29px",
+    backgroundImage: `url(${
+      screen == "Mobile"
+        ? "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/podcastdetailsbg.png?alt=media&token=410f464e-75b7-4b7d-9be0-7b334b0e060a "
+        : "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/HPhO8ygY.png?alt=media&token=9b0f0d24-717b-4145-afbc-bc08dfcea477"
+    })`,
+  };
+
   useEffect(() => {
+    setActive("Podcasts");
     id && getPodcastDetails();
   }, [id]);
 
@@ -43,17 +54,8 @@ const PodcastDetails = () => {
 
   return (
     <>
-      <Header />
-      <div
-        className="heroPD"
-        style={{
-          backgroundImage: `url(${
-            screen == "Mobile"
-              ? "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/podcastdetailsbg.png?alt=media&token=410f464e-75b7-4b7d-9be0-7b334b0e060a "
-              : "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/HPhO8ygY.png?alt=media&token=9b0f0d24-717b-4145-afbc-bc08dfcea477"
-          })`,
-        }}
-      >
+      <Header active={active} />
+      <div className="heroPD" style={mystyle}>
         <div className="container innerPodcast">
           <div className="row pt-90"></div>
           <div className="row pt-90 hide-small"></div>
@@ -68,7 +70,7 @@ const PodcastDetails = () => {
               />
             </div>
             <div className="col-md-8 col-sm-12">
-              <div className="">
+              <div className="podcast">
                 <h3 className="podcast-title text-light">{podcast?.title}</h3>
                 <p className="podcast-desc">
                   <div
@@ -156,6 +158,8 @@ const PodcastDetails = () => {
             }}
           />
           <br />
+          <br />
+          <br />
           <div className="heading text-light">Resources</div>
           <div
             className="text-light"
@@ -163,6 +167,8 @@ const PodcastDetails = () => {
               __html: podcast?.resources,
             }}
           />
+          <br />
+          <br />
           <br />
           <div className="heading text-light">Behind the Scene</div>
           <br />

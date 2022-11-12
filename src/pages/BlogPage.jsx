@@ -15,16 +15,17 @@ import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
 import { db } from "../firebase";
 import { Link } from "react-router-dom";
-import Play from "../assets/images/play.png";
 
-const BlogPage = () => {
+const BlogPage = ({}) => {
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
   const [pagedata, setPageData] = useState();
   const [featured, setFeatured] = useState();
+  const [active, setActive] = useState(null);
   // push to top page after loading
   useEffect(() => {
+    setActive("Blog");
     window.scrollTo(0, 0);
   }, []);
 
@@ -92,6 +93,14 @@ const BlogPage = () => {
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
     setSelected(targetText);
+    const loopTags = document.querySelectorAll(".tags");
+    for (let i = 0; i < loopTags.length; i++) {
+      loopTags[i].classList.remove("clicked");
+      console.log(loopTags[i]);
+      if (loopTags[i].innerText === targetText) {
+        loopTags[i].classList.add("clicked");
+      }
+    }
     if (targetText === "All") {
       console.log("All");
       const collectionRef = collection(db, "Posts");
@@ -130,9 +139,11 @@ const BlogPage = () => {
       );
     }
   };
+  // setActive("Blog");
+  // console.log(setActive);
   return (
     <>
-      <Header />
+      <Header active={active} />
       <div
         className="heroB"
         style={{
@@ -161,7 +172,7 @@ const BlogPage = () => {
               </div>
             </div>
             <div className="col-md-6 col-sm-12">
-              <div className="article pt-50 pb-50">
+              <div className="article p-10">
                 <button className="btn date featured">
                   <span>{featured?.category}</span> &nbsp;|&nbsp;
                   <span>{featured?.timestamp.toDate().toDateString()}</span>
@@ -234,10 +245,16 @@ const BlogPage = () => {
                 className="row"
                 style={{ position: "absolute", bottom: "10px", width: "100%" }}
               >
-                <div style={{ paddingTop: "4px" }} className="col text-light">
+                <div
+                  style={{
+                    paddingTop: "4px",
+                    color: "rgba(255, 255, 255, 0.8)",
+                  }}
+                  className="col"
+                >
                   {featured?.timestamp.toDate().toDateString()}
                 </div>
-                <Link className="col ptx-10" to={"/blog/" + data?.id}>
+                <Link className="col ptx-10x" to={"/blog/" + data?.id}>
                   Read More &gt;
                 </Link>
               </div>

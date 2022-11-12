@@ -15,6 +15,7 @@ const AboutDetails = ({ data }) => {
 
                   <img className="ahero-tick2" src={__} alt="tick" />
                 </h2>
+                <br />
                 <p>{data?.subtitle2}</p>
               </div>
             </div>

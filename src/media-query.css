@@ -1,3 +1,13 @@
+/* //300px mobile */
+@media (min-width: 320) and (max-width: 700px) {
+  .medias {
+    width: 100%;
+    gap: 0px;
+    grid-gap: 6px !important;
+    justify-content: space-between;
+  }
+}
+
 /* portrait tablets, portrait  landscape */
 @media (max-width: 760px) {
   .s-content {
@@ -31,11 +41,14 @@
   }
   .pd-intro h2 {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 35px;
     line-height: 45px;
     color: white;
     margin-bottom: 40px;
+  }
+  .btn-container {
+    max-width: 350x;
   }
   .hero {
     height: 134vh;
@@ -49,8 +62,12 @@
   .btn {
     font-size: 12px;
   }
+  .abt-text {
+    font-size: 40px;
+    line-height: 60px;
+  }
   .container {
-    padding: 0 20px;
+    padding: 0 10px;
   }
   .hero-tick {
     position: absolute;
@@ -100,7 +117,13 @@
     justify-content: space-between;
   }
   .sm-thumbnail {
-    max-width: 48%;
+    max-width: 47%;
+  }
+  a.ptx-10 {
+    padding-left: 40px;
+  }
+  .col-md-8 > .podcast {
+    padding: 0;
   }
   .sm-thumbnail > a img {
     width: 100% !important;
@@ -217,6 +240,14 @@
     background-size: cover;
     background-position: center;
   }
+  .pd-intro h2,
+  .hero-contentP h2 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 40px;
+    color: white;
+  }
   .buttom-banner {
     background-size: cover;
     background-position: center;
@@ -246,11 +277,27 @@
     width: 98px;
     position: absolute;
     left: 159px;
-    bottom: 74px;
+    bottom: 81px;
+    height: 15px;
+  }
+  .form-container {
+    height: 560px;
   }
   .previewThumbnail {
     width: 100%;
     padding: 10px;
+  }
+  .p-10 {
+    padding: 10px !important;
+  }
+  .heroA {
+    height: 132vh;
+    z-index: 1;
+  }
+  .contant button.large {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
   }
   /* .heroP {
     display: none;
@@ -292,14 +339,14 @@
 
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1025px) {
-  .hero {
-    height: 100vh;
-  }
+  /* .hero {
+    height: 90vh;
+  } */
 }
 
 /* hi-res laptops and desktops */
 @media (min-width: 1281px) {
-  .hero {
-    height: 100vh;
-  }
+  /* .hero {
+    height: 90vh;
+  } */
 }

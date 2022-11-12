@@ -104,8 +104,10 @@ const Footer = () => {
               <img src={Logo} alt="site logo" />
             </div>
           </div>
-          <hr />
-          <center>© 2022 Wiftz. All rights reserved.</center>
+          <hr style={{ border: "1px solid #404253" }} />
+          <center style={{ color: "rgba(255, 255, 255, 0.4)" }}>
+            © 2022 Wiftz. All rights reserved.
+          </center>
         </div>
       </footer>
     </>

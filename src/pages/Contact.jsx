@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
-import Call from "../assets/images/call.png";
-import Web from "../assets/images/web.png";
 import Email from "../assets/images/email.png";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const Contact = () => {
   const [data, setData] = useState();
+  const [active, setActive] = useState(null);
   const id = "Cw1TrtdA382NCnAzNcIu";
+
   useEffect(() => {
     id && getHomeDataFromDB();
+    setActive("Contact");
   }, [id]);
 
   const getHomeDataFromDB = async () => {
@@ -29,7 +30,7 @@ const Contact = () => {
 
   return (
     <>
-      <Header />
+      <Header active={active} />
       <div className="container-fluid pt-90">
         <div className="container">
           <div className="row">
@@ -54,7 +55,7 @@ const Contact = () => {
                   <span>
                     <img className="ico-contact" src={Email} alt="" />
                   </span>
-                  {data?.email}
+                  <span> {data?.email}</span>
                 </button>
                 <br />
                 <br />
@@ -100,7 +101,7 @@ const Contact = () => {
                     </div>
 
                     <button
-                      style={{ float: "right" }}
+                      style={{ float: "right", marginTop: "35px" }}
                       className="primary btn large"
                       type="submit"
                     >

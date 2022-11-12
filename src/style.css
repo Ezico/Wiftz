@@ -6,6 +6,16 @@
 p {
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 500;
+}
+.fom {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  text-decoration-line: underline;
 }
 body {
   font-size: 14px;
@@ -95,7 +105,15 @@ ul {
   top: -107px;
   /* z-index: -1; */
   background-size: cover;
-  height: 100vh;
+  height: 110vh;
+  width: 100%;
+}
+.heroA {
+  position: relative;
+  top: -107px;
+  /* z-index: -1; */
+  background-size: cover;
+  height: 90vh;
   width: 100%;
 }
 .heroP {
@@ -127,7 +145,8 @@ ul {
 .p-a {
   position: absolute;
 }
-.pd-intro h2 {
+.pd-intro h2,
+.hero-contentP h2 {
   font-style: normal;
   font-weight: 900;
   font-size: 40px;
@@ -181,10 +200,10 @@ section.mt-107 {
   bottom: -2px;
 }
 .ahero-tick2 {
-  width: 202px;
+  width: 140px;
   position: absolute;
   left: 0;
-  bottom: 62px;
+  bottom: 76px;
 }
 .hero-content {
   position: relative;
@@ -256,11 +275,13 @@ section.mt-107 {
 }
 .podcast-title {
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 22px;
   margin-bottom: 0px;
 }
-
+.podcast > .podcast-title {
+  line-height: 35px;
+}
 .medias {
   margin: 10px 0px;
 }
@@ -293,12 +314,23 @@ p {
 a.ptx-10 {
   word-spacing: 4px;
   text-decoration-line: underline;
-  color: #898cc5;
+  color: #585aa8;
   font-weight: 600;
   font-size: 12px;
-  padding-left: 34px;
+  /* padding-left: 134px; */
   line-height: 1.9;
 }
+
+a.ptx-10x {
+  word-spacing: 4px;
+  text-decoration-line: underline;
+  color: #585aa8;
+  font-weight: 600;
+  font-size: 12px;
+  padding-left: 134px;
+  line-height: 1.9;
+}
+
 a {
   color: #abadd3;
   text-decoration: none;
@@ -330,6 +362,7 @@ a {
 .image-container {
   position: relative;
 }
+
 .crv {
   border-radius: 10px;
 }
@@ -352,12 +385,18 @@ a {
   display: inline !important;
   position: absolute;
 }
+.pod-content:hover > .ptx-10 {
+  padding-left: 34px;
+}
 .title {
   font-size: 17px;
   padding-top: 10px;
   color: white;
 }
 
+.btn-container {
+  max-width: 350x;
+}
 .podcast-desc {
   padding: 10px 0;
   color: rgba(255, 255, 255, 0.8);
@@ -634,6 +673,7 @@ button.tags {
 }
 .ico-contact {
   width: 35px;
+  margin-right: 10px;
 }
 .container-fluid {
   background-image: url(https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/contact-bg.png?alt=media&token=42999246-c9e8-4ff2-89c5-7bf0e6c7b8bc);
@@ -680,9 +720,12 @@ button.tags {
 .contant button.large {
   padding: 10px 31px;
   margin-right: 14px;
+  border-color: #6c6a6a30;
   z-index: 99;
 }
-
+.date {
+  cursor: default;
+}
 .owl-nav {
   position: absolute;
   top: -89px;
@@ -692,8 +735,8 @@ button.tags {
 .owl-next {
   background: rgba(171, 173, 211, 0.15);
   border-radius: 100px !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 54px !important;
+  height: 54px !important;
   margin: 10px !important;
 }
 .owl-carousel .owl-nav button.owl-prev,
@@ -728,7 +771,16 @@ button.tags {
   color: white;
   background: black;
 }
-
+.active {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 27px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .btn:hover {
   color: white;
   border-color: white;
@@ -762,6 +814,7 @@ button.primary {
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1)) !important;
   border-radius: 5px !important;
   height: 37px;
+  font-weight: 400;
 }
 .text-content {
   font-style: normal;
@@ -779,4 +832,10 @@ button.primary {
 
 .p-40 {
   padding: 0 40px;
+}
+button.clicked {
+  background: rgba(88, 90, 168, 0.3);
+}
+.col-md-8 > .podcast {
+  padding: 15px 0px 0px 15px;
 }

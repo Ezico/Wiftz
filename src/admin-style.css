@@ -27151,7 +27151,7 @@
   display: flex;
 }
 .anchor:hover a:hover {
-  color: var(--kt-primary);
+  /* color: var(--kt-primary); */
   transition: all 0.2s ease-in-out;
 }
 
@@ -38834,12 +38834,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-body a:hover,
-body a:active,
-body a:focus {
-  text-decoration: none !important;
-}
 
+a:hover {
+  color: #abadd3;
+  text-decoration: underline !important;
+}
 canvas {
   user-select: none;
 }

@@ -25,7 +25,7 @@ const TopPodcast = ({ topList, data }) => {
         items: 3,
       },
       1400: {
-        items: 4,
+        items: 3,
       },
     },
   };

@@ -37,8 +37,8 @@ function Hero({ data }) {
               </div>
 
               <p>{data?.heroSubHeading}</p>
-              <div className="row">
-                <div className="col-4">
+              <div className="row btn-container">
+                <div className="col-4 ">
                   <button
                     className="primary btn large"
                     onClick={() => setOpenModel(!openModal)}

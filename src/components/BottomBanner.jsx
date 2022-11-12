@@ -19,7 +19,7 @@ const BottomBanner = ({ data }) => {
               />
 
               <br />
-              <Link className="pt-10" to="/">
+              <Link className="pt-10 fom" to="/">
                 Find out More
               </Link>
             </div>

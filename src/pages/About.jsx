@@ -18,8 +18,10 @@ const About = () => {
   const id = "Cw1TrtdA382NCnAzNcIu";
   const id2 = "TgcagxHqMIpvRTMnsjU4";
   const [screen, setScreen] = useState();
+  const [active, setActive] = useState(null);
   // push to top page after loading
   useEffect(() => {
+    setActive("About");
     window.scrollTo(0, 0);
   }, []);
 
@@ -57,9 +59,9 @@ const About = () => {
   return (
     <>
       <Modal open={openModal} onClose={() => setOpenModel(false)} />
-      <Header />
+      <Header active={active} />
       <div
-        className="hero"
+        className="heroA"
         style={{
           backgroundImage: `url(${
             screen == "Mobile" ? data?.heroBannerMobile : data?.bannerImg
@@ -71,7 +73,7 @@ const About = () => {
           <div className="row">
             <div className="pd-intro col-md-6 col-sm-12">
               <div className="hero-content">
-                <h2>
+                <h2 className="abt-text">
                   {data?.title1}
 
                   <img className="ahero-tick" src={__} alt="tick" />

@@ -26,12 +26,12 @@ const PodcastPage = ({ featured }) => {
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
   const [pagedata, setPageData] = useState();
-  // setSelected("Technology");
+  const [active, setActive] = useState(null);
   const id = "XvIKnYXnCJQ161PRXBqI";
   useEffect(() => {
+    setActive("Podcasts");
     id && getPageDataFromDB();
   }, [id]);
-
   const getPageDataFromDB = async () => {
     const docRef = doc(db, "PodcastDetails", id);
     const snapshot = await getDoc(docRef);
@@ -61,8 +61,17 @@ const PodcastPage = ({ featured }) => {
   // setSelected("All");
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
-    // e.target.classList.toggle("active");
+    // e.target.classList.add("active");
     setSelected(targetText);
+    const loopTags = document.querySelectorAll(".tags");
+    for (let i = 0; i < loopTags.length; i++) {
+      loopTags[i].classList.remove("clicked");
+      console.log(loopTags[i]);
+      if (loopTags[i].innerText === targetText) {
+        loopTags[i].classList.add("clicked");
+      }
+    }
+
     const collectionRef = collection(db, "Podcasts");
 
     if (targetText === "All") {
@@ -108,7 +117,7 @@ const PodcastPage = ({ featured }) => {
 
   return (
     <>
-      <Header />
+      <Header active={active} />
       <div className="heroP">
         <div className="container">
           <br />
@@ -148,14 +157,14 @@ const PodcastPage = ({ featured }) => {
                         />
                       </Link>
                     </div>
-                    <div className="col-md-8 col-sm-12">
+                    <div className="col-md-8 col-sm-12 p-10">
                       <div className="">
                         <h3 className="podcast-title text-light">
                           {item?.title}
                         </h3>
                         <p className="podcast-desc">
                           <div
-                            className="text-light"
+                            className=""
                             dangerouslySetInnerHTML={{
                               __html: item?.shortDescription.substring(0, 210),
                             }}
@@ -232,8 +241,8 @@ const PodcastPage = ({ featured }) => {
           </div>
         </div>
 
-        <section className=" latest-podcast pt-90">
-          <div className="container">
+        <section className=" container latest-podcast ">
+          <div className="pt-90">
             <div className="latest-container">
               <h2>
                 {pagedata?.PodcastsubHeadLine} |&nbsp;
@@ -243,9 +252,8 @@ const PodcastPage = ({ featured }) => {
                 Do the talking, while we help you earn. Do the talking, while we
                 help you earn. Do the talking, while we help you earn.
               </p>
-              <br />
             </div>
-            <div className="tags pt-10 scroll-h">
+            <div className="tag pt-10 scroll-h">
               <button className="tags" onClick={handleTagSelect}>
                 All
               </button>
@@ -255,7 +263,7 @@ const PodcastPage = ({ featured }) => {
                 </button>
               ))}
             </div>
-            <div className="row pt-10">
+            <div className="row pt-10 container">
               {data?.map((data, index) => (
                 <div key={index} className="x-4 col-sm-12 pod-content">
                   <div className="image-container">
