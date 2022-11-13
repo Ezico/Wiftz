@@ -95,7 +95,7 @@ const HomepageEditor = ({ user, handleLogout }) => {
       <AdminHeader user={user} handleLogout={handleLogout} />
 
       <div
-        className="wrapper d-flex flex-column flex-row-fluid"
+        className="wrapperx d-flex flex-column flex-row-fluid"
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">

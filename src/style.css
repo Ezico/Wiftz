@@ -410,6 +410,8 @@ a {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 14px;
+  text-transform: none;
+  text-decoration: none;
 }
 .play-ico {
   display: none !important;
@@ -783,7 +785,7 @@ button.tags {
   color: white;
   background: black;
 }
-.active {
+.activenav {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -850,4 +852,9 @@ button.clicked {
 }
 .col-md-8 > .podcast {
   padding: 15px 0px 0px 15px;
+}
+
+.pod-content .title {
+  text-transform: none;
+  text-decoration: none;
 }

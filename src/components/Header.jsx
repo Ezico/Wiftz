@@ -54,7 +54,7 @@ const Header = ({ active }) => {
                 <Link to="/podcasts">
                   <li
                     className={`nav-item ${
-                      active === "Podcasts" ? "active" : ""
+                      active === "Podcasts" ? "activenav" : ""
                     }`}
                   >
                     PODCASTS
@@ -62,14 +62,18 @@ const Header = ({ active }) => {
                 </Link>
                 <Link to="/blog">
                   <li
-                    className={`nav-item ${active === "Blog" ? "active" : ""}`}
+                    className={`nav-item ${
+                      active === "Blog" ? "activenav" : ""
+                    }`}
                   >
                     BLOG
                   </li>
                 </Link>
                 <Link to="/about">
                   <li
-                    className={`nav-item ${active === "About" ? "active" : ""}`}
+                    className={`nav-item ${
+                      active === "About" ? "activenav" : ""
+                    }`}
                   >
                     ABOUT
                   </li>
@@ -77,7 +81,7 @@ const Header = ({ active }) => {
                 <Link to="/contact">
                   <li
                     className={`nav-item ${
-                      active === "Contact" ? "active" : ""
+                      active === "Contact" ? "activenav" : ""
                     }`}
                   >
                     CONTACT

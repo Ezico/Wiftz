@@ -9,7 +9,7 @@
 }
 
 /* portrait tablets, portrait  landscape */
-@media (max-width: 760px) {
+@media (max-width: 769px) {
   .s-content {
     margin-left: 0;
     width: fit-content;

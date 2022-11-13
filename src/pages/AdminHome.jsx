@@ -13,7 +13,7 @@ const AdminHome = ({ user, handleLogout }) => {
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
-      <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+      <div class="wrapperx d-flex flex-column flex-row-fluid" id="kt_wrapper">
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
           <div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
             <div class="d-flex flex-center flex-column flex-lg-row-fluid">

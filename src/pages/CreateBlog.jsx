@@ -18,6 +18,7 @@ const initialState = {
   FeaturedImage: "",
   trending: "no",
   category: "",
+  shortDescription: "",
 };
 
 const categoryOptions = ["Self growth", "Health care", "Health", "Climate"];
@@ -27,7 +28,8 @@ const CreateBlog = ({ user, handleLogout }) => {
   const [progress, setProgress] = useState(null);
   const [descriptionvalue, setDescriptionValue] = useState();
 
-  const { title, tags, trending, category, FeaturedImage } = form;
+  const { title, tags, trending, category, FeaturedImage, shortDescription } =
+    form;
 
   const navigate = useNavigate();
   // push to top page after loading
@@ -62,7 +64,7 @@ const CreateBlog = ({ user, handleLogout }) => {
       ...form,
       description: formatedDescrition,
     };
-
+    console.log(newDoc);
     if (category && tags && title && FeaturedImage && trending) {
       try {
         await addDoc(collection(db, "Posts"), {
@@ -83,7 +85,7 @@ const CreateBlog = ({ user, handleLogout }) => {
       <AdminHeader user={user} handleLogout={handleLogout} />
 
       <div
-        className="wrapper d-flex flex-column flex-row-fluid"
+        className="wrapperx d-flex flex-column flex-row-fluid"
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
@@ -108,7 +110,7 @@ const CreateBlog = ({ user, handleLogout }) => {
                       <div className="fv-row mb-8 fv-plugins-icon-container">
                         <input
                           type="text"
-                          placeholder="Podcast Title"
+                          placeholder="Post Title"
                           name="title"
                           autocomplete="off"
                           value={title}
@@ -127,16 +129,18 @@ const CreateBlog = ({ user, handleLogout }) => {
                         <div className="fv-plugins-message-container invalid-feedback"></div>
                       </div>
                       <div className="fv-row mb-8 fv-plugins-icon-container">
-                        {/* <textarea
-                          style={{ height: "200px" }}
+                        <textarea
+                          style={{ height: "100px" }}
                           type="text"
-                          placeholder="Description"
-                          name="description"
+                          placeholder="Short Description"
+                          name="shortDescription"
                           autocomplete="off"
-                          value={description}
+                          value={shortDescription}
                           className="form-control bg-transparent"
                           onChange={handleChange}
-                        ></textarea> */}
+                        ></textarea>
+                      </div>
+                      <div className="fv-row mb-8 fv-plugins-icon-container">
                         <ReactQuill
                           theme="snow"
                           placeheolder="Description"
@@ -203,21 +207,33 @@ const CreateBlog = ({ user, handleLogout }) => {
                       <div className="fv-row mb-8 fv-plugins-icon-container">
                         <div class="fv-row mb-8 fv-plugins-icon-container">
                           <div class="mb-10">
-                            <input
+                            {/* <input
                               type="text"
-                              placeholder="Podcast Title"
+                              placeholder=" Image Link"
                               name="FeaturedImage"
                               autocomplete="off"
                               value={FeaturedImage}
                               className="form-control bg-transparent"
                               onChange={handleChange}
-                            />
-
-                            {/* <ReactTagInput
-                              tags={FeaturedImage}
-                              placeholder="Image Url Here"
-                              onChange={handleImages}
                             /> */}
+
+                            <div className="fv-row mb-8 fv-plugins-icon-container">
+                              <div className="mb-10">
+                                <label>Featured Image Url</label>
+                                {FeaturedImage ? (
+                                  <img className="w-100" src={FeaturedImage} />
+                                ) : (
+                                  ""
+                                )}
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  onChange={handleChange}
+                                  name="FeaturedImage"
+                                  value={FeaturedImage}
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

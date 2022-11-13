@@ -38886,7 +38886,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  .wrapper {
+  .wrapperx {
     transition: padding-left 0.3s ease;
     padding-top: 74px;
     padding-left: 264px;

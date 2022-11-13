@@ -17,7 +17,8 @@ const initialState = {
   tags: [],
   trending: "no",
   category: "",
-  FeatureImage: "",
+  FeaturedImage: "",
+  shortDescription: "",
 };
 
 const categoryOptions = ["Self growth", "Health care", "Health", "Climate"];
@@ -27,7 +28,8 @@ const EditBlog = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
   const [descriptionvalue, setDescriptionValue] = useState();
 
-  const { title, tags, trending, category, FeaturedImage } = form;
+  const { title, tags, trending, category, FeaturedImage, shortDescription } =
+    form;
 
   //update data
   useEffect(() => {
@@ -88,14 +90,14 @@ const EditBlog = ({ user, handleLogout }) => {
     } else {
       return toast.error("all fields are required");
     }
-    navigate("/admin");
+    navigate("/admin/blogs");
   };
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
 
       <div
-        className="wrapper d-flex flex-column flex-row-fluid"
+        className="wrapperx d-flex flex-column flex-row-fluid"
         id="kt_wrapper"
       >
         <div className="d-flex flex-column flex-lg-row flex-column-fluid">
@@ -137,6 +139,19 @@ const EditBlog = ({ user, handleLogout }) => {
                           onChange={handleTags}
                         />
                         <div className="fv-plugins-message-container invalid-feedback"></div>
+                      </div>
+
+                      <div className="fv-row mb-8 fv-plugins-icon-container">
+                        <textarea
+                          style={{ height: "100px" }}
+                          type="text"
+                          placeholder="Short Description"
+                          name="shortDescription"
+                          autocomplete="off"
+                          value={shortDescription}
+                          className="form-control bg-transparent"
+                          onChange={handleChange}
+                        ></textarea>
                       </div>
                       <div className="fv-row mb-8 fv-plugins-icon-container">
                         <ReactQuill
@@ -205,10 +220,7 @@ const EditBlog = ({ user, handleLogout }) => {
                         <div class="fv-row mb-8 fv-plugins-icon-container">
                           <div class="mb-10">
                             {FeaturedImage ? (
-                              <img
-                                className="previewThumbnail"
-                                src={FeaturedImage}
-                              />
+                              <img className="w-100" src={FeaturedImage} />
                             ) : (
                               ""
                             )}

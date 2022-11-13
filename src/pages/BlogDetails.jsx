@@ -87,7 +87,7 @@ const BlogDetails = () => {
           <div className="innerContent text-light">
             <div
               dangerouslySetInnerHTML={{
-                __html: posts?.description,
+                __html: posts?.short,
               }}
             />
           </div>

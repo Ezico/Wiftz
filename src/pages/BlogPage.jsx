@@ -186,7 +186,7 @@ const BlogPage = ({}) => {
                 <p className="podcast-desc">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: featured?.description.substring(0, 210),
+                      __html: featured?.shortDescription.substring(0, 150),
                     }}
                   />
                 </p>
@@ -236,7 +236,7 @@ const BlogPage = ({}) => {
               <p className="podcast-desc">
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data?.description.substring(0, 120),
+                    __html: data?.shortDescription.substring(0, 120),
                   }}
                 />
               </p>
