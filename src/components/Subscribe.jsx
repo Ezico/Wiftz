@@ -23,7 +23,7 @@ const Subscribe = () => {
     }
   };
   return (
-    <section className="wrapper">
+    <section className="">
       <div className="pt-90"></div>
       <div className="wrapper subscribe">
         <div className="subscribe"></div>

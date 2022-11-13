@@ -7,9 +7,44 @@
     justify-content: space-between;
   }
 }
+@media (max-width: 320px) {
+  .hero-contentP h2,
+  .pd-intro h2 {
+    color: #fff;
+    font-size: 39px !important;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 40px;
+  }
+  button.secondary {
+    width: 165px !important;
+    margin-left: 20px !important;
+    font-size: 14px !important;
+  }
+}
 
 /* portrait tablets, portrait  landscape */
 @media (max-width: 769px) {
+  .col-md-4 {
+    width: 100%;
+  }
+  .col-md-8 {
+    width: 100%;
+  }
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .pod-content-img {
+    width: 100%;
+    object-fit: fill;
+    max-height: fit-content;
+    border-radius: 10px;
+  }
+  .col-md-3 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
   .s-content {
     margin-left: 0;
     width: fit-content;
@@ -48,7 +83,7 @@
     margin-bottom: 40px;
   }
   .btn-container {
-    max-width: 350x;
+    max-width: 450px;
   }
   .hero {
     height: 134vh;

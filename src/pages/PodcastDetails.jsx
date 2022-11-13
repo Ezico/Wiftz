@@ -187,9 +187,9 @@ const PodcastDetails = () => {
               </div>
             ))}
           </div>
+          <Subscribe />
         </div>
       </section>
-      <Subscribe />
       <Footer />
     </>
     // <div>

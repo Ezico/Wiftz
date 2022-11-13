@@ -92,9 +92,10 @@ const BlogDetails = () => {
             />
           </div>
         </div>
+        <br />
+        <Subscribe />
       </div>
-      <br />
-      <Subscribe />
+
       <Footer />
     </>
   );

@@ -262,8 +262,9 @@ const BlogPage = ({}) => {
           ))}
         </div>
       </div>
-
-      <Subscribe />
+      <div className="wrapper">
+        <Subscribe />
+      </div>
       <Footer />
     </>
   );
