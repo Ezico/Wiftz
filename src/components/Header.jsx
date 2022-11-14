@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Wiftz-logo.png";
 import Menu from "../assets/images/humburger.png";
@@ -7,6 +7,23 @@ const Header = ({ active }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [openModal, setOpenModel] = useState(false);
   let menu;
+
+  useEffect(() => {
+    var navbar = document.querySelector(".navbarx");
+    window.onscroll = function () {
+      addSticky();
+    };
+    var sticky = navbar.offsetTop;
+    function addSticky() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    console.log(navbar);
+  }, []);
+
   if (showMenu) {
     menu = (
       <div className="container">
@@ -41,7 +58,7 @@ const Header = ({ active }) => {
     <>
       {menu}
       <Modal open={openModal} onClose={() => setOpenModel(false)} />
-      <header className="black">
+      <header className="black navbarx">
         <div className="container">
           <div className="row s-e">
             <div className=" col-6 logo">

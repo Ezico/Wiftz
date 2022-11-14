@@ -26,6 +26,7 @@ const AboutDetails = ({ data }) => {
                   style={{
                     backgroundImage: `url(${Bg})`,
                     backgroundSize: "contain",
+                    backgroundPosition: "center",
                   }}
                 >
                   <div
