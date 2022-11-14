@@ -123,7 +123,7 @@ const PodcastPage = ({ featured }) => {
           <br />
           <img
             className="hide-large"
-            style={{ position: "absolute", top: "80px" }}
+            style={{ position: "absolute", top: "80px", width: "93%" }}
             src="https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/bg.png?alt=media&token=361ef195-bb96-479b-819f-9750d056bea9"
           />
           <div className="pt-200"></div>
