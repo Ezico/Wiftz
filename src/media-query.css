@@ -7,9 +7,131 @@
     justify-content: space-between;
   }
 }
+@media (max-width: 1024px) {
+  .pd-intro h2,
+  .hero-contentP h2 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 51px !important;
+    line-height: 60px;
+    color: white;
+  }
+  .hero-tick {
+    position: absolute;
+    width: 253px;
+    left: 0;
+    bottom: -13px;
+  }
+  .pd-intro p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 40px;
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .pd-intro h2,
+  .hero-contentP h2 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 62px;
+    line-height: 60px;
+    color: white;
+  }
+}
+@media (max-width: 540px) {
+  .pd-intro h2,
+  .hero-contentP h2 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 45px !important;
+    line-height: 40px;
+    color: white;
+  }
+}
+
+/* nest hub */
+@media (min-width: 770px) and (max-width: 959px) {
+  .desktop-navigation {
+    display: none;
+  }
+  .mobile-navigation {
+    position: absolute;
+    right: 14px;
+    z-index: 99;
+  }
+  .w-1100 {
+    width: 100%;
+  }
+  .medias {
+    max-width: 482px;
+  }
+  .sm-thumbnail > a img {
+    margin: 6px 0;
+    width: 145px;
+  }
+  .sm-thumbnail > img {
+    margin: 6px;
+    width: 150px;
+  }
+  .col-md-5 .podcast-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 70px;
+    color: white;
+  }
+  .subscribe {
+    background: #2e3192;
+    border-radius: 20px;
+    padding: 0px;
+    margin: 12px;
+  }
+  .footer-logo img {
+    width: 195px;
+  }
+  .footer-details {
+    padding-left: 0px;
+  }
+
+  .col-md-7 {
+    flex: 0 0 auto;
+    width: 64.333333%;
+  }
+  .pd-intro {
+    position: absolute;
+    width: 52%;
+    top: 220px;
+  }
+  .hide-large {
+    display: none;
+  }
+  .hero-tick {
+    position: absolute;
+    width: 175px;
+    left: 0;
+    bottom: -2px;
+  }
+  .s-content {
+    width: 100%;
+    margin-left: 20px;
+    text-align: center;
+  }
+  .hero {
+    position: relative;
+    top: -107px;
+    /* z-index: -1; */
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1440px) and (max-width: 2000px) {
   .x-4 {
-    width: 30.333333%;
+    width: 30.333333% !important;
   }
 }
 @media (max-width: 320px) {
