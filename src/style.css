@@ -508,7 +508,7 @@ h6.title {
 .subscribe {
   background: #2e3192;
   border-radius: 20px;
-  padding: 30px;
+  padding: 10px;
 }
 
 .footer-details .heading {
@@ -829,8 +829,12 @@ button.primary {
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1)) !important;
   border-radius: 5px !important;
-  height: 37px;
+  height: 33px;
   font-weight: 400;
+  cursor: default !important;
+}
+a.nol:hover {
+  text-decoration: none !important;
 }
 .text-content {
   font-style: normal;
@@ -838,14 +842,24 @@ button.primary {
   line-height: 30px;
 }
 .aab {
-  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .s-content {
   width: 369px;
-  margin-left: 20px;
+  margin-left: 70px;
 }
 
+.headingx {
+  margin-bottom: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+}
 .p-40 {
   padding: 0 40px;
 }
@@ -860,4 +874,27 @@ button.clicked {
 .pod-content .title {
   text-transform: none;
   text-decoration: none;
+}
+
+/* Skeleton */
+.heroHeading {
+  position: absolute;
+  width: 39%;
+  top: 220px;
+}
+.headingText {
+  background-color: #ef0000;
+  width: 39%;
+  height: 20px;
+}
+a.pod-content:hover {
+  text-decoration: none !important;
+}
+.headingText2 {
+}
+.subText {
+}
+.subText2 {
+}
+.button {
 }

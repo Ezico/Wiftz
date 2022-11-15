@@ -140,7 +140,7 @@ const BlogPage = ({}) => {
     }
   };
   // setActive("Blog");
-  // console.log(setActive);
+  console.log(data);
   return (
     <>
       <Header active={active} />
@@ -186,7 +186,8 @@ const BlogPage = ({}) => {
                 <p className="podcast-desc">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: featured?.shortDescription.substring(0, 150),
+                      __html:
+                        featured?.shortDescription.substring(0, 200) + "...",
                     }}
                   />
                 </p>
@@ -223,7 +224,11 @@ const BlogPage = ({}) => {
       <div className="">
         <div className="row wrapper">
           {data?.map((data, index) => (
-            <div key={index} className="x-4 col-sm-12 pod-content">
+            <Link
+              key={index}
+              className="x-4 col-sm-12 pod-content"
+              to={"/blog/" + data?.id}
+            >
               <div className="image-container">
                 <span className="green-overlay"></span>
                 <img
@@ -248,6 +253,7 @@ const BlogPage = ({}) => {
                 <div
                   style={{
                     paddingTop: "4px",
+                    fontSize: "12px",
                     color: "rgba(255, 255, 255, 0.8)",
                   }}
                   className="col"
@@ -258,7 +264,7 @@ const BlogPage = ({}) => {
                   Read More &gt;
                 </Link>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

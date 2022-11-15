@@ -121,6 +121,7 @@ const PodcastPage = ({ featured }) => {
       <div className="heroP">
         <div className="wrapper">
           <br />
+
           <img
             className="hide-large"
             style={{ position: "absolute", top: "80px", width: "93%" }}
@@ -159,9 +160,11 @@ const PodcastPage = ({ featured }) => {
                     </div>
                     <div className="col-md-8 col-sm-12 p-10">
                       <div className="">
-                        <h3 className="podcast-title text-light">
-                          {item?.title}
-                        </h3>
+                        <Link className="nol" to={`/podcast/${item.id}`}>
+                          <h3 className="podcast-title text-light">
+                            {item?.title}
+                          </h3>{" "}
+                        </Link>
                         <p className="podcast-desc">
                           <div
                             className=""
@@ -171,7 +174,7 @@ const PodcastPage = ({ featured }) => {
                           />
                         </p>
                         <br />
-                        <button className="btn secondary featured">
+                        <button class=" secondary featured">
                           Listen or Watch on
                         </button>
                         <br />
@@ -265,16 +268,23 @@ const PodcastPage = ({ featured }) => {
             </div>
             <div className="row pt-10 container">
               {data?.map((data, index) => (
-                <div key={index} className="x-4 col-sm-12 pod-content">
+                <Link
+                  className="nol x-4 col-sm-12  pod-content"
+                  to={`/podcast/${data.id}`}
+                  key={index}
+                >
                   <div className="image-container">
                     <span className="green-overlay"></span>
+
                     <img
                       src={data.FeatureImage}
                       alt={data.title}
                       className="pod-content-img"
                     />
                   </div>
-                  <h3 className="title ">{data?.title}</h3>
+                  <Link className="nol" to={`/podcast/${data.id}`}>
+                    <h3 className="title ">{data?.title}</h3>
+                  </Link>
                   <p className="podcast-desc">
                     <div
                       dangerouslySetInnerHTML={{
@@ -285,8 +295,8 @@ const PodcastPage = ({ featured }) => {
                   <img className="play-ico" src={Play} alt="" />
                   <Link className="ptx-10" to={"/podcast/" + data.id}>
                     Listen to this podcast
-                  </Link>
-                </div>
+                  </Link>{" "}
+                </Link>
               ))}
             </div>
           </div>

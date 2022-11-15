@@ -57,6 +57,7 @@ const Subscribe = () => {
             </div>
           </div>
         </div>
+        <div className="subscribe"></div>
       </div>
       <div className="pt-90"></div>
     </section>

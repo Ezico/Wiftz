@@ -47,7 +47,7 @@ const TopPodcast = ({ topList, data }) => {
                 padding: "10px 20px",
                 margin: "0",
               }}
-              class="secondary btn large"
+              class="secondary btn large featured"
             >
               View all Episodes
             </button>
@@ -57,24 +57,29 @@ const TopPodcast = ({ topList, data }) => {
         <div className=" pt-20">
           <OwlCarousel className="owl-theme hide-small" {...options}>
             {topList.map((item) => (
-              <div className="pod-content" key={item.id}>
-                <div className="image-container">
-                  <span className="green-overlay"></span>
-                  <img
-                    src={item.FeatureImage}
-                    alt={item.title}
-                    className="pod-content-img"
-                  />
+              <Link className="nol" to={`/podcast/${item.id}`}>
+                <div className="pod-content" key={item.id}>
+                  <div className="image-container">
+                    <span className="green-overlay"></span>
+
+                    <img
+                      src={item.FeatureImage}
+                      alt={item.title}
+                      className="pod-content-img"
+                    />
+                  </div>
+                  <Link className="nol" to={`/podcast/${item.id}`}>
+                    <h3 className="title">{item.title}</h3>
+                  </Link>
+                  <p className="podcast-desc">
+                    {item.shortDescription.substring(0, 140)}
+                  </p>
+                  <img className="play-ico" src={Play} alt="" />{" "}
+                  <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                    Listen to this podcast
+                  </Link>
                 </div>
-                <h3 className="title">{item.title}</h3>
-                <p className="podcast-desc">
-                  {item.shortDescription.substring(0, 140)}
-                </p>
-                <img className="play-ico" src={Play} alt="" />{" "}
-                <Link className="ptx-10" to={`/podcast/${item.id}`}>
-                  Listen to this podcast
-                </Link>
-              </div>
+              </Link>
             ))}
           </OwlCarousel>
           <div className="row hide-large">
@@ -83,13 +88,17 @@ const TopPodcast = ({ topList, data }) => {
                 <div className="pod-content" key={item.id}>
                   <div className="image-container">
                     <span className="green-overlay"></span>
-                    <img
-                      src={item.FeatureImage}
-                      alt={item.title}
-                      className="pod-content-img"
-                    />
+                    <Link className="nol" to={`/podcast/${item.id}`}>
+                      <img
+                        src={item.FeatureImage}
+                        alt={item.title}
+                        className="pod-content-img"
+                      />
+                    </Link>
                   </div>
-                  <h3 className="title">{item.title}</h3>
+                  <Link className="nol" to={`/podcast/${item.id}`}>
+                    <h3 className="title">{item.title}</h3>
+                  </Link>
                   <p className="podcast-desc">
                     {item.shortDescription.substring(0, 140)}
                   </p>

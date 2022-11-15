@@ -490,6 +490,17 @@
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
+  .innerContent {
+    text-align: justify;
+    position: relative;
+
+    top: -110px;
+    margin-bottom: -110px;
+  }
+  .content > .innerContent {
+    top: 0;
+    margin-bottom: 0px;
+  }
   .sticky {
     position: fixed;
     top: -29px;

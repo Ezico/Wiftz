@@ -72,7 +72,11 @@ const Contact = () => {
             <div className="col-md-6 ">
               <div className="form-container">
                 <div className="form-content">
-                  <form name="contact" method="POST">
+                  <form
+                    name="contact"
+                    method="POST"
+                    action="https://formspree.io/f/mvoylqar"
+                  >
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="form">
                       <label htmlFor="email">Email Address</label>

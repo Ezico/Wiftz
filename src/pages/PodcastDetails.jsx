@@ -20,7 +20,7 @@ const PodcastDetails = () => {
   const [active, setActive] = useState(null);
 
   const mystyle = {
-    top: "-29px",
+    top: "-80px",
     backgroundImage: `url(${
       screen == "Mobile"
         ? "https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/podcastdetailsbg.png?alt=media&token=410f464e-75b7-4b7d-9be0-7b334b0e060a "
@@ -80,9 +80,7 @@ const PodcastDetails = () => {
                   />
                 </p>
                 <br />
-                <button className="btn secondary featured">
-                  Listen or Watch on
-                </button>
+                <button class=" secondary featured">Listen or Watch on</button>
                 <br />
                 <div className="medias row">
                   {podcast?.sportify ? (
@@ -149,7 +147,7 @@ const PodcastDetails = () => {
 
       <section className="wrapper">
         <div className="innerContent">
-          <div className="heading text-light">Description</div>
+          <div className="headingx text-light">Description</div>
           <div
             className="text-light"
             dangerouslySetInnerHTML={{
@@ -159,7 +157,7 @@ const PodcastDetails = () => {
           <br />
           <br />
           <br />
-          <div className="heading text-light">Resources</div>
+          <div className="headingx text-light">Resources</div>
           <div
             className="text-light"
             dangerouslySetInnerHTML={{
@@ -169,7 +167,7 @@ const PodcastDetails = () => {
           <br />
           <br />
           <br />
-          <div className="heading text-light">Behind the Scene</div>
+          <div className="headingx text-light">Behind the Scene</div>
           <br />
         </div>
       </section>
