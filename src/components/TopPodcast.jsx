@@ -41,9 +41,9 @@ const TopPodcast = ({ topList, data, loading }) => {
             </button>
           </Link>
         </div>
-        <div className="slide-container">
+        <div className="slide-container ">
           <div className=" pt-20">
-            <Slider {...settings}>
+            <Slider {...settings} className="hide-small">
               {topList.map((item) => (
                 <Link className="nol" to={`/podcast/${item.id}`}>
                   <div className="pod-content" key={item.id}>
