@@ -22,6 +22,8 @@ const initialState = {
   heroBannerMobile: "",
   bannerB: "",
   bannerBImg: "",
+  contactTitle: "",
+  contactSubTitle: "",
 };
 
 const AboutPageEditor = ({ user, handleLogout }) => {
@@ -32,6 +34,8 @@ const AboutPageEditor = ({ user, handleLogout }) => {
   }, []);
 
   const {
+    contactTitle,
+    contactSubTitle,
     title1,
     subtitle1,
     title2,
@@ -95,11 +99,118 @@ const AboutPageEditor = ({ user, handleLogout }) => {
           <div className="d-flex flex-column flex-lg-row-fluid w-lg-50 pt-10 order-2 order-lg-1">
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
               <div className="w-100  p-10">
-                <div className="text-center mb-11">
-                  <h1 className=" text-light fw-bolder mb-3">About Content</h1>
-                </div>
-
                 <form className="" onSubmit={handleSubmit}>
+                  <div className="text-center mb-11">
+                    <h1 className=" text-light fw-bolder mb-3">
+                      Contact Page Content
+                    </h1>
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <input
+                      type="text"
+                      placeholder="Header Title"
+                      name="contactTitle"
+                      autocomplete="off"
+                      value={contactTitle}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <textarea
+                      type="text"
+                      placeholder="Header sub-title"
+                      name="contactSubTitle"
+                      autocomplete="off"
+                      value={contactSubTitle}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+
+                    <div className="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <input
+                      type="text"
+                      placeholder="Company Email Address"
+                      name="email"
+                      autocomplete="off"
+                      value={email}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <input
+                      type="text"
+                      placeholder="Company Phone Number"
+                      name="phone"
+                      autocomplete="off"
+                      value={phone}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="text-center mb-11">
+                    <h1 className=" text-light fw-bolder mb-3">
+                      About Page Content
+                    </h1>
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <input
+                      type="text"
+                      placeholder="Second Title"
+                      name="title2"
+                      autocomplete="off"
+                      value={title2}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+
+                    <div className="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <textarea
+                      type="text"
+                      placeholder="second sub-title"
+                      name="subtitle2"
+                      autocomplete="off"
+                      value={subtitle2}
+                      className="form-control"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="fv-row mb-8 fv-plugins-icon-container">
+                    <textarea
+                      type="text"
+                      placeholder="Buttom Banner Text"
+                      name="bannerB"
+                      autocomplete="off"
+                      value={bannerB}
+                      className="form-control mb-10"
+                      onChange={handleChange}
+                    />
+
+                    <div class="mb-10">
+                      {bannerBImg ? (
+                        <img className="w-100" src={bannerBImg} />
+                      ) : (
+                        ""
+                      )}
+                      <input
+                        type="text"
+                        placeholder="Hero Banner Image"
+                        name="bannerBImg"
+                        autocomplete="off"
+                        value={bannerBImg}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
                   <div className="fv-row mb-8 fv-plugins-icon-container">
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <input

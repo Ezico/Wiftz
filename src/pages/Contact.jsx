@@ -40,11 +40,8 @@ const Contact = ({ loading }) => {
             <div className="col-md-6 ">
               <div className="contant">
                 <p style={{ color: "#585AA8" }}>CONTACT US</p>
-                <h2 className="podcast-title">How can we help you?</h2>
-                <p className="text-light">
-                  Kindly, fil the form to get in to with us. We promise to
-                  respond to your message within the shortest time possible.
-                </p>
+                <h2 className="podcast-title">{data.contactTitle}</h2>
+                <p className="text-light">{data.contactSubTitle}</p>
                 <br />
                 {/* <button class="secondary btn large">
                   <span>

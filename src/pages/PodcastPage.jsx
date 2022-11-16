@@ -142,10 +142,7 @@ const PodcastPage = ({ featured, loading }) => {
             <div className="wrapper ">
               <div className="latest-container">
                 <h2>Latest Podcast</h2>
-                <p className="text-light">
-                  Do the talking, while we help you earn. Do the talking, while
-                  we help you earn. Do the talking, while we help you earn.
-                </p>
+                <p className="text-light">{pagedata?.PodcastsubHeadlineText}</p>
               </div>
               <hr style={{ border: "1px solid #404253" }} />
               <div className="row pt-50" style={{ margin: "0" }}>
@@ -253,10 +250,7 @@ const PodcastPage = ({ featured, loading }) => {
                 {pagedata?.PodcastsubHeadLine} |&nbsp;
                 <span style={{ color: "#585AA8" }}>{selected}</span>
               </h2>
-              <p className="text-light">
-                Do the talking, while we help you earn. Do the talking, while we
-                help you earn. Do the talking, while we help you earn.
-              </p>
+              <p className="text-light">{pagedata?.PodcastsubText2}</p>
             </div>
             <div className="tag  scroll-h">
               <button className="tags clicked" onClick={handleTagSelect}>

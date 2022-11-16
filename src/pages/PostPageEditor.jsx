@@ -12,6 +12,7 @@ const initialPodcastState = {
   PodcastsubHeading: "",
   PodcastsubHeadLine: "",
   PodcastsubHeadlineText: "",
+  PodcastsubText2: "",
 };
 const initialBlogState = {
   BlogheadLine: "",
@@ -28,6 +29,7 @@ const PostPageEditor = ({ user, handleLogout }) => {
     PodcastsubHeading,
     PodcastsubHeadLine,
     PodcastsubHeadlineText,
+    PodcastsubText2,
   } = form;
 
   const { BlogheadLine, BlogsubHeading, BlogsubHeadLine, BlogsubHeadlineText } =
@@ -170,6 +172,17 @@ const PostPageEditor = ({ user, handleLogout }) => {
                           />
 
                           <div className="fv-plugins-message-container invalid-feedback"></div>
+                        </div>
+                        <div className="fv-row mb-8 fv-plugins-icon-container">
+                          <input
+                            type="text"
+                            placeholder="Do the talking, while we help you earn. Do the talking, while we help you earn. Do the talking, while we help you earn."
+                            name="PodcastsubText2"
+                            autocomplete="off"
+                            value={PodcastsubText2}
+                            className="form-control"
+                            onChange={PodcasthandleChange}
+                          />
                         </div>
                         <div className="fv-row mb-8 fv-plugins-icon-container">
                           <input
