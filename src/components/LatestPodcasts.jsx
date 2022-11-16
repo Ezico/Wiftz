@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import apple from "../assets/images/apple_small.png";
 import google from "../assets/images/google_small.png";
 import pod from "../assets/images/podbean_small.png";
@@ -21,19 +20,19 @@ const LatestPodcasts = ({ data, featured, bg }) => {
           {featured.map((item) => (
             <>
               <div className="col-md-4 col-sm-12">
-                <Link to={`/podcast/${item.id}`}>
+                <a href={`/podcast/${item.id}`}>
                   <img
                     className="thumbnail"
                     src={item?.FeatureImage}
                     alt="podcast"
                   />
-                </Link>
+                </a>
               </div>
               <div className="col-md-8 col-sm-12 pt-20">
                 <div className="medias">
-                  <Link className="nol" to={`/podcast/${item.id}`}>
+                  <a className="nol" href={`/podcast/${item.id}`}>
                     <h3 className="podcast-title text-light">{item?.title}</h3>
-                  </Link>
+                  </a>
                   <p className="podcast-desc">
                     <div
                       dangerouslySetInnerHTML={{

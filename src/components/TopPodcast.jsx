@@ -39,7 +39,7 @@ const TopPodcast = ({ topList, data }) => {
           </h2>
           <p>{data?.topPodcastSubHeading}</p>
           <br />
-          <Link to="/podcasts">
+          <a href="/podcasts">
             <button
               style={{
                 borderRadius: "5px",
@@ -51,13 +51,13 @@ const TopPodcast = ({ topList, data }) => {
             >
               View all Episodes
             </button>
-          </Link>
+          </a>
         </div>
 
         <div className=" pt-20">
           <OwlCarousel className="owl-theme " {...options}>
             {topList.map((item) => (
-              <Link className="nol" to={`/podcast/${item.id}`}>
+              <a className="nol" href={`/podcast/${item.id}`}>
                 <div className="pod-content" key={item.id}>
                   <div className="image-container">
                     <span className="green-overlay"></span>
@@ -68,18 +68,18 @@ const TopPodcast = ({ topList, data }) => {
                       className="pod-content-img"
                     />
                   </div>
-                  <Link className="nol" to={`/podcast/${item.id}`}>
+                  <a className="nol" href={`/podcast/${item.id}`}>
                     <h3 className="title">{item.title}</h3>
-                  </Link>
+                  </a>
                   <p className="podcast-desc">
                     {item.shortDescription.substring(0, 140)}
                   </p>
                   <img className="play-ico" src={Play} alt="" />{" "}
-                  <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                  <a className="ptx-10" href={`/podcast/${item.id}`}>
                     Listen to this podcast
-                  </Link>
+                  </a>
                 </div>
-              </Link>
+              </a>
             ))}
           </OwlCarousel>
           <div className="row hide-large">
@@ -88,24 +88,24 @@ const TopPodcast = ({ topList, data }) => {
                 <div className="pod-content" key={item.id}>
                   <div className="image-container">
                     <span className="green-overlay"></span>
-                    <Link className="nol" to={`/podcast/${item.id}`}>
+                    <a className="nol" href={`/podcast/${item.id}`}>
                       <img
                         src={item.FeatureImage}
                         alt={item.title}
                         className="pod-content-img"
                       />
-                    </Link>
+                    </a>
                   </div>
-                  <Link className="nol" to={`/podcast/${item.id}`}>
+                  <a className="nol" href={`/podcast/${item.id}`}>
                     <h3 className="title">{item.title}</h3>
-                  </Link>
+                  </a>
                   <p className="podcast-desc">
                     {item.shortDescription.substring(0, 140)}
                   </p>
                   <img className="play-ico" src={Play} alt="" />{" "}
-                  <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                  <a className="ptx-10" href={`/podcast/${item.id}`}>
                     Listen to this podcast
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
