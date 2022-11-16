@@ -55,10 +55,10 @@ const TopPodcast = ({ topList, data }) => {
         </div>
 
         <div className=" pt-20">
-          <OwlCarousel className="owl-theme " {...options}>
+          <OwlCarousel className="owl-theme hide-small" {...options}>
             {topList.map((item) => (
               <a key={item.id} className="nol" href={`/podcast/${item.id}`}>
-                <div className="pod-content" key={item.id}>
+                <div className="pod-content">
                   <div className="image-container">
                     <span className="green-overlay"></span>
 
