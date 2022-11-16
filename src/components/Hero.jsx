@@ -3,7 +3,8 @@ import Ico from "../assets/images/icos.png";
 import __ from "../assets/images/__.png";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
-function Hero({ data }) {
+import Skeleton from "./Skeleton";
+function Hero({ data, loading }) {
   const [screen, setScreen] = useState();
   const [openModal, setOpenModel] = useState(false);
 
@@ -14,6 +15,9 @@ function Hero({ data }) {
       setScreen("DesKtop");
     }
   });
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Modal open={openModal} onClose={() => setOpenModel(false)} />

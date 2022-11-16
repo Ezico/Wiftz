@@ -196,9 +196,9 @@ function App() {
     };
   }, []);
 
-  if (loading) {
-    return <Spinner />;
-  }
+  // if (loading) {
+  //   return <Spinner />;
+  // }
 
   const handleBlogDelete = async (id) => {
     if (window.confirm("are you sure you want to delete this post?")) {
@@ -230,7 +230,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home topList={topList} featured={featured} />}
+          element={
+            <Home loading={loading} topList={topList} featured={featured} />
+          }
         />
         <Route path="/about" element={<About />} />
         <Route path="/terms" element={<Terms data={legaldata} />} />

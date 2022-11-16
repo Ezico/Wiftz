@@ -185,7 +185,7 @@ section.mt-107 {
 .hero-tick {
   position: absolute;
   width: 175px;
-  left: 309px;
+  left: 185px;
   bottom: -2px;
 }
 .hero-tick2 {
@@ -294,8 +294,12 @@ section.mt-107 {
   margin: 6px;
   width: 170px;
 }
+.col-md-7 > .medias {
+  margin: 10px auto;
+}
 .medias {
-  width: 580px;
+  width: 655px;
+  margin: 0 auto;
 }
 p {
   font-size: 13px;
@@ -850,6 +854,8 @@ a.nol:hover {
 .s-content {
   width: 369px;
   margin-left: 70px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .headingx {
@@ -890,11 +896,54 @@ button.clicked {
 a.pod-content:hover {
   text-decoration: none !important;
 }
-.headingText2 {
+
+/* CONTAINER */
+
+.heroSk {
+  position: relative;
+  top: -107px;
+  /* z-index: -1; */
+  background-size: cover;
+  height: 110vh;
+  background-color: #000;
+  width: 100%;
+  animation: skeleton 1s ease infinite alternate;
 }
-.subText {
+.hero-contentSk {
+  position: relative;
 }
-.subText2 {
+
+.pd-introSk {
+  position: absolute;
+  width: 39%;
+  top: 220px;
 }
-.button {
+.pd-introSk p {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.pd-introSk h2 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 60px;
+  height: 20px;
+  color: white;
+  background-color: #1e1f28;
+  animation: skeleton 1s ease infinite alternate;
+}
+.imageLoaderBgSk {
+  background-color: #1e1f28;
+  height: 400px;
+  position: absolute;
+  width: 30%;
+  right: 60px;
+  top: 130px;
+}
+
+@keyframes skeleton {
+  to {
+    opacity: 0.5;
+  }
 }

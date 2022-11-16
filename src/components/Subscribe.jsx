@@ -23,9 +23,9 @@ const Subscribe = () => {
     }
   };
   return (
-    <section className="">
+    <section className="wrapper">
       <div className="pt-90"></div>
-      <div className="wrapper subscribe">
+      <div className=" subscribe">
         <div className="subscribe"></div>
         <div className="row aab">
           <div className="col-md-5">

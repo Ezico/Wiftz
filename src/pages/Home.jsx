@@ -10,7 +10,7 @@ import Subscribe from "../components/Subscribe";
 import TopPodcast from "../components/TopPodcast";
 import { db } from "../firebase";
 
-const Home = ({ featured, topList }) => {
+const Home = ({ featured, topList, loading }) => {
   const [data, setData] = useState();
   const id = "TgcagxHqMIpvRTMnsjU4";
   useEffect(() => {
@@ -32,7 +32,7 @@ const Home = ({ featured, topList }) => {
   return (
     <>
       <Header />
-      <Hero data={data} />
+      <Hero loading={loading} data={data} />
       <ListenOn />
       <LatestPodcasts featured={featured} data={data} bg={"black"} />
       <BottomBanner data={data} />

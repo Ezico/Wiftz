@@ -29,21 +29,26 @@ const LatestPodcasts = ({ data, featured, bg }) => {
                   />
                 </Link>
               </div>
-              <div className="col-md-8 col-sm-12 p-10">
-                <Link className="nol" to={`/podcast/${item.id}`}>
-                  <h3 className="podcast-title text-light">{item?.title}</h3>
-                </Link>
-                <p className="podcast-desc">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: item?.shortDescription.substring(0, 210),
-                    }}
-                  />
-                </p>
+              <div className="col-md-8 col-sm-12 pt-20">
+                <div className="medias">
+                  <Link className="nol" to={`/podcast/${item.id}`}>
+                    <h3 className="podcast-title text-light">{item?.title}</h3>
+                  </Link>
+                  <p className="podcast-desc">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: item?.shortDescription.substring(0, 210),
+                      }}
+                    />
+                  </p>
+                </div>
                 <br />
-                <button className="btn secondary featured">
-                  Listen or Watch on
-                </button>
+                <div className="medias">
+                  <button className="btn secondary featured">
+                    Listen or Watch on
+                  </button>
+                </div>
+
                 <br />
                 <div className="medias row">
                   {item.sportify ? (
