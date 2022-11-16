@@ -171,7 +171,7 @@
     font-size: 39px !important;
     font-style: normal;
     font-weight: 900;
-    line-height: 40px;
+    line-height: 50px;
   }
   button.secondary {
     width: 165px !important;
@@ -442,7 +442,7 @@
     font-style: normal;
     font-weight: 900;
     font-size: 33px;
-    line-height: 40px;
+    line-height: 50px;
     color: white;
   }
   .mw-110 {
