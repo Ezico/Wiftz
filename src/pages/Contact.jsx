@@ -5,8 +5,9 @@ import Subscribe from "../components/Subscribe";
 import Email from "../assets/images/email.png";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import Skeleton from "../components/Skeleton";
 
-const Contact = () => {
+const Contact = ({ loading }) => {
   const [data, setData] = useState();
   const [active, setActive] = useState(null);
   const id = "Cw1TrtdA382NCnAzNcIu";
@@ -27,7 +28,9 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Header active={active} />

@@ -7,7 +7,6 @@ import amazon from "../assets/images/amazon_small.png";
 import youtube from "../assets/images/youtube_small.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
 import Play from "../assets/images/play.png";
 import Subscribe from "../components/Subscribe";
 import {
@@ -20,8 +19,9 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import Skeleton from "../components/Skeleton";
 
-const PodcastPage = ({ featured }) => {
+const PodcastPage = ({ featured, loading }) => {
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -114,7 +114,9 @@ const PodcastPage = ({ featured }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Header active={active} />
@@ -150,21 +152,21 @@ const PodcastPage = ({ featured }) => {
                 {featured.map((item) => (
                   <>
                     <div className="col-md-4 col-sm-12">
-                      <Link to={"/podcast/" + item.id}>
+                      <a href={"/podcast/" + item.id}>
                         <img
                           className="thumbnail"
                           src={item?.FeatureImage}
                           alt="podcast"
                         />
-                      </Link>
+                      </a>
                     </div>
                     <div className="col-md-8 col-sm-12 p-10">
                       <div className="">
-                        <Link className="nol" to={`/podcast/${item.id}`}>
+                        <a className="nol" href={`/podcast/${item.id}`}>
                           <h3 className="podcast-title text-light">
                             {item?.title}
                           </h3>{" "}
-                        </Link>
+                        </a>
                         <p className="podcast-desc">
                           <div
                             className=""
@@ -268,9 +270,9 @@ const PodcastPage = ({ featured }) => {
             </div>
             <div className="row pt-10 container">
               {data?.map((data, index) => (
-                <Link
+                <a
                   className="nol x-4 col-sm-12  pod-content"
-                  to={`/podcast/${data.id}`}
+                  href={`/podcast/${data.id}`}
                   key={index}
                 >
                   <div className="image-container">
@@ -282,9 +284,9 @@ const PodcastPage = ({ featured }) => {
                       className="pod-content-img"
                     />
                   </div>
-                  <Link className="nol" to={`/podcast/${data.id}`}>
+                  <a className="nol" href={`/podcast/${data.id}`}>
                     <h3 className="title ">{data?.title}</h3>
-                  </Link>
+                  </a>
                   <p className="podcast-desc">
                     <div
                       dangerouslySetInnerHTML={{
@@ -293,10 +295,10 @@ const PodcastPage = ({ featured }) => {
                     />
                   </p>
                   <img className="play-ico" src={Play} alt="" />
-                  <Link className="ptx-10" to={"/podcast/" + data.id}>
+                  <a className="ptx-10" href={"/podcast/" + data.id}>
                     Listen to this podcast
-                  </Link>{" "}
-                </Link>
+                  </a>{" "}
+                </a>
               ))}
             </div>
           </div>

@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="hide-large pt-90"></div>
             <div className="col-md-3 footer-details">
-              <div className="heading">Stay Connected with Us on:</div>
+              <div className="heading">Stay connected with us on:</div>
               <div className="social-links">
                 <br />
                 <Link className="social-ico" to="www.instagram.com">

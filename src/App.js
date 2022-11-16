@@ -234,18 +234,24 @@ function App() {
             <Home loading={loading} topList={topList} featured={featured} />
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About loading={loading} />} />
         <Route path="/terms" element={<Terms data={legaldata} />} />
         <Route path="/policy" element={<Policy data={legaldata} />} />
         <Route path="/cookies" element={<Cookies data={legaldata} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact loading={loading} />} />
         <Route path="/Podcast/:id" element={<PodcastDetails />} />
         <Route
           path="/podcasts"
-          element={<PodcastPage topList={topList} featured={featured} />}
+          element={
+            <PodcastPage
+              topList={topList}
+              loading={loading}
+              featured={featured}
+            />
+          }
         />
-        <Route path="/blog/:id" element={<BlogDetails />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogDetails loading={loading} />} />
+        <Route path="/blog" element={<BlogPage loading={loading} />} />
         <Route path="*" element={<NotFound />} />
 
         {/* admin */}

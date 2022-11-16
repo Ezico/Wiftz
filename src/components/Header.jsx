@@ -30,24 +30,24 @@ const Header = ({ active }) => {
         <div className="navigation-menu">
           <ul>
             <li className="nav-item">
-              <Link className="nav-link" to="/podcasts">
+              <a className="nav-link" href="/podcasts">
                 PODCAST
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/blog">
+              <a className="nav-link" href="/blog">
                 BLOG
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <a className="nav-link" href="/about">
                 ABOUT
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <a className="nav-link" href="/contact">
                 CONTACT
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -62,13 +62,13 @@ const Header = ({ active }) => {
         <div className="container">
           <div className="row s-e">
             <div className=" col-6 logo">
-              <Link to="/">
+              <a href="/">
                 <img className="logo" src={Logo} alt="" />
-              </Link>
+              </a>
             </div>
             <div className="col-6">
               <ul className="desktop-navigation">
-                <Link to="/podcasts">
+                <a href="/podcasts">
                   <li
                     className={`nav-item ${
                       active === "Podcasts" ? "activenav" : ""
@@ -76,8 +76,8 @@ const Header = ({ active }) => {
                   >
                     PODCASTS
                   </li>
-                </Link>
-                <Link to="/blog">
+                </a>
+                <a href="/blog">
                   <li
                     className={`nav-item ${
                       active === "Blog" ? "activenav" : ""
@@ -85,8 +85,8 @@ const Header = ({ active }) => {
                   >
                     BLOG
                   </li>
-                </Link>
-                <Link to="/about">
+                </a>
+                <a href="/about">
                   <li
                     className={`nav-item ${
                       active === "About" ? "activenav" : ""
@@ -94,8 +94,8 @@ const Header = ({ active }) => {
                   >
                     ABOUT
                   </li>
-                </Link>
-                <Link to="/contact">
+                </a>
+                <a href="/contact">
                   <li
                     className={`nav-item ${
                       active === "Contact" ? "activenav" : ""
@@ -103,7 +103,7 @@ const Header = ({ active }) => {
                   >
                     CONTACT
                   </li>
-                </Link>
+                </a>
                 <button
                   data-bs-toggle="modal"
                   data-bs-target="#kt_modal_1"

@@ -10,11 +10,14 @@ const AboutDetails = ({ data }) => {
             <div className="col-md-4 col-sm-12">
               <div className="hero-content pt-50">
                 <div className="tagline">THE WIFTZ PODCASTS</div>
-                <h2>
-                  {data?.title2}
+                <div className="content-holder">
+                  <h2>
+                    {data?.title2}
 
-                  <img className="ahero-tick2" src={__} alt="tick" />
-                </h2>
+                    <img className="ahero-tick2" src={__} alt="tick" />
+                  </h2>
+                </div>
+
                 <br />
                 <p>{data?.subtitle2}</p>
               </div>

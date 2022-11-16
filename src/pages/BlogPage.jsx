@@ -14,9 +14,9 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
 import { db } from "../firebase";
-import { Link } from "react-router-dom";
+import Skeleton from "../components/Skeleton";
 
-const BlogPage = ({}) => {
+const BlogPage = ({ loading }) => {
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -140,7 +140,10 @@ const BlogPage = ({}) => {
     }
   };
   // setActive("Blog");
-  console.log(data);
+  // console.log(data);
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Header active={active} />
@@ -192,9 +195,9 @@ const BlogPage = ({}) => {
                   />
                 </p>
                 <br />
-                <Link to={"/blog/" + featured?.id} style={{ width: "131px" }}>
+                <a href={"/blog/" + featured?.id} style={{ width: "131px" }}>
                   <button className="btn primary cta">Read More</button>
-                </Link>
+                </a>
                 <br />
               </div>
             </div>
@@ -224,10 +227,10 @@ const BlogPage = ({}) => {
       <div className="">
         <div className="row wrapper">
           {data?.map((data, index) => (
-            <Link
+            <a
               key={index}
               className="x-4 col-sm-12 pod-content"
-              to={"/blog/" + data?.id}
+              href={"/blog/" + data?.id}
             >
               <div className="image-container">
                 <span className="green-overlay"></span>
@@ -260,11 +263,11 @@ const BlogPage = ({}) => {
                 >
                   {featured?.timestamp.toDate().toDateString()}
                 </div>
-                <Link className="col ptx-10x" to={"/blog/" + data?.id}>
+                <a className="col ptx-10x" href={"/blog/" + data?.id}>
                   Read More &gt;
-                </Link>
+                </a>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

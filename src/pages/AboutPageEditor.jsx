@@ -20,6 +20,8 @@ const initialState = {
   image3: "",
   image4: "",
   heroBannerMobile: "",
+  bannerB: "",
+  bannerBImg: "",
 };
 
 const AboutPageEditor = ({ user, handleLogout }) => {
@@ -42,6 +44,8 @@ const AboutPageEditor = ({ user, handleLogout }) => {
     image3,
     image4,
     heroBannerMobile,
+    bannerB,
+    bannerBImg,
   } = form;
 
   const id = "Cw1TrtdA382NCnAzNcIu";
@@ -72,12 +76,12 @@ const AboutPageEditor = ({ user, handleLogout }) => {
         author: user.displayName,
         userId: user.uid,
       });
-      toast.success("Post Updated Successfully");
+      toast.success("About Content Updated Successfully");
     } catch (err) {
       console.log(err);
     }
 
-    navigate("/admin");
+    navigate("/admin/about/editor");
   };
   return (
     <>
@@ -112,7 +116,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                     </div>
 
                     <div className="fv-row mb-8 fv-plugins-icon-container">
-                      <input
+                      <textarea
                         type="text"
                         placeholder="Header sub-title"
                         name="subtitle1"
@@ -138,7 +142,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
-                      <input
+                      <textarea
                         type="text"
                         placeholder="second sub-title"
                         name="subtitle2"
@@ -147,6 +151,34 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                         className="form-control"
                         onChange={handleChange}
                       />
+                    </div>
+                    <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <textarea
+                        type="text"
+                        placeholder="Buttom Banner Text"
+                        name="bannerB"
+                        autocomplete="off"
+                        value={bannerB}
+                        className="form-control mb-10"
+                        onChange={handleChange}
+                      />
+
+                      <div class="mb-10">
+                        {bannerBImg ? (
+                          <img className="w-100" src={bannerBImg} />
+                        ) : (
+                          ""
+                        )}
+                        <input
+                          type="text"
+                          placeholder="Hero Banner Image"
+                          name="bannerBImg"
+                          autocomplete="off"
+                          value={bannerBImg}
+                          className="form-control"
+                          onChange={handleChange}
+                        />
+                      </div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <input

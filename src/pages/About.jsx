@@ -5,20 +5,20 @@ import Subscribe from "../components/Subscribe";
 import ListenOn from "../components/ListenOn";
 import AboutDetails from "../components/AboutDetails";
 import Footer from "../components/Footer";
-import BottomBanner from "../components/BottomBanner";
 import Ico from "../assets/images/icos.png";
 import __ from "../assets/images/__.png";
 import { db } from "../firebase";
 import Modal from "../components/Modal";
+import Skeleton from "../components/Skeleton";
+import AboutText from "../components/AboutText";
 
 const About = () => {
   const [openModal, setOpenModel] = useState(false);
   const [data, setData] = useState();
-  const [data2, setData2] = useState();
   const id = "Cw1TrtdA382NCnAzNcIu";
-  const id2 = "TgcagxHqMIpvRTMnsjU4";
   const [screen, setScreen] = useState();
   const [active, setActive] = useState(null);
+  const [loading, setLoading] = useState(null);
   // push to top page after loading
   useEffect(() => {
     setActive("About");
@@ -36,26 +36,19 @@ const About = () => {
     id && getAboutDataFromDB();
   }, [id]);
 
-  useEffect(() => {
-    id2 && getBannerDataFromDB();
-  }, [id]);
-
   const getAboutDataFromDB = async () => {
+    setLoading(true);
     const docRef = doc(db, "AboutDetails", id);
     const snapshot = await getDoc(docRef);
     if (snapshot.exists()) {
       setData({ ...snapshot.data() });
     }
+    setLoading(false);
   };
 
-  const getBannerDataFromDB = async () => {
-    const docRef = doc(db, "HomeDetails", id2);
-    const snapshot = await getDoc(docRef);
-    if (snapshot.exists()) {
-      setData2({ ...snapshot.data() });
-    }
-  };
-
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Modal open={openModal} onClose={() => setOpenModel(false)} />
@@ -96,9 +89,9 @@ const About = () => {
       </div>
       <ListenOn />
       <AboutDetails data={data} />
-      <BottomBanner data={data2} />
+      <AboutText data={data} />
       <Subscribe />
-      <Footer data={data2} />
+      <Footer />
     </>
   );
 };

@@ -6,8 +6,9 @@ import Header from "../components/Header";
 
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
+import Skeleton from "../components/Skeleton";
 
-const BlogDetails = () => {
+const BlogDetails = ({ loading }) => {
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,7 +29,9 @@ const BlogDetails = () => {
   };
   // setActive("Blog");
   // console.log(setActive);
-
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <>
       <Header active={active} />
