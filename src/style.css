@@ -759,6 +759,28 @@ button.tags {
   height: 54px !important;
   margin: 10px !important;
 }
+.slick-slider button {
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  background: rgb(171 173 211 / 0%);
+  width: 54px !important;
+  height: 54px !important;
+  margin: 10px !important;
+  border-radius: 50%;
+  top: -70px;
+  border: none;
+  color: white;
+}
+.slick-prev {
+  right: 76px;
+}
+.slick-next {
+  right: 0;
+}
+.slick-prev:after {
+  content: "";
+}
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next,
 .owl-carousel button.owl-dot {

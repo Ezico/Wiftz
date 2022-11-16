@@ -1,34 +1,29 @@
-import React from "react";
+import { React, useEffect } from "react";
 import Play from "../assets/images/play.png";
 import { Link } from "react-router-dom";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
+import Slider from "react-slick";
 
 const TopPodcast = ({ topList, data }) => {
-  const options = {
-    loop: true,
-    margin: 10,
-    nav: true,
+  const settings = {
     dots: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 3,
-      },
-      1400: {
-        items: 3,
-      },
-    },
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    arrows: true,
   };
+
+  useEffect(() => {
+    document.querySelector(".slick-prev").innerHTML =
+      "<img src='https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/Prev.png?alt=media&token=dcad27cc-aca7-42f9-91ed-868f80ab8d65'>";
+    document.querySelector(".slick-next").innerHTML =
+      "<img src='https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/next.png?alt=media&token=a259847f-eab4-4a7b-8403-c15d17046d7a'>";
+    console.log();
+  }, []);
   return (
     <section className="bgb latest-podcast pt-90">
       <div className="container">
@@ -39,7 +34,7 @@ const TopPodcast = ({ topList, data }) => {
           </h2>
           <p>{data?.topPodcastSubHeading}</p>
           <br />
-          <a href="/podcasts">
+          <Link to="/podcasts">
             <button
               style={{
                 borderRadius: "5px",
@@ -51,64 +46,66 @@ const TopPodcast = ({ topList, data }) => {
             >
               View all Episodes
             </button>
-          </a>
+          </Link>
         </div>
+        <div className="slide-container">
+          <div className=" pt-20">
+            <Slider {...settings}>
+              {topList.map((item) => (
+                <Link className="nol" to={`/podcast/${item.id}`}>
+                  <div className="pod-content" key={item.id}>
+                    <div className="image-container">
+                      <span className="green-overlay"></span>
 
-        <div className=" pt-20">
-          <OwlCarousel className="owl-theme hide-small" {...options}>
-            {topList.map((item) => (
-              <div key={item.id} className="pod-content">
-                <a className="nol" href={`/podcast/${item.id}`}>
-                  <div className="image-container">
-                    <span className="green-overlay"></span>
-
-                    <img
-                      src={item.FeatureImage}
-                      alt={item.title}
-                      className="pod-content-img"
-                    />
-                  </div>
-                  <a className="nol" href={`/podcast/${item.id}`}>
-                    <h3 className="title">{item.title}</h3>
-                  </a>
-                  <p className="podcast-desc">
-                    {item.shortDescription.substring(0, 140)}
-                  </p>
-                  <img className="play-ico" src={Play} alt="" />{" "}
-                  <a className="ptx-10" href={`/podcast/${item.id}`}>
-                    Listen to this podcast
-                  </a>
-                </a>
-              </div>
-            ))}
-          </OwlCarousel>
-          <div className="row hide-large">
-            {topList.map((item) => (
-              <div className="col-md-12">
-                <div className="pod-content" key={item.id}>
-                  <div className="image-container">
-                    <span className="green-overlay"></span>
-                    <a className="nol" href={`/podcast/${item.id}`}>
                       <img
                         src={item.FeatureImage}
                         alt={item.title}
                         className="pod-content-img"
                       />
-                    </a>
+                    </div>
+                    <Link className="nol" to={`/podcast/${item.id}`}>
+                      <h3 className="title">{item.title}</h3>
+                    </Link>
+                    <p className="podcast-desc">
+                      {item.shortDescription.substring(0, 140)}
+                    </p>
+                    <img className="play-ico" src={Play} alt="" />{" "}
+                    <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                      Listen to this podcast
+                    </Link>
                   </div>
-                  <a className="nol" href={`/podcast/${item.id}`}>
-                    <h3 className="title">{item.title}</h3>
-                  </a>
-                  <p className="podcast-desc">
-                    {item.shortDescription.substring(0, 140)}
-                  </p>
-                  <img className="play-ico" src={Play} alt="" />{" "}
-                  <a className="ptx-10" href={`/podcast/${item.id}`}>
-                    Listen to this podcast
-                  </a>
+                </Link>
+              ))}
+            </Slider>
+
+            <div className="row hide-large">
+              {topList.map((item) => (
+                <div className="col-md-12">
+                  <div className="pod-content" key={item.id}>
+                    <div className="image-container">
+                      <span className="green-overlay"></span>
+                      <Link className="nol" to={`/podcast/${item.id}`}>
+                        <img
+                          src={item.FeatureImage}
+                          alt={item.title}
+                          className="pod-content-img"
+                        />
+                      </Link>
+                    </div>
+                    <Link className="nol" to={`/podcast/${item.id}`}>
+                      <h3 className="title">{item.title}</h3>
+                    </Link>
+                    <p className="podcast-desc">
+                      {item.shortDescription.substring(0, 140)}
+                    </p>
+                    <img className="play-ico" src={Play} alt="" />{" "}
+                    <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                      Listen to this podcast
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

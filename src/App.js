@@ -239,13 +239,16 @@ function App() {
         <Route path="/policy" element={<Policy data={legaldata} />} />
         <Route path="/cookies" element={<Cookies data={legaldata} />} />
         <Route path="/contact" element={<Contact loading={loading} />} />
-        <Route path="/Podcast/:id" element={<PodcastDetails />} />
+        <Route
+          path="/Podcast/:id"
+          element={<PodcastDetails loading={loading} />}
+        />
         <Route
           path="/podcasts"
           element={
             <PodcastPage
-              topList={topList}
               loading={loading}
+              topList={topList}
               featured={featured}
             />
           }

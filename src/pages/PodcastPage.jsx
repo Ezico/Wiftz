@@ -176,7 +176,7 @@ const PodcastPage = ({ featured, loading }) => {
                           />
                         </p>
                         <br />
-                        <button class=" secondary featured">
+                        <button className=" secondary featured">
                           Listen or Watch on
                         </button>
                         <br />
@@ -284,9 +284,7 @@ const PodcastPage = ({ featured, loading }) => {
                       className="pod-content-img"
                     />
                   </div>
-                  <a className="nol" href={`/podcast/${data.id}`}>
-                    <h3 className="title ">{data?.title}</h3>
-                  </a>
+                  <h3 className="title ">{data?.title}</h3>
                   <p className="podcast-desc">
                     <div
                       dangerouslySetInnerHTML={{
@@ -295,9 +293,7 @@ const PodcastPage = ({ featured, loading }) => {
                     />
                   </p>
                   <img className="play-ico" src={Play} alt="" />
-                  <a className="ptx-10" href={"/podcast/" + data.id}>
-                    Listen to this podcast
-                  </a>{" "}
+                  <p className="ptx-10">Listen to this podcast</p>{" "}
                 </a>
               ))}
             </div>

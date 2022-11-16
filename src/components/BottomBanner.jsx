@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Skeleton from "./Skeleton";
 
-const BottomBanner = ({ data }) => {
+const BottomBanner = ({ data, loading }) => {
+  if (loading) {
+    return <Skeleton />;
+  }
   return (
     <section
       style={{ backgroundImage: `url(${data?.midPageBanner})` }}
