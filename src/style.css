@@ -763,14 +763,14 @@ button.tags {
   position: absolute;
   top: 0;
   z-index: 99;
-  background: rgb(171 173 211 / 0%);
+  background: rgba(171, 173, 211, 0.15);
   width: 54px !important;
   height: 54px !important;
   margin: 10px !important;
   border-radius: 50%;
   top: -70px;
   border: none;
-  color: white;
+  color: rgba(255, 255, 255, 0);
 }
 .slick-prev {
   right: 76px;
@@ -779,7 +779,20 @@ button.tags {
   right: 0;
 }
 .slick-prev:after {
-  content: "";
+  content: "<";
+  color: white;
+  position: absolute;
+  bottom: 7px;
+  left: 19px;
+  font-size: 26px;
+}
+.slick-next:after {
+  content: ">";
+  color: white;
+  position: absolute;
+  bottom: 7px;
+  left: 19px;
+  font-size: 26px;
 }
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next,

@@ -6,7 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
 import Slider from "react-slick";
 
-const TopPodcast = ({ topList, data }) => {
+const TopPodcast = ({ topList, data, loading }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -17,13 +17,6 @@ const TopPodcast = ({ topList, data }) => {
     arrows: true,
   };
 
-  useEffect(() => {
-    document.querySelector(".slick-prev").innerHTML =
-      "<img src='https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/Prev.png?alt=media&token=dcad27cc-aca7-42f9-91ed-868f80ab8d65'>";
-    document.querySelector(".slick-next").innerHTML =
-      "<img src='https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/next.png?alt=media&token=a259847f-eab4-4a7b-8403-c15d17046d7a'>";
-    console.log();
-  }, []);
   return (
     <section className="bgb latest-podcast pt-90">
       <div className="container">

@@ -36,7 +36,7 @@ const Home = ({ featured, topList, loading }) => {
       <ListenOn />
       <LatestPodcasts featured={featured} data={data} bg={"black"} />
       <BottomBanner data={data} />
-      <TopPodcast topList={topList} data={data} />
+      <TopPodcast topList={topList} data={data} loading={loading} />
       <div className="wrapper">
         <Subscribe data={data} />
       </div>
