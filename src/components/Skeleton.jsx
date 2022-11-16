@@ -17,12 +17,12 @@ export default function Skeleton({ type }) {
             </div>
             <p></p>
             <div className="row btn-container">
-              <div className="col-4">
+              {/* <div className="col-4">
                 <button className="primarySk btn large mw-110"></button>
               </div>
               <div className="col-8">
                 <button className="secondary btn large"></button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-md-6 col-sm-12">
