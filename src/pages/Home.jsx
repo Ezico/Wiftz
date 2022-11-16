@@ -37,7 +37,9 @@ const Home = ({ featured, topList, loading }) => {
       <LatestPodcasts featured={featured} data={data} bg={"black"} />
       <BottomBanner data={data} />
       <TopPodcast topList={topList} data={data} />
-      <Subscribe data={data} />
+      <div className="wrapper">
+        <Subscribe data={data} />
+      </div>
       <Footer data={data} />
     </>
   );
