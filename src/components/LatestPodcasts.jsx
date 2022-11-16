@@ -6,7 +6,7 @@ import spotify_small from "../assets/images/sportify_small.png";
 import amazon from "../assets/images/amazon_small.png";
 import youtube from "../assets/images/youtube_small.png";
 
-const LatestPodcasts = ({ data, featured, bg }) => {
+const LatestPodcasts = ({ data, featured }) => {
   // const cleanHtml = cleanHtml.replace(/<[^>]+>/g, "");
   return (
     <section className="bgb latest-podcast pb-90 pt-90">
@@ -19,7 +19,7 @@ const LatestPodcasts = ({ data, featured, bg }) => {
         <div className="row pt-30">
           {featured.map((item) => (
             <>
-              <div className="col-md-4 col-sm-12">
+              <div key={item.id} className="col-md-4 col-sm-12">
                 <a href={`/podcast/${item.id}`}>
                   <img
                     className="thumbnail"
