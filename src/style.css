@@ -418,6 +418,9 @@ a {
 .pod-content:hover > .title {
   text-decoration: underline;
 }
+.pod-content:hover > a .title {
+  text-decoration: underline !important;
+}
 .pod-content:hover > .image-container > .green-overlay {
   display: block !important;
 }
