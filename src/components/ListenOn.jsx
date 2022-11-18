@@ -21,7 +21,7 @@ const ListenOn = () => {
         <div className="wrapper">
           <div className="row">
             <div className="col-2">
-              <div className="lwo">Listen or Watch on</div>
+              <div className="lwo">Listen or watch on</div>
             </div>
             <div className="dl col-10">
               <a href="https://open.spotify.com/show/4PHMvcu3aqIEEa4NX89TFl?si=492d2aa13a0e4846">
