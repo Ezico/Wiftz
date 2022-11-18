@@ -131,9 +131,11 @@ const EditPodcast = ({ user, handleLogout }) => {
 
                   <div className="card-body card-scroll ">
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Podcast Title
+                      </label>
                       <input
                         type="text"
-                        placeholder="Podcast Title"
                         name="title"
                         autocomplete="off"
                         value={title}
@@ -144,9 +146,14 @@ const EditPodcast = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label
+                        className="text-gray-500"
+                        htmlFor="shortDescription"
+                      >
+                        Short Description
+                      </label>
                       <textarea
                         type="text"
-                        placeholder="Short Description"
                         name="shortDescription"
                         value={shortDescription}
                         autocomplete="off"
@@ -157,6 +164,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label
+                        className="text-gray-500"
+                        htmlFor="shortDescription"
+                      >
+                        Description
+                      </label>
                       <ReactQuill
                         theme="snow"
                         value={descriptionvalue}
@@ -166,18 +179,22 @@ const EditPodcast = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="resources">
+                        Resources
+                      </label>
                       <ReactQuill
                         theme="snow"
                         value={resourcesvalue}
                         onChange={setResourcesValue}
-                        placeholder="Here"
                       />
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="category">
+                        Category
+                      </label>
                       <input
                         type="text"
-                        placeholder="Podcast Title"
                         name="category"
                         autocomplete="off"
                         value={category}
@@ -237,7 +254,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                         ) : (
                           ""
                         )}
-
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Behind the scene image urls
+                        </label>
                         <ReactTagInput
                           tags={behindTheScene}
                           placeholder="Paste image urls here"
@@ -274,10 +296,17 @@ const EditPodcast = ({ user, handleLogout }) => {
                   </div>
                   <div className="card-body card-scroll ">
                     <div className="text-gray-500 fw-semibold fs-6">
-                      insert you media links below
+                      <center>insert you media links below</center>
                     </div>
+                    <br />
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Apple
+                        </label>
                         <input
                           type="text"
                           name="apple"
@@ -292,6 +321,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Spotify
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
@@ -306,6 +341,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Youtube
+                        </label>
                         <input
                           type="text"
                           name="youtube"
@@ -320,6 +361,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Amazon
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
@@ -334,6 +381,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Google
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
@@ -348,6 +401,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          PodBean
+                        </label>
                         <input
                           type="text"
                           name="pod"
@@ -362,12 +421,17 @@ const EditPodcast = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
-                        <label>Featured Image Url</label>
                         {FeatureImage ? (
                           <img className="w-100" src={FeatureImage} />
                         ) : (
                           ""
                         )}
+                        <label
+                          className="text-gray-500"
+                          htmlFor="shortDescription"
+                        >
+                          Featured Image Url
+                        </label>
                         <input
                           type="text"
                           className="form-control"

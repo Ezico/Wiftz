@@ -37,22 +37,34 @@ const Subscribe = () => {
           <div className="col-md-7">
             <div className="medias row">
               <div className="col-md-4 col-sm-12 sm-thumbnail ">
-                <img src={Sportify} alt="Sportify" />
+                <a href="https://open.spotify.com/show/4PHMvcu3aqIEEa4NX89TFl?si=492d2aa13a0e4846">
+                  <img src={Sportify} alt="Sportify" />
+                </a>
               </div>
               <div className="col-md-4 col-sm-12 sm-thumbnail">
-                <img src={Apple} alt="Apple" />
+                <a href="https://podcasts.apple.com/gb/podcast/wiftz-podcast/id1644619451">
+                  <img src={Apple} alt="Apple" />
+                </a>
               </div>
               <div className="col-md-4 sm-thumbnail">
-                <img src={Amazone} alt="Amazone" />
+                <a href="https://amzn.eu/d/7ipmppy">
+                  <img src={Amazone} alt="Amazone" />
+                </a>
               </div>
               <div className="col-md-4 col-sm-12 sm-thumbnail">
-                <img src={Google} alt="Sportify" />
+                <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3dpZnR6L2ZlZWQueG1s?sa=X&ved=0CAMQ9sEGahcKEwjw78fN8bP7AhUAAAAAHQAAAAAQWg">
+                  <img src={Google} alt="Sportify" />
+                </a>
               </div>
               <div className="col-md-4 col-sm-12 sm-thumbnail">
-                <img src={Podbean} alt="Podbean" />
+                <a href="https://wiftz.podbean.com/">
+                  <img src={Podbean} alt="Podbean" />
+                </a>
               </div>
               <div className="col-md-4 col-sm-12 sm-thumbnail">
-                <img src={Youtube} alt="Youtube" />
+                <a href="https://www.youtube.com/@thewiftz">
+                  <img src={Youtube} alt="Youtube" />
+                </a>
               </div>
             </div>
           </div>

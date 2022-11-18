@@ -115,9 +115,11 @@ const Create = ({ user, handleLogout }) => {
                 <div className="d-flex flex-center flex-column flex-lg-row-fluid">
                   <div className="" style={{ width: "100%" }}>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Podcast Title
+                      </label>
                       <input
                         type="text"
-                        placeholder="Podcast Title"
                         name="title"
                         autocomplete="off"
                         value={title}
@@ -128,9 +130,11 @@ const Create = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Short Description
+                      </label>
                       <textarea
                         type="text"
-                        placeholder="Short Description"
                         name="shortDescription"
                         value={shortDescription}
                         autocomplete="off"
@@ -141,8 +145,10 @@ const Create = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Description
+                      </label>
                       <ReactQuill
-                        placeholder="Podcast Description"
                         style={{ MinWidth: "200px" }}
                         theme="snow"
                         value={descriptionvalue}
@@ -155,12 +161,14 @@ const Create = ({ user, handleLogout }) => {
                     <br />
                     <br />
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Resources
+                      </label>
                       <ReactQuill
                         style={{ MinWidth: "200px" }}
                         theme="snow"
                         value={resourcesvalue}
                         onChange={setResourcesValue}
-                        placeholder="Resources"
                       />
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
@@ -201,9 +209,11 @@ const Create = ({ user, handleLogout }) => {
                       </div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <label className="text-gray-500" htmlFor="title">
+                        Podcast Category
+                      </label>
                       <input
                         type="text"
-                        placeholder="Podcast Category"
                         name="category"
                         autocomplete="off"
                         value={category}
@@ -270,11 +280,13 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="apple">
+                          Apple Podcasts
+                        </label>
                         <input
                           type="text"
                           name="apple"
                           className="form-control form-control-solid"
-                          placeholder="Apple Podcast"
                           value={apple}
                           onChange={handleChange}
                         />
@@ -284,10 +296,12 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="sportify">
+                          Spotify Podcasts
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
-                          placeholder="Sportify Podcast"
                           name="sportify"
                           value={sportify}
                           onChange={handleChange}
@@ -298,11 +312,13 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="youtube">
+                          Youtube Podcasts
+                        </label>
                         <input
                           type="text"
                           name="youtube"
                           className="form-control form-control-solid"
-                          placeholder="Youtube podcast"
                           value={youtube}
                           onChange={handleChange}
                         />
@@ -312,10 +328,12 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="amazon">
+                          Amazon Podcasts
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
-                          placeholder="Amazon Podcast"
                           value={amazon}
                           name="amazon"
                           onChange={handleChange}
@@ -326,10 +344,12 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="google">
+                          Google Podcasts
+                        </label>
                         <input
                           type="text"
                           className="form-control form-control-solid"
-                          placeholder="Google Podcast"
                           value={google}
                           name="google"
                           onChange={handleChange}
@@ -340,11 +360,13 @@ const Create = ({ user, handleLogout }) => {
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <div className="mb-10">
+                        <label className="text-gray-500" htmlFor="pod">
+                          PodBean Podcasts
+                        </label>
                         <input
                           type="text"
                           name="pod"
                           className="form-control form-control-solid"
-                          placeholder="PodBean Podcast"
                           value={pod}
                           onChange={handleChange}
                         />

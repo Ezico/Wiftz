@@ -529,7 +529,7 @@
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
   .innerContent {
-    text-align: justify;
+    text-align: unset;
     position: relative;
 
     top: -110px;

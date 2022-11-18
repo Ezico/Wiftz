@@ -31,13 +31,13 @@ const Footer = () => {
             </div>
             <div className="hide-large pt-50"></div>
             <div className="col-md-3 footer-details">
-              <div className="heading">Usefull links</div>
+              <div className="heading">Useful links</div>
               <ul>
                 <Link to="/policy">
-                  <li>Policy</li>
+                  <li>Privacy policy</li>
                 </Link>
                 <Link to="/terms">
-                  <li>Terms of Use</li>
+                  <li>Terms of use</li>
                 </Link>
                 <Link to="/cookies">
                   <li>Cookies</li>

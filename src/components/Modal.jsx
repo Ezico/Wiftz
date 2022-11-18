@@ -20,32 +20,41 @@ const Modal = ({ open, onClose }) => {
             </p>
             <div className="row pop">
               <div className="col-sm-6 ">
-                <a href="https://spotify.com" target="_blank">
+                <a
+                  href="https://open.spotify.com/show/4PHMvcu3aqIEEa4NX89TFl?si=492d2aa13a0e4846"
+                  target="_blank"
+                >
                   <img className="modal-img" src={spotify_small} alt="" />
                 </a>
               </div>
               <div className="col-sm-6 ">
-                <a href="https://apple.com" target="_blank">
+                <a
+                  href="https://podcasts.apple.com/gb/podcast/wiftz-podcast/id1644619451"
+                  target="_blank"
+                >
                   <img className="modal-img" src={apple} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="https://google.com" target="_blank">
+                <a
+                  href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3dpZnR6L2ZlZWQueG1s?sa=X&ved=0CAMQ9sEGahcKEwjw78fN8bP7AhUAAAAAHQAAAAAQWg"
+                  target="_blank"
+                >
                   <img className="modal-img" src={google} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="https://podbean.com" target="_blank">
+                <a href="https://wiftz.podbean.com/" target="_blank">
                   <img className="modal-img" src={pod} alt="" />
                 </a>
               </div>
               <div className=" col-sm-6 ">
-                <a href="https://amazon.com" target="_blank">
+                <a href="https://amzn.eu/d/7ipmppy" target="_blank">
                   <img className="modal-img" src={amazon} alt="" />
                 </a>
               </div>
               <div className="col-sm-6 ">
-                <a href="https://youtube.com" target="_blank">
+                <a href="https://youtube.com/@thewiftz" target="_blank">
                   <img
                     style={{ width: "100%" }}
                     className=""

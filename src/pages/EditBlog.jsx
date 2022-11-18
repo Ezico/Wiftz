@@ -120,9 +120,11 @@ const EditBlog = ({ user, handleLogout }) => {
                   <div className="card-body card-scroll ">
                     <form className="" onSubmit={handleSubmit}>
                       <div className="fv-row mb-8 fv-plugins-icon-container">
+                        <label className="text-gray-500" htmlFor="title">
+                          Title
+                        </label>
                         <input
                           type="text"
-                          placeholder="Podcast Title"
                           name="title"
                           autocomplete="off"
                           value={title}
@@ -133,19 +135,20 @@ const EditBlog = ({ user, handleLogout }) => {
                         <div className="fv-plugins-message-container invalid-feedback"></div>
                       </div>
                       <div className="fv-row mb-8 fv-plugins-icon-container">
-                        <ReactTagInput
-                          tags={tags}
-                          placeholder="tags"
-                          onChange={handleTags}
-                        />
+                        <label className="text-gray-500" htmlFor="title">
+                          Tags
+                        </label>
+                        <ReactTagInput tags={tags} onChange={handleTags} />
                         <div className="fv-plugins-message-container invalid-feedback"></div>
                       </div>
 
                       <div className="fv-row mb-8 fv-plugins-icon-container">
+                        <label className="text-gray-500" htmlFor="title">
+                          Short Description
+                        </label>
                         <textarea
                           style={{ height: "100px" }}
                           type="text"
-                          placeholder="Short Description"
                           name="shortDescription"
                           autocomplete="off"
                           value={shortDescription}
@@ -154,6 +157,9 @@ const EditBlog = ({ user, handleLogout }) => {
                         ></textarea>
                       </div>
                       <div className="fv-row mb-8 fv-plugins-icon-container">
+                        <label className="text-gray-500" htmlFor="title">
+                          Description
+                        </label>
                         <ReactQuill
                           theme="snow"
                           value={descriptionvalue}
@@ -201,6 +207,9 @@ const EditBlog = ({ user, handleLogout }) => {
                       </div>
 
                       <div className="fv-row mb-8 fv-plugins-icon-container">
+                        <label className="text-gray-500" htmlFor="title">
+                          Category
+                        </label>
                         <select
                           value={category}
                           onChange={onCategoryChange}
@@ -224,7 +233,9 @@ const EditBlog = ({ user, handleLogout }) => {
                             ) : (
                               ""
                             )}
-
+                            <label className="text-gray-500" htmlFor="title">
+                              Featured Image Url
+                            </label>
                             <input
                               type="text"
                               placeholder="Featured Image"

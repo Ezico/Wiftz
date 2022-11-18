@@ -41,10 +41,31 @@ h2 {
   color: white;
 }
 p {
-  font-size: 14px;
+  font-size: 15px;
 }
 .lwo {
+  color: white;
   font-size: 18px;
+  padding-top: 14px;
+}
+.dl {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.lt {
+  padding: 30px;
+  background: #1e1f28;
+}
+.dl a {
+  width: 100%;
+  text-align: center;
+}
+.dl img {
+  width: 72.285%;
+}
+.amazon {
+  width: 59px !important;
 }
 .tac {
   text-align: center;
@@ -161,7 +182,7 @@ ul {
 }
 .pd-intro p {
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 40px;
 }
 button.large {
@@ -215,26 +236,32 @@ section.mt-107 {
   text-align: center;
   margin: 0px auto;
 }
+.m-l {
+  text-align: center;
+}
+.m-l .col {
+  padding: 20px;
+}
+
 .spotify {
-  width: 120px;
+  width: 68% !important;
 }
 .apple {
-  width: 60px;
+  width: 100% !important;
 }
 .pod {
-  width: 80px;
+  width: 200px;
 }
 .amazon {
-  width: 45px;
+  width: 200px;
 }
 .google {
-  width: 35px;
+  width: 100%;
 }
 
 .youtube {
-  width: 45px;
+  width: 58%;
 }
-
 .s-e {
   justify-content: space-between;
 }
@@ -302,7 +329,7 @@ section.mt-107 {
   margin: 0 auto;
 }
 p {
-  font-size: 13px;
+  font-size: 15px;
 }
 .col-md-7 .content,
 .col-sm-12 .content {
@@ -490,6 +517,7 @@ h6.title {
 }
 .subscribe-msg {
   color: white;
+  text-align: left;
 }
 /* //blog details */
 .blog-single-content .meta-info {
@@ -626,6 +654,7 @@ button.tags {
 }
 .innerContent {
   max-width: 800px;
+  text-align: unset;
   margin: 0 auto;
 }
 
@@ -882,6 +911,7 @@ a.nol:hover {
   font-style: normal;
   font-weight: 500;
   line-height: 30px;
+  font-size: 15px;
 }
 .aab {
   display: flex;

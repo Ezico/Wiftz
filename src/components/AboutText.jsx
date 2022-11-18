@@ -17,11 +17,6 @@ const AboutText = ({ data }) => {
                   __html: data?.bannerB,
                 }}
               />
-
-              <br />
-              <a className="pt-10 fom" href="/">
-                Find out More
-              </a>
             </div>
           </div>
           <div className="col-5"></div>

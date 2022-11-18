@@ -37,7 +37,7 @@ const TopPodcast = ({ topList, data, loading }) => {
               }}
               class="secondary btn large featured"
             >
-              View all Episodes
+              View all episodes
             </button>
           </Link>
         </div>

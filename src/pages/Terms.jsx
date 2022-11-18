@@ -26,6 +26,9 @@ const Terms = ({ data }) => {
             </div>
           </div>
           <br />
+          <br />
+          <br />
+          <br />
           <div className="innerContent">
             <div
               className="text-light"

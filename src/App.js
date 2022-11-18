@@ -35,8 +35,7 @@ import {
   getDoc,
   where,
 } from "firebase/firestore";
-import Spinner from "./components/Spinner";
-import Skeleton from "./components/Skeleton";
+
 import EditBlog from "./pages/EditBlog";
 import EditPodcast from "./pages/EditPodcast";
 import Terms from "./pages/Terms";
