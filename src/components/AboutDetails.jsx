@@ -19,7 +19,12 @@ const AboutDetails = ({ data }) => {
                 </div>
 
                 <br />
-                <p>{data?.subtitle2}</p>
+                <div
+                  className="text-content"
+                  dangerouslySetInnerHTML={{
+                    __html: data?.subtitle2,
+                  }}
+                />
               </div>
             </div>
             <div className="col-md-8 col-sm-12">

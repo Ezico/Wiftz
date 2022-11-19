@@ -24,7 +24,7 @@ const BottomBanner = ({ data, loading }) => {
 
               <br />
               <a href="/about" className="pt-10 fom">
-                Find out More
+                Find out more
               </a>
             </div>
           </div>

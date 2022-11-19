@@ -32,6 +32,7 @@ const BlogDetails = ({ loading }) => {
   if (loading) {
     return <Skeleton />;
   }
+  console.log(posts);
   return (
     <>
       <Header active={active} />
@@ -52,7 +53,7 @@ const BlogDetails = ({ loading }) => {
           <div className="row pt-90"></div>
           <div className="row pt-90"></div>
           <center>
-            <h1 className="title  innerContent">{posts?.title}</h1>
+            <h1 className="title title-x innerContent">{posts?.title}</h1>
           </center>
           <div className="row pb-50"></div>
           <div className="row pb-50"></div>
@@ -88,6 +89,9 @@ const BlogDetails = ({ loading }) => {
         </div>
         <div className="content">
           <div className="innerContent text-light">
+            <img src={posts?.FeaturedImage} className="w-100" />
+            <br />
+            <br />
             <div
               dangerouslySetInnerHTML={{
                 __html: posts?.description,

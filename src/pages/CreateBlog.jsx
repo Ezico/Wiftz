@@ -3,7 +3,7 @@ import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+// import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -59,20 +59,20 @@ const CreateBlog = ({ user, handleLogout }) => {
       description: formatedDescrition,
     };
     console.log(newDoc);
-    if (category && tags && title && FeaturedImage && trending) {
-      try {
-        await addDoc(collection(db, "Posts"), {
-          ...newDoc,
-          timestamp: serverTimestamp(),
-          author: user.displayName,
-          userId: user.uid,
-        });
-        toast.success("Post Created Successfully");
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    navigate("/admin");
+    // if (category && tags && title && FeaturedImage && trending) {
+    //   try {
+    //     await addDoc(collection(db, "Posts"), {
+    //       ...newDoc,
+    //       timestamp: serverTimestamp(),
+    //       author: user.displayName,
+    //       userId: user.uid,
+    //     });
+    //     toast.success("Post Created Successfully");
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // }
+    // navigate("/admin");
   };
   return (
     <>

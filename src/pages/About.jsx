@@ -72,8 +72,13 @@ const About = () => {
                   <img className="ahero-tick" src={__} alt="tick" />
                 </h2>
               </div>
+              <div
+                className="text-content"
+                dangerouslySetInnerHTML={{
+                  __html: data?.subtitle1,
+                }}
+              />
 
-              <p>{data?.subtitle1}</p>
               <button
                 onClick={() => setOpenModel(!openModal)}
                 className="primary btn large"
