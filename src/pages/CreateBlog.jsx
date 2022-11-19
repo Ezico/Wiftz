@@ -21,8 +21,6 @@ const initialState = {
   shortDescription: "",
 };
 
-const categoryOptions = ["Self growth", "Health care", "Health", "Climate"];
-
 const CreateBlog = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
   const [progress, setProgress] = useState(null);
@@ -51,10 +49,6 @@ const CreateBlog = ({ user, handleLogout }) => {
 
   const handleTrending = (e) => {
     setForm({ ...form, trending: e.target.value });
-  };
-
-  const onCategoryChange = (e) => {
-    setForm({ ...form, category: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -197,34 +191,23 @@ const CreateBlog = ({ user, handleLogout }) => {
                         <label className="text-gray-500" htmlFor="title">
                           Category
                         </label>
-                        <select
+
+                        <input
+                          style={{ width: "33%" }}
+                          type="text"
+                          name="category"
+                          autocomplete="off"
                           value={category}
-                          onChange={onCategoryChange}
-                          className="form-select form-select-white"
-                        >
-                          <option>Please select a category</option>
-                          {categoryOptions.map((option, index) => (
-                            <option value={option || ""} key={index}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
+                          className="form-control bg-transparent"
+                          onChange={handleChange}
+                        />
+
                         <div className="fv-plugins-message-container invalid-feedback"></div>
                       </div>
 
                       <div className="fv-row mb-8 fv-plugins-icon-container">
                         <div class="fv-row mb-8 fv-plugins-icon-container">
                           <div class="mb-10">
-                            {/* <input
-                              type="text"
-                              placeholder=" Image Link"
-                              name="FeaturedImage"
-                              autocomplete="off"
-                              value={FeaturedImage}
-                              className="form-control bg-transparent"
-                              onChange={handleChange}
-                            /> */}
-
                             <div className="fv-row mb-8 fv-plugins-icon-container">
                               <div className="mb-10">
                                 {FeaturedImage ? (

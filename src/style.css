@@ -970,6 +970,14 @@ a.pod-content:hover {
 
 /* CONTAINER */
 
+.innerContent ul li {
+  list-style: disc;
+  margin-left: 20px;
+}
+.innerContent ol li {
+  list-style: disc;
+  margin-left: 20px;
+}
 .heroSk {
   position: relative;
   top: -107px;

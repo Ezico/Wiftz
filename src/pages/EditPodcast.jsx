@@ -123,7 +123,7 @@ const EditPodcast = ({ user, handleLogout }) => {
                   </div>
                   <div className="card-toolbar">
                     <Link to="/admin">
-                      <button type="button" className="btn btn-sm btn-light">
+                      <button type="button" className="btn btn-sm btn-primary">
                         CANCEL
                       </button>
                     </Link>
@@ -194,11 +194,12 @@ const EditPodcast = ({ user, handleLogout }) => {
                         Category
                       </label>
                       <input
+                        style={{ width: "33%" }}
                         type="text"
-                        name="category"
+                        name="Category"
                         autocomplete="off"
                         value={category}
-                        className="form-control "
+                        className="form-control bg-transparent"
                         onChange={handleChange}
                       />
 

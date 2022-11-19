@@ -5,8 +5,6 @@ import pod from "../assets/images/podbean1.png";
 import spotify from "../assets/images/spotify1.png";
 import amazon from "../assets/images/amazon1.png";
 import youtube from "../assets/images/youtube1.png";
-import Listen from "../assets/images/listen.png";
-import ListenM from "../assets/images/listenM.png";
 import apple2 from "../assets/images/apple.png";
 import google2 from "../assets/images/google.png";
 import pod2 from "../assets/images/pod.png";

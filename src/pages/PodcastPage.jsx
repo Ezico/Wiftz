@@ -177,6 +177,7 @@ const PodcastPage = ({ featured, loading }) => {
                           Listen or Watch on
                         </button>
                         <br />
+                        <br />
                         <div className="medias row">
                           {item.sportify ? (
                             <div className="col-md-4 col-sm-6 sm-thumbnail">
@@ -287,7 +288,7 @@ const PodcastPage = ({ featured, loading }) => {
                     />
                   </p>
                   <img className="play-ico" src={Play} alt="" />
-                  <p className="ptx-10">Listen to this podcast</p>{" "}
+                  <p className="ptx-10">Listen to this podcast</p>
                 </a>
               ))}
             </div>

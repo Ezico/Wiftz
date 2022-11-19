@@ -105,13 +105,13 @@ const Create = ({ user, handleLogout }) => {
                 </div>
                 <div className="card-toolbar">
                   <Link to="/admin">
-                    <button type="button" className="btn btn-sm btn-light">
+                    <button type="button" className="btn btn-sm btn-primary">
                       CANCEL
                     </button>
                   </Link>
                 </div>
               </div>
-              <div className="card-body card-scroll">
+              <div className="card-scroll">
                 <div className="d-flex flex-center flex-column flex-lg-row-fluid">
                   <div className="" style={{ width: "100%" }}>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
@@ -213,11 +213,12 @@ const Create = ({ user, handleLogout }) => {
                         Podcast Category
                       </label>
                       <input
+                        style={{ width: "33%" }}
                         type="text"
-                        name="category"
+                        name="Category"
                         autocomplete="off"
                         value={category}
-                        className="form-control "
+                        className="form-control bg-transparent"
                         onChange={handleChange}
                       />
 
@@ -257,7 +258,7 @@ const Create = ({ user, handleLogout }) => {
               <div className="card-header">
                 <h3 className="card-title">ADD NEW PODCAST</h3>
                 <div className="card-toolbar">
-                  <button type="button" className="btn btn-sm btn-light">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <button
                       onClick={handleSUbmit}
                       id="kt_sign_in_submit"

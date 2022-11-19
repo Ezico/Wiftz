@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Subscribe from "../components/Subscribe";
 import Email from "../assets/images/email.png";
+import emailjs from "@emailjs/browser";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import Skeleton from "../components/Skeleton";
+import { toast } from "react-toastify";
 
 const Contact = ({ loading }) => {
   const [data, setData] = useState();
@@ -24,6 +26,31 @@ const Contact = ({ loading }) => {
       setData({ ...snapshot.data() });
     }
   };
+  //email function
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_u82ttiw",
+        "template_vuly37i",
+        form.current,
+        "b4I2DIDCQLNVOeFQC"
+      )
+      .then(
+        (result) => {
+          toast.success("Message Sent Successfully!");
+          e.target.reset();
+        },
+        (error) => {
+          toast.error("Message Not Sent!");
+          e.target.reset();
+        }
+      );
+  };
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,6 +58,7 @@ const Contact = ({ loading }) => {
   if (loading) {
     return <Skeleton />;
   }
+
   return (
     <>
       <Header active={active} />
@@ -72,11 +100,7 @@ const Contact = ({ loading }) => {
             <div className="col-md-6 ">
               <div className="form-container">
                 <div className="form-content">
-                  <form
-                    name="contact"
-                    method="POST"
-                    action="https://formspree.io/f/mvoylqar"
-                  >
+                  <form ref={form} onSubmit={sendEmail}>
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="form">
                       <label htmlFor="email">Email Address</label>

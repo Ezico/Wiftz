@@ -210,18 +210,15 @@ const EditBlog = ({ user, handleLogout }) => {
                         <label className="text-gray-500" htmlFor="title">
                           Category
                         </label>
-                        <select
+                        <input
+                          style={{ width: "33%" }}
+                          type="text"
+                          name="category"
+                          autocomplete="off"
                           value={category}
-                          onChange={onCategoryChange}
-                          className="form-select form-select-white"
-                        >
-                          <option>Please select a category</option>
-                          {categoryOptions.map((option, index) => (
-                            <option value={option || ""} key={index}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
+                          className="form-control bg-transparent"
+                          onChange={handleChange}
+                        />
                         <div className="fv-plugins-message-container invalid-feedback"></div>
                       </div>
 
