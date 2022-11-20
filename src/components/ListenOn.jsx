@@ -48,7 +48,7 @@ const ListenOn = () => {
       <div className="lt hide-large">
         <div className="m-l">
           <div className="col">
-            <div className="lwo">Listen or Watch on</div>
+            <div className="lwo">Listen or watch on</div>
           </div>
           <div className="col">
             <a href="https://open.spotify.com/show/4PHMvcu3aqIEEa4NX89TFl?si=492d2aa13a0e4846">
