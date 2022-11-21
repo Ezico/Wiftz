@@ -196,7 +196,7 @@ const EditPodcast = ({ user, handleLogout }) => {
                       <input
                         style={{ width: "33%" }}
                         type="text"
-                        name="Category"
+                        name="category"
                         autocomplete="off"
                         value={category}
                         className="form-control bg-transparent"
