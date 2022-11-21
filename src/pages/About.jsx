@@ -46,9 +46,9 @@ const About = () => {
     setLoading(false);
   };
 
-  if (loading) {
-    return <Skeleton />;
-  }
+  // if (loading) {
+  //   return <Skeleton />;
+  // }
   return (
     <>
       <Modal open={openModal} onClose={() => setOpenModel(false)} />

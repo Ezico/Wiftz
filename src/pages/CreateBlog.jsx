@@ -19,6 +19,7 @@ const initialState = {
   trending: "no",
   category: "",
   shortDescription: "",
+  timestamp: "",
 };
 
 const CreateBlog = ({ user, handleLogout }) => {
@@ -26,8 +27,15 @@ const CreateBlog = ({ user, handleLogout }) => {
   const [progress, setProgress] = useState(null);
   const [descriptionvalue, setDescriptionValue] = useState();
 
-  const { title, tags, trending, category, FeaturedImage, shortDescription } =
-    form;
+  const {
+    title,
+    tags,
+    trending,
+    category,
+    FeaturedImage,
+    shortDescription,
+    timestamp,
+  } = form;
 
   const navigate = useNavigate();
   // push to top page after loading
@@ -59,20 +67,21 @@ const CreateBlog = ({ user, handleLogout }) => {
       description: formatedDescrition,
     };
     console.log(newDoc);
-    // if (category && tags && title && FeaturedImage && trending) {
-    //   try {
-    //     await addDoc(collection(db, "Posts"), {
-    //       ...newDoc,
-    //       timestamp: serverTimestamp(),
-    //       author: user.displayName,
-    //       userId: user.uid,
-    //     });
-    //     toast.success("Post Created Successfully");
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
-    // navigate("/admin");
+    if (category && tags && title && FeaturedImage && trending && timestamp) {
+      try {
+        await addDoc(collection(db, "Posts"), {
+          ...newDoc,
+          timestamp: timestamp,
+          author: user.displayName,
+          userId: user.uid,
+          date: serverTimestamp(),
+        });
+        toast.success("Post Created Successfully");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    navigate("/admin");
   };
   return (
     <>
@@ -108,7 +117,7 @@ const CreateBlog = ({ user, handleLogout }) => {
                         <input
                           type="text"
                           name="title"
-                          autocomplete="off"
+                          autoComplete="off"
                           value={title}
                           className="form-control bg-transparent"
                           onChange={handleChange}
@@ -131,7 +140,7 @@ const CreateBlog = ({ user, handleLogout }) => {
                           style={{ height: "100px" }}
                           type="text"
                           name="shortDescription"
-                          autocomplete="off"
+                          autoComplete="off"
                           value={shortDescription}
                           className="form-control bg-transparent"
                           onChange={handleChange}
@@ -186,23 +195,45 @@ const CreateBlog = ({ user, handleLogout }) => {
                           </div>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-6">
+                          <div className="fv-row mb-8 fv-plugins-icon-container">
+                            <label className="text-gray-500" htmlFor="title">
+                              Category
+                            </label>
 
-                      <div className="fv-row mb-8 fv-plugins-icon-container">
-                        <label className="text-gray-500" htmlFor="title">
-                          Category
-                        </label>
+                            <input
+                              style={{ width: "60%" }}
+                              type="text"
+                              name="category"
+                              autoComplete="off"
+                              value={category}
+                              className="form-control bg-transparent"
+                              onChange={handleChange}
+                            />
 
-                        <input
-                          style={{ width: "33%" }}
-                          type="text"
-                          name="category"
-                          autocomplete="off"
-                          value={category}
-                          className="form-control bg-transparent"
-                          onChange={handleChange}
-                        />
+                            <div className="fv-plugins-message-container invalid-feedback"></div>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div className="fv-row mb-8 fv-plugins-icon-container">
+                            <label className="text-gray-500" htmlFor="title">
+                              Date
+                            </label>
 
-                        <div className="fv-plugins-message-container invalid-feedback"></div>
+                            <input
+                              style={{ width: "60%" }}
+                              type="text"
+                              name="timestamp"
+                              autoComplete="off"
+                              value={timestamp}
+                              className="form-control bg-transparent"
+                              onChange={handleChange}
+                            />
+
+                            <div className="fv-plugins-message-container invalid-feedback"></div>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="fv-row mb-8 fv-plugins-icon-container">

@@ -81,9 +81,7 @@ const BlogDetails = ({ loading }) => {
                 />
               </span>
 
-              <span className="text-light">
-                {posts?.timestamp.toDate().toDateString()}
-              </span>
+              <span className="text-light">{posts?.timestamp}</span>
             </div>
           </div>
         </div>

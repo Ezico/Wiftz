@@ -15,9 +15,9 @@ function Hero({ data, loading }) {
       setScreen("DesKtop");
     }
   });
-  if (loading) {
-    return <Skeleton />;
-  }
+  // if (loading) {
+  //   return <Skeleton />;
+  // }
   return (
     <>
       <Modal open={openModal} onClose={() => setOpenModel(false)} />

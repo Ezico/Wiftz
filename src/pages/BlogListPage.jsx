@@ -52,7 +52,7 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                             <h6 className="title">{item.title}</h6>
                           </div>
                         </td>
-                        <td>{item.timestamp.toDate().toDateString()}</td>
+                        <td>{item.timestamp}</td>
                         <td>
                           <Link to={`/blog/${item.id}`}>View</Link>
                         </td>

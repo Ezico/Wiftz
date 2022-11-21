@@ -67,7 +67,7 @@ const BlogPage = ({ loading }) => {
     const collectionRef = collection(db, "Posts");
     const featuredQuerry = query(
       collectionRef,
-      orderBy("timestamp", "desc"),
+      orderBy("date", "desc"),
       limit(1)
     );
 
@@ -178,7 +178,7 @@ const BlogPage = ({ loading }) => {
               <div className="article pt-20">
                 <button className="btn date featured">
                   <span>{featured?.category}</span> &nbsp;|&nbsp;
-                  <span>{featured?.timestamp.toDate().toDateString()}</span>
+                  <span>{featured?.timestamp}</span>
                 </button>
                 <h3
                   className="podcast-title text-light"
@@ -261,7 +261,7 @@ const BlogPage = ({ loading }) => {
                   }}
                   className="col"
                 >
-                  {featured?.timestamp.toDate().toDateString()}
+                  {data?.timestamp}
                 </div>
                 <a className="col ptx-10x" href={"/blog/" + data?.id}>
                   Read More &gt;

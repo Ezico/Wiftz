@@ -185,6 +185,13 @@
 
 /* portrait tablets, portrait  landscape */
 @media (max-width: 769px) {
+  .youtubem,
+  .googlem,
+  .podm,
+  .applem,
+  .spotifym {
+    width: 160px;
+  }
   .col-md-4 {
     width: 100%;
   }

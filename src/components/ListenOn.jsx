@@ -52,33 +52,32 @@ const ListenOn = () => {
           </div>
           <div className="col">
             <a href="https://open.spotify.com/show/4PHMvcu3aqIEEa4NX89TFl?si=492d2aa13a0e4846">
-              <img className="spotifym" src={spotify2} alt="spotify" />
+              <img className="spotifym" src={spotify} alt="spotify" />
             </a>
           </div>
           <div className="col">
             <a href="https://podcasts.apple.com/gb/podcast/wiftz-podcast/id1644619451">
-              <img className="applem" src={apple2} alt="apple" />
+              <img className="applem" src={apple} alt="apple" />
             </a>
           </div>
           <div className="col">
-            {" "}
             <a href="https://amzn.eu/d/7ipmppy">
-              <img className="amazonm" src={amazon2} alt="amazon" />
+              <img className="amazonm" src={amazon} alt="amazon" />
             </a>
           </div>
           <div className="col">
             <a href="https://wiftz.podbean.com/">
-              <img className="podm" src={pod2} alt="pod" />
+              <img className="podm" src={pod} alt="pod" />
             </a>
           </div>
           <div className="col">
             <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3dpZnR6L2ZlZWQueG1s?sa=X&amp;ved=0CAMQ9sEGahcKEwjw78fN8bP7AhUAAAAAHQAAAAAQWg">
-              <img className="googlem" src={google2} alt="google" />
+              <img className="googlem" src={google} alt="google" />
             </a>
           </div>
           <div className="col">
             <a href="https://youtube.com/@thewiftz">
-              <img className="youtubem" src={youtube2} alt="youtube" />
+              <img className="youtubem" src={youtube} alt="youtube" />
             </a>
           </div>
         </div>

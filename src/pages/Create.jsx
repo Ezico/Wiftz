@@ -113,7 +113,7 @@ const Create = ({ user, handleLogout }) => {
               </div>
               <div className="card-scroll">
                 <div className="d-flex flex-center flex-column flex-lg-row-fluid">
-                  <div className="" style={{ width: "100%" }}>
+                  <div className="" style={{ width: "95%" }}>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <label className="text-gray-500" htmlFor="title">
                         Podcast Title
@@ -215,7 +215,7 @@ const Create = ({ user, handleLogout }) => {
                       <input
                         style={{ width: "33%" }}
                         type="text"
-                        name="Category"
+                        name="category"
                         autocomplete="off"
                         value={category}
                         className="form-control bg-transparent"

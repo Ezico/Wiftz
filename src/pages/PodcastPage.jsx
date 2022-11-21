@@ -114,9 +114,9 @@ const PodcastPage = ({ featured, loading }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  if (loading) {
-    return <Skeleton />;
-  }
+  // if (loading) {
+  //   return <Skeleton />;
+  // }
   return (
     <>
       <Header active={active} />

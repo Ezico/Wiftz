@@ -19,6 +19,7 @@ const initialState = {
   category: "",
   FeaturedImage: "",
   shortDescription: "",
+  date: "",
 };
 
 const categoryOptions = ["Self growth", "Health care", "Health", "Climate"];
@@ -28,8 +29,16 @@ const EditBlog = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
   const [descriptionvalue, setDescriptionValue] = useState();
 
-  const { title, tags, trending, category, FeaturedImage, shortDescription } =
-    form;
+  const {
+    title,
+    tags,
+    trending,
+    category,
+    FeaturedImage,
+    shortDescription,
+    timestamp,
+    date,
+  } = form;
 
   //update data
   useEffect(() => {
@@ -76,12 +85,15 @@ const EditBlog = ({ user, handleLogout }) => {
       description: formatedDescrition,
     };
 
-    if (category && tags && title && trending) {
+    console.log(newDoc);
+    if (category && tags && title && trending && timestamp) {
       try {
         await updateDoc(doc(db, "Posts", id), {
           ...newDoc,
+          timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,
+          date: serverTimestamp(),
         });
         toast.success("Post Updated Successfully");
       } catch (err) {
@@ -126,7 +138,7 @@ const EditBlog = ({ user, handleLogout }) => {
                         <input
                           type="text"
                           name="title"
-                          autocomplete="off"
+                          autoComplete="off"
                           value={title}
                           className="form-control bg-transparent"
                           onChange={handleChange}
@@ -150,7 +162,7 @@ const EditBlog = ({ user, handleLogout }) => {
                           style={{ height: "100px" }}
                           type="text"
                           name="shortDescription"
-                          autocomplete="off"
+                          autoComplete="off"
                           value={shortDescription}
                           className="form-control bg-transparent"
                           onChange={handleChange}
@@ -206,20 +218,41 @@ const EditBlog = ({ user, handleLogout }) => {
                         </div>
                       </div>
 
-                      <div className="fv-row mb-8 fv-plugins-icon-container">
-                        <label className="text-gray-500" htmlFor="title">
-                          Category
-                        </label>
-                        <input
-                          style={{ width: "33%" }}
-                          type="text"
-                          name="category"
-                          autocomplete="off"
-                          value={category}
-                          className="form-control bg-transparent"
-                          onChange={handleChange}
-                        />
-                        <div className="fv-plugins-message-container invalid-feedback"></div>
+                      <div className="row">
+                        <div className="col-6">
+                          <div className="fv-row mb-8 fv-plugins-icon-container">
+                            <label className="text-gray-500" htmlFor="title">
+                              Category
+                            </label>
+                            <input
+                              style={{ width: "33%" }}
+                              type="text"
+                              name="category"
+                              autoComplete="off"
+                              value={category}
+                              className="form-control bg-transparent"
+                              onChange={handleChange}
+                            />
+                            <div className="fv-plugins-message-container invalid-feedback"></div>
+                          </div>
+                        </div>
+                        <div className="col-6">
+                          <div className="fv-row mb-8 fv-plugins-icon-container">
+                            <label className="text-gray-500" htmlFor="title">
+                              Date
+                            </label>
+                            <input
+                              style={{ width: "66%" }}
+                              type="text"
+                              name="timestamp"
+                              autoComplete="off"
+                              value={timestamp}
+                              className="form-control bg-transparent"
+                              onChange={handleChange}
+                            />
+                            <div className="fv-plugins-message-container invalid-feedback"></div>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="fv-row mb-8 fv-plugins-icon-container">
@@ -237,7 +270,7 @@ const EditBlog = ({ user, handleLogout }) => {
                               type="text"
                               placeholder="Featured Image"
                               name="FeaturedImage"
-                              autocomplete="off"
+                              autoComplete="off"
                               value={FeaturedImage}
                               className="form-control bg-transparent"
                               onChange={handleChange}

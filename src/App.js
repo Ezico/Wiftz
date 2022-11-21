@@ -144,7 +144,7 @@ function App() {
 
   useEffect(() => {
     const collectionRef = collection(db, "Podcasts");
-    const featuredQuerry = query(collectionRef, orderBy("timestamp", "desc"));
+    const featuredQuerry = query(collectionRef, orderBy("date", "desc"));
 
     const unsub = onSnapshot(
       featuredQuerry,
