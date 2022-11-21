@@ -67,7 +67,7 @@ const BlogPage = ({ loading }) => {
     const collectionRef = collection(db, "Posts");
     const featuredQuerry = query(
       collectionRef,
-      orderBy("date", "desc"),
+      orderBy("date", "asc"),
       limit(1)
     );
 
