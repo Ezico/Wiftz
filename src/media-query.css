@@ -416,10 +416,10 @@
     height: 156vh;
   }
   .hero-tick2 {
-    width: 100px;
     position: absolute;
-    left: 163px;
-    top: 101px;
+    width: 150px !important;
+    left: 0;
+    bottom: -11px;
   }
   .p0 {
     padding: 4px !important;
@@ -566,12 +566,12 @@
   .x-4 {
     width: 31.333333%;
   }
-  .hero-tick2 {
+  /* .hero-tick2 {
     width: 202px;
     position: absolute;
     left: 0;
     bottom: -4px;
-  }
+  } */
 }
 
 /* big landscape tablets, laptops, and desktops */

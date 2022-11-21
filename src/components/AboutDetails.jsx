@@ -12,9 +12,7 @@ const AboutDetails = ({ data }) => {
                 <div className="tagline">THE WIFTZ PODCASTS</div>
                 <div className="content-holder">
                   <h2>
-                    {data?.title2}
-
-                    <img className="ahero-tick2" src={__} alt="tick" />
+                    <div dangerouslySetInnerHTML={{ __html: data?.title2 }} />
                   </h2>
                 </div>
 

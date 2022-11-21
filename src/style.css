@@ -615,7 +615,12 @@ h6.title {
   width: 100%;
   padding: 10px;
 }
-
+.hero-tick2 {
+  position: absolute;
+  width: 150px !important;
+  left: 0;
+  bottom: -11px;
+}
 .banner-thumbnail {
   width: 100%;
 }
