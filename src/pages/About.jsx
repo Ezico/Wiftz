@@ -67,9 +67,7 @@ const About = () => {
             <div className="pd-intro col-md-6 col-sm-12 wrapper">
               <div className="hero-content">
                 <h2 className="abt-text">
-                  {data?.title1}
-
-                  <img className="ahero-tick" src={__} alt="tick" />
+                  <div dangerouslySetInnerHTML={{ __html: data?.title1 }} />
                 </h2>
               </div>
               <div
