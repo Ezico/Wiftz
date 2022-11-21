@@ -35,8 +35,9 @@ function Hero({ data, loading }) {
             <div className="pd-intro col-md-6 col-sm-12">
               <div className="hero-content">
                 <h2>
-                  {data?.heroHeading}
-                  <img className="hero-tick" src={__} alt="tick" />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: data?.heroHeading }}
+                  />
                 </h2>
               </div>
 

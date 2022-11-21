@@ -548,7 +548,15 @@ h6.title {
 .footer-details .heading {
   font-size: 16px;
 }
-
+.hero-tick {
+  position: absolute;
+  width: 163px;
+  bottom: -6px;
+  left: 0;
+}
+.hero-content span {
+  position: relative;
+}
 .footer-logo img {
   width: 250px;
 }
