@@ -117,7 +117,7 @@ function App() {
     const collectionRef = collection(db, "Podcasts");
     const topQuerry = query(
       collectionRef,
-      where("featured", "==", "yes"),
+      orderBy("timestamp", "desc"),
       limit(6)
     );
 

@@ -17,6 +17,7 @@ import {
   getDocs,
   doc,
   getDoc,
+  orderBy,
 } from "firebase/firestore";
 import { db } from "../firebase";
 import Skeleton from "../components/Skeleton";
@@ -44,7 +45,10 @@ const PodcastPage = ({ featured, loading }) => {
     const getData = async (e) => {
       let topList = [];
       let tags = [];
-      const Podcasts = query(collection(db, "Podcasts"));
+      const Podcasts = query(
+        collection(db, "Podcasts"),
+        orderBy("timestamp", "desc")
+      );
       const querySnapshot = await getDocs(Podcasts);
       querySnapshot.forEach((doc) => {
         topList.push({ id: doc.id, ...doc.data() });
@@ -75,7 +79,7 @@ const PodcastPage = ({ featured, loading }) => {
     const collectionRef = collection(db, "Podcasts");
 
     if (targetText === "All") {
-      const topQuerry = query(collectionRef);
+      const topQuerry = query(collectionRef, orderBy("timestamp", "desc"));
       onSnapshot(
         topQuerry,
         (snapshot) => {
@@ -93,7 +97,8 @@ const PodcastPage = ({ featured, loading }) => {
     } else {
       const topQuerry = query(
         collectionRef,
-        where("category", "==", targetText)
+        where("category", "==", targetText),
+        orderBy("timestamp", "desc")
       );
       onSnapshot(
         topQuerry,
