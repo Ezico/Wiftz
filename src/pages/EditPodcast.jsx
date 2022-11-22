@@ -24,6 +24,7 @@ const initialState = {
   featured: "",
   resources: "",
   category: "",
+  timestamp: "",
 };
 
 const EditPodcast = ({ user, handleLogout }) => {
@@ -46,6 +47,7 @@ const EditPodcast = ({ user, handleLogout }) => {
     description,
     shortDescription,
     category,
+    timestamp,
   } = form;
 
   useEffect(() => {
@@ -83,13 +85,15 @@ const EditPodcast = ({ user, handleLogout }) => {
       description: formatedDescrition,
       resources: formatedResources,
     };
-
+    console.log(newDoc);
     if (title && description) {
       try {
         await updateDoc(doc(db, "Podcasts", id), {
           ...newDoc,
           author: user.displayName,
           userId: user.uid,
+          timestamp: timestamp,
+          date: serverTimestamp(),
         });
         toast.success("Podcast Updated Successfully");
       } catch (err) {
@@ -190,18 +194,36 @@ const EditPodcast = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <div className="fv-row mb-8 fv-plugins-icon-container">
-                      <label className="text-gray-500" htmlFor="category">
-                        Category
-                      </label>
-                      <input
-                        style={{ width: "33%" }}
-                        type="text"
-                        name="category"
-                        autocomplete="off"
-                        value={category}
-                        className="form-control bg-transparent"
-                        onChange={handleChange}
-                      />
+                      <div className="row">
+                        <div className="col">
+                          <label className="text-gray-500" htmlFor="category">
+                            Category
+                          </label>
+                          <input
+                            style={{ width: "60%" }}
+                            type="text"
+                            name="category"
+                            autocomplete="off"
+                            value={category}
+                            className="form-control bg-transparent"
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="col">
+                          <label className="text-gray-500" htmlFor="category">
+                            Date
+                          </label>
+                          <input
+                            style={{ width: "60%" }}
+                            type="text"
+                            name="timestamp"
+                            autocomplete="off"
+                            value={timestamp}
+                            className="form-control bg-transparent"
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
 
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>

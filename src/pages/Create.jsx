@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import "@pathofdev/react-tag-input/build/index.css";
-import { db, storage } from "../firebase";
+import { db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -24,6 +24,7 @@ const initialState = {
   shortDescription: "",
   featured: "no",
   category: "",
+  timestamp: "",
 };
 
 const Create = ({ user, handleLogout }) => {
@@ -44,6 +45,7 @@ const Create = ({ user, handleLogout }) => {
     FeatureImage,
     shortDescription,
     category,
+    timestamp,
   } = form;
   // push to top page after loading
   useEffect(() => {
@@ -68,14 +70,15 @@ const Create = ({ user, handleLogout }) => {
       resources: formatedResources,
       ...form,
     };
-
-    if (title && featured) {
+    // console.log(newDoc);
+    if (title && featured && timestamp) {
       try {
         await addDoc(collection(db, "Podcasts"), {
           ...newDoc,
-          timestamp: serverTimestamp(),
+          timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,
+          date: serverTimestamp(),
         });
         toast.success("Podcast Created Successfully");
       } catch (err) {
@@ -173,41 +176,60 @@ const Create = ({ user, handleLogout }) => {
                       <div className="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                     <br />
-                    <div className="mb-10">
-                      <div className="row">
-                        <div className="col">Featured?</div>
-                        <div className="col">
-                          <input
-                            onChange={handleFeatured}
-                            className="form-check-input"
-                            type="radio"
-                            name="featured"
-                            value="yes"
-                            checked={featured === "yes"}
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckChecked"
-                          >
-                            Yes&nbsp;
+                    <div className="row">
+                      <div className="col">
+                        <div className="mb-10">
+                          <div className="row">
+                            <div className="col">Featured?</div>
+                            <div className="col">
+                              <input
+                                onChange={handleFeatured}
+                                className="form-check-input"
+                                type="radio"
+                                name="featured"
+                                value="yes"
+                                checked={featured === "yes"}
+                              />
+                              <label
+                                className="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                Yes&nbsp;
+                              </label>
+                              <input
+                                onChange={handleFeatured}
+                                className="form-check-input"
+                                type="radio"
+                                name="featured"
+                                value="no"
+                                checked={featured === "no"}
+                              />
+                              <label
+                                className="form-check-label"
+                                for="flexCheckChecked"
+                              >
+                                No
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="mb-10">
+                          <label className="text-gray-500" htmlFor="apple">
+                            Date
                           </label>
                           <input
-                            onChange={handleFeatured}
-                            className="form-check-input"
-                            type="radio"
-                            name="featured"
-                            value="no"
-                            checked={featured === "no"}
+                            type="text"
+                            name="timestamp"
+                            className="form-control form-control-solid"
+                            value={timestamp}
+                            onChange={handleChange}
                           />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckChecked"
-                          >
-                            No
-                          </label>
                         </div>
                       </div>
                     </div>
+
                     <div className="fv-row mb-8 fv-plugins-icon-container">
                       <label className="text-gray-500" htmlFor="title">
                         Podcast Category

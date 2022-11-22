@@ -60,7 +60,7 @@ const PodcastListPage = ({
                         <td>
                           <Link to={`/podcast/${item.id}`}>View</Link>
                         </td>
-                        <td>{item.timestamp.toDate().toDateString()}</td>
+                        <td>{item.timestamp}</td>
 
                         <td>
                           <div className="row">

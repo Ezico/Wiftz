@@ -47,7 +47,7 @@ const PodcastPage = ({ featured, loading }) => {
       let tags = [];
       const Podcasts = query(
         collection(db, "Podcasts"),
-        orderBy("timestamp", "desc")
+        orderBy("date", "desc")
       );
       const querySnapshot = await getDocs(Podcasts);
       querySnapshot.forEach((doc) => {

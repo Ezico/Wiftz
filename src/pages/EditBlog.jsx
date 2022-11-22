@@ -37,7 +37,6 @@ const EditBlog = ({ user, handleLogout }) => {
     FeaturedImage,
     shortDescription,
     timestamp,
-    date,
   } = form;
 
   //update data
