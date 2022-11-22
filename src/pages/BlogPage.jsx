@@ -141,9 +141,7 @@ const BlogPage = ({ loading }) => {
   };
   // setActive("Blog");
   // console.log(data);
-  if (loading) {
-    return <Skeleton />;
-  }
+
   return (
     <>
       <Header active={active} />
