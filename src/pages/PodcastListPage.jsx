@@ -30,9 +30,9 @@ const PodcastListPage = ({
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>Date</th>
                       <th>View</th>
-                      <th>Delete</th>
+                      <th>Date</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -25,15 +25,16 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>Date</th>
                       <th>View</th>
-                      <th>Delete</th>
+                      <th>Date</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
+
                   <tbody>
                     {blogs.map((item) => (
                       <tr key={item.index}>
-                        <td>
+                        <td className="hide-small">
                           {item.FeaturedImage ? (
                             <img
                               className="thumbnail-small"
@@ -47,19 +48,23 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                             />
                           )}
                         </td>
-                        <td className="list-style">
-                          <div className="text-start">
+                        <td className="list-title">
+                          <div className="text-start w-75">
                             <h6 className="title">{item.title}</h6>
                           </div>
                         </td>
-                        <td>{item.timestamp}</td>
                         <td>
                           <Link to={`/blog/${item.id}`}>View</Link>
                         </td>
+                        <td>{item.timestamp}</td>
+
                         <td>
-                          <div style={{ float: "right" }}>
+                          <div className="row">
                             <svg
-                              style={{ margin: "15px", cursor: "pointer" }}
+                              style={{
+                                cursor: "pointer",
+                                flex: "1",
+                              }}
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
@@ -70,11 +75,14 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                             >
                               <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                               />
                             </svg>
-                            <Link to={`/admin/edit-blog/${item.id}`}>
+                            <Link
+                              style={{ flex: "1" }}
+                              to={`/admin/edit-blog/${item.id}`}
+                            >
                               <svg
                                 style={{ cursor: "pointer" }}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +94,7 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                               >
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                 <path
-                                  fill-rule="evenodd"
+                                  fillRule="evenodd"
                                   d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
                                 />
                               </svg>
