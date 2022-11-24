@@ -27,7 +27,7 @@ const Footer = () => {
                 style={{ color: "white", textDecoration: "underline" }}
                 href="/cookies"
               >
-                Cookie Policy
+                Cookie Policy.
               </a>
             </p>
           </div>
