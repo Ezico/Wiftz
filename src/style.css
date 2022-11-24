@@ -658,7 +658,7 @@ button.tags {
   border: 0;
   padding: 10px;
   margin: 10px;
-  width: 100px;
+  min-width: 100px;
   height: 44px;
   font-weight: 400;
   color: rgba(171, 173, 211, 0.8);

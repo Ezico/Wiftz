@@ -1,4 +1,5 @@
 import React from "react";
+import CookieConsent from "react-cookie-consent";
 
 import Logo from "../assets/images/logo-footer.png";
 import { Link } from "react-router-dom";
@@ -7,6 +8,25 @@ const Footer = () => {
   return (
     <>
       <footer>
+        <CookieConsent
+          location="bottom"
+          cookieName="myAwesomeCookieName2"
+          style={{ background: "#2e3192" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "14px" }}
+          expires={300}
+        >
+          <div className="wrapper">
+            <p>
+              We use cookies to personalize content and analyze traffic to our
+              website. You can choose to accept only cookies that are necessary
+              for the website to function or to also allow tracking cookies. For
+              more information, please see our &nbsp;
+              <a style={{ color: "yellow" }} href="/policy">
+                privacy policy
+              </a>
+            </p>
+          </div>
+        </CookieConsent>
         <div className="wrapper">
           <div className="row pt-50">
             <div className="hide-small col-md-3 footer-logo">

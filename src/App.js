@@ -34,6 +34,7 @@ import {
   query,
   getDoc,
   where,
+  getDocs,
 } from "firebase/firestore";
 
 import EditBlog from "./pages/EditBlog";
@@ -92,24 +93,20 @@ function App() {
 
   // get all blog posts
   useEffect(() => {
-    const unsub = onSnapshot(
-      collection(db, "Posts"),
-      (snapshot) => {
-        let list = [];
-        snapshot.docs.forEach((doc) => {
-          list.push({ id: doc.id, ...doc.data() });
-        });
-        setBlog(list);
-        setLoading(false);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    const getData = async (e) => {
+      let topList = [];
+      let tags = [];
+      const Posts = query(collection(db, "Posts"), orderBy("date", "desc"));
+      const querySnapshot = await getDocs(Posts);
+      querySnapshot.forEach((doc) => {
+        topList.push({ id: doc.id, ...doc.data() });
+        tags.push(doc.data().category);
+      });
+      const uniqueTags = [...new Set(tags)];
 
-    return () => {
-      unsub();
+      setBlog(topList);
     };
+    getData();
   }, []);
 
   // get featured podcasts

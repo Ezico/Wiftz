@@ -47,7 +47,7 @@ const BlogPage = ({ loading }) => {
     const getData = async (e) => {
       let topList = [];
       let tags = [];
-      const Posts = query(collection(db, "Posts"));
+      const Posts = query(collection(db, "Posts"), orderBy("date", "desc"));
       const querySnapshot = await getDocs(Posts);
       querySnapshot.forEach((doc) => {
         topList.push({ id: doc.id, ...doc.data() });
