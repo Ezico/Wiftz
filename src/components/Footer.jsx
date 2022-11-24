@@ -19,7 +19,7 @@ const Footer = () => {
           expires={300}
         >
           <div className="wrapper">
-            <p>
+            <p className="cookie-text">
               We use essential cookies to make our site work. By clicking
               “Accept,“ you agree to our website's cookie use as described in
               our &nbsp;
