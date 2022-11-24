@@ -23,7 +23,10 @@ const Footer = () => {
               We use essential cookies to make our site work. By clicking
               “Accept,“ you agree to our website's cookie use as described in
               our &nbsp;
-              <a style={{ color: "white" }} href="/cookies">
+              <a
+                style={{ color: "white", textDecoration: "underline" }}
+                href="/cookies"
+              >
                 Cookie Policy
               </a>
             </p>
