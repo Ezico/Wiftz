@@ -55,9 +55,6 @@ const Contact = ({ loading }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  if (loading) {
-    return;
-  }
 
   return (
     <>
@@ -68,8 +65,8 @@ const Contact = ({ loading }) => {
             <div className="col-md-6 ">
               <div className="contant">
                 <p style={{ color: "#585AA8" }}>CONTACT US</p>
-                <h2 className="podcast-title">{data.contactTitle}</h2>
-                <p className="text-light">{data.contactSubTitle}</p>
+                <h2 className="podcast-title">{data?.contactTitle}</h2>
+                <p className="text-light">{data?.contactSubTitle}</p>
                 <br />
                 {/* <button class="secondary btn large">
                   <span>
