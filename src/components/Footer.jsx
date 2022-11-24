@@ -10,6 +10,8 @@ const Footer = () => {
       <footer>
         <CookieConsent
           location="bottom"
+          contentClasses="customD"
+          buttonWrapperClasses="customB"
           disableButtonStyles
           buttonText="Accept"
           buttonClasses="primary btn large mw-110"

@@ -9,6 +9,12 @@
 }
 
 @media (min-width: 768px) {
+  .customD {
+    margin-left: 75px !important;
+  }
+  .customB {
+    margin-right: 80px;
+  }
   .col-md-5 {
     flex: 0 0 auto;
     width: 41%;
@@ -31,6 +37,12 @@
   }
 }
 @media (max-width: 1024px) {
+  .customD {
+    margin-left: 75px;
+  }
+  .customB {
+    margin-right: 80px;
+  }
   .pd-intro h2,
   .hero-contentP h2 {
     font-style: normal;
@@ -58,6 +70,12 @@
 }
 
 @media (max-width: 1280px) {
+  .customD {
+    margin-left: 75px;
+  }
+  .customB {
+    margin-right: 80px;
+  }
   .pd-intro h2,
   .hero-contentP h2 {
     font-style: normal;
