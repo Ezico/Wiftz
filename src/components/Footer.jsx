@@ -10,18 +10,20 @@ const Footer = () => {
       <footer>
         <CookieConsent
           location="bottom"
+          disableButtonStyles
+          buttonText="Accept"
+          buttonClasses="primary btn large mw-110"
           cookieName="myAwesomeCookieName2"
-          style={{ background: "#2e3192" }}
-          buttonStyle={{ color: "#4e503b", fontSize: "14px" }}
+          style={{ background: "#000000d1" }}
+          buttonStyle={{ color: "#ffffff", fontSize: "14px" }}
           expires={300}
         >
           <div className="wrapper">
             <p>
-              We use cookies to personalize content and analyze traffic to our
-              website. You can choose to accept only cookies that are necessary
-              for the website to function or to also allow tracking cookies. For
-              more information, please see our &nbsp;
-              <a style={{ color: "yellow" }} href="/policy">
+              We use essential cookies to make our site work. By clicking
+              “Accept,“ you agree to our website's cookie use as described in
+              our Cookie Policy. &nbsp;
+              <a style={{ color: "yellow" }} href="/cookies">
                 privacy policy
               </a>
             </p>
@@ -60,7 +62,7 @@ const Footer = () => {
                   <li>Terms of use</li>
                 </Link>
                 <Link to="/cookies">
-                  <li>Cookies</li>
+                  <li>Cookie</li>
                 </Link>
               </ul>
             </div>
