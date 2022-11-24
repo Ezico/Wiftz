@@ -115,11 +115,7 @@ function App() {
   // get featured podcasts
   useEffect(() => {
     const collectionRef = collection(db, "Podcasts");
-    const topQuerry = query(
-      collectionRef,
-      orderBy("timestamp", "desc"),
-      limit(6)
-    );
+    const topQuerry = query(collectionRef, orderBy("date", "desc"), limit(6));
 
     const unsubxx = onSnapshot(
       topQuerry,
@@ -172,7 +168,7 @@ function App() {
     const collectionRef = collection(db, "Podcasts");
     const featuredQuerry = query(
       collectionRef,
-      orderBy("timestamp", "desc"),
+      orderBy("date", "desc"),
       limit(1)
     );
 
@@ -194,10 +190,6 @@ function App() {
       unsubx();
     };
   }, []);
-
-  // if (loading) {
-  //   return <Spinner />;
-  // }
 
   const handleBlogDelete = async (id) => {
     if (window.confirm("are you sure you want to delete this post?")) {

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AdminContent = ({ user }) => {
-  const username = user?.displayName;
+  const username = "Admin";
   const email = user?.email;
   return (
     <>
