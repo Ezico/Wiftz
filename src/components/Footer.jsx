@@ -67,7 +67,7 @@ const Footer = () => {
                   <li>Terms of use</li>
                 </Link>
                 <Link to="/cookies">
-                  <li>Cookie</li>
+                  <li>Cookie Policy</li>
                 </Link>
               </ul>
             </div>
