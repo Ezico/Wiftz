@@ -50,6 +50,7 @@
     font-size: 40px !important;
     line-height: 60px;
     color: white;
+    line-height: 30px;
   }
   .hero-tick {
     position: absolute;
@@ -62,6 +63,7 @@
     font-size: 14px;
     margin-bottom: 40px;
     padding-top: 14px;
+    line-height: 30px;
   }
   .col-md-4 {
     flex: 0 0 auto;
