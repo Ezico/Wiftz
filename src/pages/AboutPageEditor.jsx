@@ -26,6 +26,10 @@ const initialState = {
   bannerBImg: "",
   contactTitle: "",
   contactSubTitle: "",
+  linkedin: "",
+  facebook: "",
+  instagram: "",
+  twitter: "",
 };
 
 const AboutPageEditor = ({ user, handleLogout }) => {
@@ -52,6 +56,10 @@ const AboutPageEditor = ({ user, handleLogout }) => {
     image4,
     heroBannerMobile,
     bannerBImg,
+    linkedin,
+    facebook,
+    instagram,
+    twitter,
   } = form;
 
   const id = "Cw1TrtdA382NCnAzNcIu";
@@ -115,6 +123,56 @@ const AboutPageEditor = ({ user, handleLogout }) => {
             <div className="d-flex flex-center flex-column flex-lg-row-fluid">
               <div className="w-100  p-10">
                 <form className="" onSubmit={handleSubmit}>
+                  <div className="text-center mb-11">
+                    <h1 className=" text-light fw-bolder mb-3">Social Media</h1>
+                  </div>
+                  <div className="row">
+                    <div className="col-s12 col-md-3 mb-11">
+                      <input
+                        type="text"
+                        placeholder="Instagram"
+                        name="instagram"
+                        autocomplete="off"
+                        value={instagram}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-s12 col-md-3 mb-11">
+                      <input
+                        type="text"
+                        placeholder="Twitter"
+                        name="twitter"
+                        autocomplete="off"
+                        value={twitter}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-s12 col-md-3 mb-11">
+                      <input
+                        type="text"
+                        placeholder="Linkein"
+                        name="linkedin"
+                        autocomplete="off"
+                        value={linkedin}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-s12 col-md-3 mb-11">
+                      <input
+                        type="text"
+                        placeholder="Facebook"
+                        name="facebook"
+                        autocomplete="off"
+                        value={facebook}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
                   <div className="text-center mb-11">
                     <h1 className=" text-light fw-bolder mb-3">
                       Contact Page Content
