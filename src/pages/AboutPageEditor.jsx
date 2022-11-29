@@ -30,6 +30,7 @@ const initialState = {
   facebook: "",
   instagram: "",
   twitter: "",
+  tictok: "",
 };
 
 const AboutPageEditor = ({ user, handleLogout }) => {
@@ -60,6 +61,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
     facebook,
     instagram,
     twitter,
+    tictok,
   } = form;
 
   const id = "Cw1TrtdA382NCnAzNcIu";
@@ -167,6 +169,17 @@ const AboutPageEditor = ({ user, handleLogout }) => {
                         name="facebook"
                         autocomplete="off"
                         value={facebook}
+                        className="form-control"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-s12 col-md-3 mb-11">
+                      <input
+                        type="text"
+                        placeholder="Tictok"
+                        name="tictok"
+                        autocomplete="off"
+                        value={tictok}
                         className="form-control"
                         onChange={handleChange}
                       />
