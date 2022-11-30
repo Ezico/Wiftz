@@ -3,17 +3,16 @@ import Play from "../assets/images/play.png";
 import { Link } from "react-router-dom";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import OwlCarousel from "react-owl-carousel";
 import Slider from "react-slick";
 
-const TopPodcast = ({ topList, data, loading }) => {
+const TopPodcast = ({ topList, data }) => {
+  console.log(topList.length);
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-
     arrows: true,
   };
 
@@ -35,7 +34,7 @@ const TopPodcast = ({ topList, data, loading }) => {
                 padding: "10px 20px",
                 margin: "0",
               }}
-              class="secondary btn large featured"
+              className="secondary btn large featured"
             >
               View all episodes
             </button>
@@ -43,38 +42,79 @@ const TopPodcast = ({ topList, data, loading }) => {
         </div>
         <div className="slide-container ">
           <div className=" pt-20">
-            <Slider {...settings} className="hide-small">
-              {topList.map((item) => (
-                <Link className="nol" to={`/podcast/${item.id}`}>
-                  <div className="pod-content" key={item.id}>
-                    <div className="image-container">
-                      <span className="green-overlay"></span>
+            <div className="hide-small">
+              {topList.length < 3 ? (
+                <div className="row">
+                  {topList.map((items) => (
+                    <div className="col-4">
+                      <Link
+                        className="nol"
+                        to={`/podcast/${items.id}`}
+                        key={items.id}
+                      >
+                        <div className="pod-content">
+                          <div className="image-container">
+                            <span className="green-overlay"></span>
 
-                      <img
-                        src={item.FeatureImage}
-                        alt={item.title}
-                        className="pod-content-img"
-                      />
+                            <img
+                              src={items.FeatureImage}
+                              alt={items.title}
+                              className="pod-content-img"
+                            />
+                          </div>
+                          <Link className="nol" to={`/podcast/${items.id}`}>
+                            <h3 className="title">{items.title}</h3>
+                          </Link>
+                          <p className="podcast-desc">
+                            {items.shortDescription.substring(0, 140)}
+                          </p>
+                          <img className="play-ico" src={Play} alt="" />
+                          <Link className="ptx-10" to={`/podcast/${items.id}`}>
+                            Listen to this podcast
+                          </Link>
+                        </div>
+                      </Link>
                     </div>
-                    <Link className="nol" to={`/podcast/${item.id}`}>
-                      <h3 className="title">{item.title}</h3>
-                    </Link>
-                    <p className="podcast-desc">
-                      {item.shortDescription.substring(0, 140)}
-                    </p>
-                    <img className="play-ico" src={Play} alt="" />{" "}
-                    <Link className="ptx-10" to={`/podcast/${item.id}`}>
-                      Listen to this podcast
-                    </Link>
-                  </div>
-                </Link>
-              ))}
-            </Slider>
+                  ))}
+                </div>
+              ) : (
+                <Slider {...settings}>
+                  {topList.map((item) => (
+                    <Link
+                      className="nol"
+                      to={`/podcast/${item.id}`}
+                      key={item.id}
+                    >
+                      <div className="pod-content">
+                        <div className="image-container">
+                          <span className="green-overlay"></span>
 
+                          <img
+                            src={item.FeatureImage}
+                            alt={item.title}
+                            className="pod-content-img"
+                          />
+                        </div>
+                        <Link className="nol" to={`/podcast/${item.id}`}>
+                          <h3 className="title">{item.title}</h3>
+                        </Link>
+                        <p className="podcast-desc">
+                          {item.shortDescription.substring(0, 140)}
+                        </p>
+                        <img className="play-ico" src={Play} alt="" />
+                        <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                          Listen to this podcast
+                        </Link>
+                      </div>
+                    </Link>
+                  ))}
+                </Slider>
+              )}
+            </div>
             <div className="row hide-large">
               {topList.map((item) => (
-                <div className="col-md-12">
-                  <div className="pod-content" key={item.id}>
+                <div className="col-md-12" key={item.id}>
+                  <div className="pod-content">
                     <div className="image-container">
                       <span className="green-overlay"></span>
                       <Link className="nol" to={`/podcast/${item.id}`}>

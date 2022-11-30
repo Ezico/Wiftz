@@ -30,7 +30,7 @@ const Subscribe = () => {
         <div className="row aab">
           <div className="col-md-5">
             <div className="s-content">
-              <h3 class="podcast-title">{data?.footerTitle}</h3>
+              <h3 className="podcast-title">{data?.footerTitle}</h3>
               <p className="subscribe-msg">{data?.footerSubTitle}</p>
             </div>
           </div>
