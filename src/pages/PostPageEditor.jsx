@@ -160,18 +160,18 @@ const PostPageEditor = ({ user, handleLogout }) => {
 
                           <div className="fv-plugins-message-container invalid-feedback"></div>
                         </div>
-
                         <div className="fv-row mb-8 fv-plugins-icon-container">
                           <input
                             type="text"
-                            placeholder="Do the talking, while we help you earn. Do the talking, while we help you earn. Do the talking, while we help you earn."
-                            name="PodcastsubText2"
+                            placeholder="second sub-title"
+                            name="PodcastsubHeadlineText"
                             autocomplete="off"
-                            value={PodcastsubText2}
+                            value={PodcastsubHeadlineText}
                             className="form-control"
                             onChange={PodcasthandleChange}
                           />
                         </div>
+
                         <div className="fv-row mb-8 fv-plugins-icon-container">
                           <input
                             type="text"
@@ -188,10 +188,10 @@ const PostPageEditor = ({ user, handleLogout }) => {
                         <div className="fv-row mb-8 fv-plugins-icon-container">
                           <input
                             type="text"
-                            placeholder="second sub-title"
-                            name="PodcastsubHeadlineText"
+                            placeholder="Do the talking, while we help you earn. Do the talking, while we help you earn. Do the talking, while we help you earn."
+                            name="PodcastsubText2"
                             autocomplete="off"
-                            value={PodcastsubHeadlineText}
+                            value={PodcastsubText2}
                             className="form-control"
                             onChange={PodcasthandleChange}
                           />
