@@ -9,7 +9,6 @@ const AdminHome = ({ user, handleLogout }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />

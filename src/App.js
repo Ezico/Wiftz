@@ -43,6 +43,7 @@ import Terms from "./pages/Terms";
 import Policy from "./pages/Policy";
 import Cookies from "./pages/Cookies";
 import Protected from "./components/protected";
+import Signup from "./pages/Signup";
 function App() {
   const [user, setUser] = useState(null);
 
@@ -263,6 +264,10 @@ function App() {
         <Route
           path="/adminstrator-access"
           element={<Auth handleLogout={handleLogout} user={user} />}
+        />
+        <Route
+          path="/adminstrator-access/create-user"
+          element={<Signup handleLogout={handleLogout} user={user} />}
         />
         <Route
           path="/admin/create-blog"

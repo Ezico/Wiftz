@@ -6,7 +6,6 @@ import Header from "../components/Header";
 
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
-import Skeleton from "../components/Skeleton";
 
 const BlogDetails = ({ loading }) => {
   // push to top page after loading
@@ -29,10 +28,7 @@ const BlogDetails = ({ loading }) => {
   };
   // setActive("Blog");
   // console.log(setActive);
-  if (loading) {
-    return <Skeleton />;
-  }
-  console.log(posts);
+
   return (
     <>
       <Header active={active} />

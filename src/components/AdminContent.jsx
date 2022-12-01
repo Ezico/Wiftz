@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MetaTags from "react-meta-tags";
 
 const AdminContent = ({ user }) => {
-  const username = "Admin";
+  const username = user?.displayName;
   const email = user?.email;
+  console.log(user);
   return (
     <>
+      <MetaTags>
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
+      </MetaTags>
+
       <div class="page d-flex flex-row flex-column-fluid">
         {/* <!--begin::Aside--> */}
         <div
