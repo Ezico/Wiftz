@@ -428,6 +428,7 @@ a {
 .sort-list span {
   margin: 5px;
   cursor: pointer;
+  color: #abadd3;
 }
 .list-item {
   color: white;

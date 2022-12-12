@@ -64,13 +64,14 @@ const ResourceDetails = ({ resourceId }) => {
       });
       setA(topList);
     };
-
     getA();
+
     const getB = async (e) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("class", "==", "B")
+        where("class", "==", "B"),
+        where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -83,7 +84,8 @@ const ResourceDetails = ({ resourceId }) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("class", "==", "C")
+        where("class", "==", "C"),
+        where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -96,7 +98,8 @@ const ResourceDetails = ({ resourceId }) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("class", "==", "D")
+        where("class", "==", "D"),
+        where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -109,7 +112,8 @@ const ResourceDetails = ({ resourceId }) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("class", "==", "E")
+        where("class", "==", "E"),
+        where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -122,7 +126,8 @@ const ResourceDetails = ({ resourceId }) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("class", "==", "F")
+        where("class", "==", "F"),
+        where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -133,6 +138,7 @@ const ResourceDetails = ({ resourceId }) => {
     getF();
   }, []);
 
+  console.log(b);
   return (
     <>
       <Header active={active} />
@@ -188,84 +194,121 @@ const ResourceDetails = ({ resourceId }) => {
             </div>
             <br />
             <div className="row pt-20" style={{ padding: "0 20px" }}>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">A</h3>
-                <ul className="resource-list">
-                  {a?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">B</h3>
-                <ul className="resource-list">
-                  {b?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">C</h3>
-                <ul className="resource-list">
-                  {c?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">D</h3>
-                <ul className="resource-list">
-                  {d?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">E</h3>
-                <ul className="resource-list">
-                  {e?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className=" mb-20 col-md-6 col-s-12">
-                <h3 className="text-light">F</h3>
-                <ul className="resource-list">
-                  {f?.map((item, index) => (
-                    <li className="row" key={index}>
-                      <li className="col list-item">{item?.Text}</li>
-                      <li className="col list-itema">
-                        <a href={item?.Link}>{`Apply >`}</a>
-                      </li>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {a?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">A</h3>
+                    <ul className="resource-list">
+                      {a?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+
+              {b?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">B</h3>
+                    <ul className="resource-list">
+                      {b?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+              {c?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">C</h3>
+                    <ul className="resource-list">
+                      {c?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+              {d?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">D</h3>
+                    <ul className="resource-list">
+                      {d?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+              {e?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">E</h3>
+                    <ul className="resource-list">
+                      {e?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+              {f?.length > 1 ? (
+                <>
+                  <div className=" mb-20 col-md-6 col-s-12">
+                    <h3 className="text-light">F</h3>
+                    <ul className="resource-list">
+                      {f?.map((item, index) => (
+                        <li className="row" key={index}>
+                          <li className="col list-item">{item?.Text}</li>
+                          <li className="col list-itema">
+                            <a href={item?.Link}>{`Apply >`}</a>
+                          </li>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </section>
