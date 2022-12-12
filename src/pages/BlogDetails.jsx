@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import Header from "../components/Header";
 
 import Subscribe from "../components/Subscribe";
@@ -18,14 +18,28 @@ const BlogDetails = ({ loading }) => {
   const [active, setActive] = useState(null);
   useEffect(() => {
     setActive("Blog");
-    id && getPodcastDetails();
+    // id && getPodcastDetails();
   }, [id]);
 
-  const getPodcastDetails = async () => {
-    const docRef = doc(db, "Posts", id);
-    const postDetail = await getDoc(docRef);
-    setPosts(postDetail.data());
-  };
+  useEffect(() => {
+    const getData = async (e) => {
+      const PodcastData = query(
+        collection(db, "Posts"),
+        where("url", "==", id)
+      );
+      const querySnapshot = await getDocs(PodcastData);
+      querySnapshot.forEach((doc) => {
+        setPosts({ ...doc.data() });
+      });
+    };
+    getData();
+  }, []);
+
+  // const getPodcastDetails = async () => {
+  //   const docRef = doc(db, "Posts", id);
+  //   const postDetail = await getDoc(docRef);
+  //   setPosts(postDetail.data());
+  // };
   // setActive("Blog");
   // console.log(setActive);
 

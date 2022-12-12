@@ -69,6 +69,7 @@ const About = () => {
                 <h2 className="abt-text">
                   <div dangerouslySetInnerHTML={{ __html: data?.title1 }} />
                 </h2>
+                <br />
               </div>
               <div
                 className="text-content"

@@ -147,6 +147,14 @@ ul {
   width: 100%;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/Frame%201%20(1).png?alt=media&token=1e818c7a-f673-4c1a-ae3f-c1d1369dddc3");
 }
+.heroR {
+  position: relative;
+  top: -107px;
+  /* z-index: -1; */
+  background-size: cover;
+  height: 95vh;
+  width: 100%;
+}
 .heroB {
   position: relative;
   top: -107px;
@@ -370,7 +378,7 @@ a.ptx-10x {
 }
 
 a {
-  color: #abadd3;
+  color: #585aa8;
   text-decoration: none;
   font-size: 16px;
 }
@@ -396,6 +404,36 @@ a {
   height: 100%;
   position: absolute;
   right: 0;
+}
+
+.resource-overlay {
+  background-color: rgb(35 58 117 / 77%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.latest-resource {
+  /* margin: 0 20px; */
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.sort-list {
+  background: #0d0e18;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+.sort-list span {
+  margin: 5px;
+  cursor: pointer;
+}
+.list-item {
+  color: white;
+  font-size: 16px;
+  margin: 0 31px;
+  list-style-image: url("https://firebasestorage.googleapis.com/v0/b/wiftz-podcasts.appspot.com/o/Resources%2Flist.png?alt=media&token=557e7f6c-45bb-4edb-9ebe-16c070356244");
 }
 .image-container {
   position: relative;
@@ -761,6 +799,7 @@ button.tags {
   width: 100%;
   left: 0;
   top: 0;
+  text-align: center;
 }
 .heroPD {
   position: relative;
@@ -1066,4 +1105,18 @@ a.pod-content:hover {
   to {
     opacity: 0.5;
   }
+}
+
+/* captcha */
+.rc-anchor-dark.rc-anchor-normal {
+  border: 1px solid #1e1f28 !important;
+  margin-left: 11px !important;
+}
+#rc-anchor-container {
+  background: #1e1f28 !important;
+  color: #fff !important;
+}
+.rc-anchor-dark {
+  background: #1e1f28 !important;
+  color: #fff !important;
 }

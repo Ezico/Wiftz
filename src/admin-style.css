@@ -39081,7 +39081,7 @@ body {
     left: 0;
     bottom: 0;
     z-index: 101;
-    overflow: hidden;
+    overflow: scroll;
     width: 265px;
     transition: left 0.3s ease;
   }

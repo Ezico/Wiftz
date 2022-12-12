@@ -193,8 +193,8 @@ const BlogPage = ({ loading }) => {
                   />
                 </p>
                 <br />
-                <a href={"/blog/" + featured?.id} style={{ width: "131px" }}>
-                  <button className="btn primary cta">Read More</button>
+                <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
+                  <button className="btn primary cta">Read more</button>
                 </a>
                 <br />
               </div>
@@ -228,7 +228,7 @@ const BlogPage = ({ loading }) => {
             <a
               key={index}
               className="x-4 col-sm-12 pod-content"
-              href={"/blog/" + data?.id}
+              href={"/blog/" + data?.url}
             >
               <div className="image-container">
                 <span className="green-overlay"></span>
@@ -261,8 +261,8 @@ const BlogPage = ({ loading }) => {
                 >
                   {data?.timestamp}
                 </div>
-                <a className="col ptx-10x" href={"/blog/" + data?.id}>
-                  Read More &gt;
+                <a className="col ptx-10x" href={"/blog/" + data?.url}>
+                  Read more &gt;
                 </a>
               </div>
             </a>

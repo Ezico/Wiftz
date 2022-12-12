@@ -8,12 +8,17 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import Skeleton from "../components/Skeleton";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = ({ loading }) => {
   const [data, setData] = useState();
   const [active, setActive] = useState(null);
+  const [passed, setPassed] = useState(false);
   const id = "Cw1TrtdA382NCnAzNcIu";
 
+  const onChange = () => {
+    setPassed(true);
+  };
   useEffect(() => {
     id && getHomeDataFromDB();
     setActive("Contact");
@@ -76,7 +81,16 @@ const Contact = ({ loading }) => {
                 </button>
                 <br />
                 <br /> */}
-                <button class="secondary btn large">
+                <button
+                  style={{
+                    border: "solid",
+                    border: "solid 1px #F5F5F5",
+                    color: "white",
+                    fontWeight: "500",
+                  }}
+                  className="secondary btn large"
+                  disabled
+                >
                   <span>
                     <img className="ico-contact" src={Email} alt="" />
                   </span>
@@ -108,6 +122,14 @@ const Contact = ({ loading }) => {
                       />
                     </div>
                     <div className="form">
+                      <label htmlFor="email">Full Name</label>
+                      <input
+                        type="text"
+                        name="Full Name"
+                        placeholder="Enter Name"
+                      />
+                    </div>
+                    <div className="form">
                       <label htmlFor="Subject">Subject</label>
                       <input
                         type="text"
@@ -124,11 +146,22 @@ const Contact = ({ loading }) => {
                         placeholder="Write here.."
                       ></textarea>
                     </div>
+                    <div className="form">
+                      <ReCAPTCHA
+                        theme="dark"
+                        sitekey="6LdggGkjAAAAAByp0Ygr2NMCsntqHZT5nE9BpyPQ"
+                        onChange={onChange}
+                        style={{
+                          marginLeft: "11px",
+                        }}
+                      />
+                    </div>
 
                     <button
                       style={{ float: "right", marginTop: "35px" }}
                       className="primary btn large"
                       type="submit"
+                      disabled={!passed}
                     >
                       Send
                     </button>

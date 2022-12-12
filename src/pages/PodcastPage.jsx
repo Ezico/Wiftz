@@ -20,7 +20,6 @@ import {
   orderBy,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import Skeleton from "../components/Skeleton";
 
 const PodcastPage = ({ featured, loading }) => {
   const [data, setData] = useState([]);
@@ -28,6 +27,7 @@ const PodcastPage = ({ featured, loading }) => {
   const [selected, setSelected] = useState([]);
   const [pagedata, setPageData] = useState();
   const [active, setActive] = useState(null);
+
   const id = "XvIKnYXnCJQ161PRXBqI";
   useEffect(() => {
     setActive("Podcasts");
@@ -154,7 +154,7 @@ const PodcastPage = ({ featured, loading }) => {
                 {featured.map((item) => (
                   <>
                     <div className="col-md-4 col-sm-12">
-                      <a href={"/podcast/" + item.id}>
+                      <a href={"/podcast/" + item.url}>
                         <img
                           className="thumbnail"
                           src={item?.FeatureImage}
@@ -164,7 +164,7 @@ const PodcastPage = ({ featured, loading }) => {
                     </div>
                     <div className="col-md-8 col-sm-12 p-10">
                       <div className="">
-                        <a className="nol" href={`/podcast/${item.id}`}>
+                        <a className="nol" href={`/podcast/${item.url}`}>
                           <h3 className="podcast-title text-light">
                             {item?.title}
                           </h3>{" "}
@@ -179,7 +179,7 @@ const PodcastPage = ({ featured, loading }) => {
                         </p>
                         <br />
                         <button className=" secondary featured">
-                          Listen or Watch on
+                          Listen or watch on
                         </button>
                         <br />
                         <br />
@@ -272,7 +272,7 @@ const PodcastPage = ({ featured, loading }) => {
               {data?.map((data, index) => (
                 <a
                   className="nol x-4 col-sm-12  pod-content"
-                  href={`/podcast/${data.id}`}
+                  href={`/podcast/${data.url}`}
                   key={index}
                 >
                   <div className="image-container">

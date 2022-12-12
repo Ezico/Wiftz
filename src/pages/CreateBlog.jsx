@@ -3,7 +3,6 @@ import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
-// import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -62,6 +61,11 @@ const CreateBlog = ({ user, handleLogout }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formatedDescrition = "<div>" + descriptionvalue + "</div>";
+    var urlspc = title
+      .replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-")
+      .toLowerCase();
+    var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
+    var url = nospc.replaceAll(/--/g, "-");
     let newDoc = {
       ...form,
       description: formatedDescrition,
@@ -71,6 +75,7 @@ const CreateBlog = ({ user, handleLogout }) => {
       try {
         await addDoc(collection(db, "Posts"), {
           ...newDoc,
+          url: url,
           timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,

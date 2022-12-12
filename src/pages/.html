@@ -1,0 +1,223 @@
+<div class="wrapperx d-flex flex-column flex-row-fluid" id="kt_wrapper">
+  <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+    <div
+      class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-5 order-2 order-lg-1"
+    >
+      <div class="card card-custom">
+        <div class="card-header">
+          <div class="card-title">
+            <h1 class="fw-bolder mb-3">Create Podcast</h1>
+          </div>
+          <div class="card-toolbar">
+            <a href="/admin"
+              ><button type="button" class="btn btn-sm btn-primary">
+                CANCEL
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="card-scroll">
+          <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+            <div class="" style="width: 95%">
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <label class="text-gray-500" for="title">Podcast Title</label
+                ><input
+                  type="text"
+                  name="title"
+                  autocomplete="off"
+                  class="form-control bg-transparent"
+                  value=""
+                />
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <label class="text-gray-500" for="title"
+                  >Short Description</label
+                ><textarea
+                  type="text"
+                  name="shortDescription"
+                  autocomplete="off"
+                  class="form-control bg-transparent"
+                ></textarea>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <label class="text-gray-500" for="title">Description</label>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <br /><br /><br />
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <label class="text-gray-500" for="title">Resources</label>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <br />
+
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <label class="text-gray-500" for="title">Podcast Category</label
+                ><input
+                  type="text"
+                  name="category"
+                  autocomplete="off"
+                  class="form-control bg-transparent"
+                  value=""
+                  style="width: 33%"
+                />
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label>Behind the scene images</label>
+                  <div class="row"></div>
+                  <div class="react-tag-input">
+                    <input
+                      class="react-tag-input__input"
+                      placeholder="Paste image urls here"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column flex-lg-row-fluid w-lg-25 p-5 order-2 order-lg-2"
+    >
+      <div class="card card-custom">
+        <div class="card-header">
+          <h3 class="card-title">ADD NEW PODCAST</h3>
+          <div class="card-toolbar">
+            <button type="button" class="btn btn-sm btn-primary">
+              <button id="kt_sign_in_submit" class="btn btn-dark">
+                CREATE
+              </button>
+            </button>
+          </div>
+        </div>
+        <div class="card-body card-scroll h-500px">
+          <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+            <div class="w-100 p-10">
+              <div class="text-center mb-11">
+                <h1 class="fw-bolder mb-3">Media Links</h1>
+                <div class="text-gray-500 fw-semibold fs-6">
+                  insert you media links below
+                </div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="apple">Apple Podcasts</label
+                  ><input
+                    type="text"
+                    name="apple"
+                    class="form-control form-control-solid"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="sportify"
+                    >Spotify Podcasts</label
+                  ><input
+                    type="text"
+                    class="form-control form-control-solid"
+                    name="sportify"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="youtube"
+                    >Youtube Podcasts</label
+                  ><input
+                    type="text"
+                    name="youtube"
+                    class="form-control form-control-solid"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="amazon"
+                    >Amazon Podcasts</label
+                  ><input
+                    type="text"
+                    class="form-control form-control-solid"
+                    name="amazon"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="google"
+                    >Google Podcasts</label
+                  ><input
+                    type="text"
+                    class="form-control form-control-solid"
+                    name="google"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label class="text-gray-500" for="pod">PodBean Podcasts</label
+                  ><input
+                    type="text"
+                    name="pod"
+                    class="form-control form-control-solid"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="fv-plugins-message-container invalid-feedback"
+                ></div>
+              </div>
+              <div class="fv-row mb-8 fv-plugins-icon-container">
+                <div class="mb-10">
+                  <label>Featured Image Url</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="FeatureImage"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

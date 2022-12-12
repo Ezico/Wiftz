@@ -80,10 +80,16 @@ const EditPodcast = ({ user, handleLogout }) => {
     e.preventDefault();
     const formatedDescrition = "<div>" + descriptionvalue + "</div>";
     const formatedResources = "<div>" + resourcesvalue + "</div>";
+
+    var urlspc = title
+      .replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-")
+      .toLowerCase();
+    var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
+    var url = nospc.replaceAll(/--/g, "-");
     let newDoc = {
       ...form,
+      url: url,
       description: formatedDescrition,
-      resources: formatedResources,
     };
     console.log(newDoc);
     if (title && description) {

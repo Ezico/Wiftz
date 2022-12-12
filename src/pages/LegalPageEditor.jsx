@@ -12,6 +12,7 @@ const initialState = {
   cookies: "",
   policy: "",
   terms: "",
+  Pop: "",
 };
 
 const LegalPageEditor = ({ user, handleLogout }) => {
@@ -19,8 +20,9 @@ const LegalPageEditor = ({ user, handleLogout }) => {
   const [policyvalue, setPolicyValue] = useState("");
   const [cookiesvalue, setCookiesValue] = useState("");
   const [termsvalue, setTermsValue] = useState("");
+  const [cookiesPop, setPopValue] = useState("");
 
-  const { cookies, policy, terms } = form;
+  const { cookies, policy, terms, Pop } = form;
 
   const id = "m0Yce9AiqSl8y0WGCuu1";
   useEffect(() => {
@@ -34,8 +36,10 @@ const LegalPageEditor = ({ user, handleLogout }) => {
       setPolicyValue(snapshot.data().policy);
       setCookiesValue(snapshot.data().cookies);
       setTermsValue(snapshot.data().terms);
+      setPopValue(snapshot.data().Pop);
     }
   };
+
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,6 +58,7 @@ const LegalPageEditor = ({ user, handleLogout }) => {
       await updateDoc(doc(db, "LegalContents", id), {
         cookies: cookiesvalue,
         terms: termsvalue,
+        Pop: cookiesPop,
         policy: policyvalue,
         timestamp: serverTimestamp(),
         author: user.displayName,
@@ -115,6 +120,17 @@ const LegalPageEditor = ({ user, handleLogout }) => {
                         theme="snow"
                         value={policyvalue}
                         onChange={setPolicyValue}
+                      />
+
+                      <div className="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                    <div className="fv-row mb-8 fv-plugins-icon-container">
+                      <h3>Cookies Popup</h3>
+                      <ReactQuill
+                        // name="policy"
+                        theme="snow"
+                        value={cookiesPop}
+                        onChange={setPopValue}
                       />
 
                       <div className="fv-plugins-message-container invalid-feedback"></div>

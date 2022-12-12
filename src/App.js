@@ -33,7 +33,6 @@ import {
   orderBy,
   query,
   getDoc,
-  where,
   getDocs,
 } from "firebase/firestore";
 
@@ -44,6 +43,12 @@ import Policy from "./pages/Policy";
 import Cookies from "./pages/Cookies";
 import Protected from "./components/protected";
 import Signup from "./pages/Signup";
+import Resources from "./pages/Resources";
+import ResourceDetails from "./pages/ResourceDetails";
+import CreateResource from "./pages/CreateResource";
+import ResourceList from "./pages/ResourceList";
+import EditResource from "./pages/EditResource";
+import ResourcePageEditor from "./pages/ResourcePageEditor";
 function App() {
   const [user, setUser] = useState(null);
 
@@ -91,6 +96,7 @@ function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [featured, setFeatured] = useState([]);
   const [topList, setTopList] = useState([]);
+  const [resources, setResources] = useState([]);
 
   // get all blog posts
   useEffect(() => {
@@ -161,6 +167,30 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const collectionRef = collection(db, "Resources");
+    const featuredQuerry = query(collectionRef, orderBy("date", "desc"));
+    const unsub = onSnapshot(
+      featuredQuerry,
+      (snapshot) => {
+        let list = [];
+
+        snapshot.docs.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+
+        setResources(list);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    return () => {
+      unsub();
+    };
+  }, []);
+
   // get one Podcasts
   useEffect(() => {
     const collectionRef = collection(db, "Podcasts");
@@ -201,6 +231,16 @@ function App() {
       }
     }
   };
+  const handleResourceDelete = async (id) => {
+    if (window.confirm("are you sure you want to delete this item?")) {
+      try {
+        await deleteDoc(doc(db, "Resources", id));
+        toast.success("Resource Deleted Successfully");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
   const handlePodcastDelete = async (id) => {
     if (window.confirm("are you sure you want to delete this Podcast?")) {
       try {
@@ -228,6 +268,8 @@ function App() {
         <Route path="/policy" element={<Policy data={legaldata} />} />
         <Route path="/cookies" element={<Cookies data={legaldata} />} />
         <Route path="/contact" element={<Contact loading={loading} />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/:id" element={<ResourceDetails />} />
         <Route
           path="/Podcast/:id"
           element={<PodcastDetails loading={loading} />}
@@ -277,6 +319,7 @@ function App() {
             </Protected>
           }
         />
+
         <Route
           path="/admin/blogs"
           element={
@@ -287,6 +330,46 @@ function App() {
                 user={user}
                 handleBlogDelete={handleBlogDelete}
               />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/admin/create-blog"
+          element={
+            <Protected user={user}>
+              <CreateBlog handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/admin/create-resources"
+          element={
+            <Protected user={user}>
+              <CreateResource handleLogout={handleLogout} user={user} />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/admin/resources"
+          element={
+            <Protected user={user}>
+              <ResourceList
+                handleLogout={handleLogout}
+                user={user}
+                handleResourceDelete={handleResourceDelete}
+                resources={resources}
+              />
+            </Protected>
+          }
+        />
+        <Route
+          path="/admin/edit-resources/:id"
+          element={
+            <Protected user={user}>
+              <EditResource handleLogout={handleLogout} user={user} />
             </Protected>
           }
         />
@@ -333,6 +416,14 @@ function App() {
           element={
             <Protected user={user}>
               <PostPageEditor user={user} handleLogout={handleLogout} />
+            </Protected>
+          }
+        />
+        <Route
+          path="/admin/resources/editor"
+          element={
+            <Protected user={user}>
+              <ResourcePageEditor user={user} handleLogout={handleLogout} />
             </Protected>
           }
         />

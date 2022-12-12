@@ -23,7 +23,7 @@ const LatestPodcasts = ({ data, featured, loading, test }) => {
         {featured.map((item) => (
           <div key={item.id} className="row pt-30">
             <div className="col-md-4 col-sm-12">
-              <a href={`/podcast/${item.id}`}>
+              <a href={`/podcast/${item.url}`}>
                 <img
                   className="thumbnail"
                   src={item?.FeatureImage}
@@ -33,7 +33,7 @@ const LatestPodcasts = ({ data, featured, loading, test }) => {
             </div>
             <div className="col-md-8 col-sm-12 pt-20">
               <div className="medias">
-                <a className="nol" href={`/podcast/${item.id}`}>
+                <a className="nol" href={`/podcast/${item.url}`}>
                   <h3 className="podcast-title text-light">{item?.title}</h3>
                 </a>
                 <div className="podcast-desc">
@@ -47,7 +47,7 @@ const LatestPodcasts = ({ data, featured, loading, test }) => {
               <br />
               <div className="medias">
                 <button className="btn secondary featured">
-                  Listen or Watch on
+                  Listen or watch on
                 </button>
               </div>
 

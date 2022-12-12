@@ -9,11 +9,25 @@ import { db } from "../firebase";
 
 const Footer = () => {
   const [data, setData] = useState();
+  const [popData, setPopData] = useState();
   const id = "Cw1TrtdA382NCnAzNcIu";
+  const idPop = "m0Yce9AiqSl8y0WGCuu1";
 
   useEffect(() => {
     id && getAboutDataFromDB();
   }, [id]);
+
+  useEffect(() => {
+    idPop && getPopDataFromDB();
+  }, [idPop]);
+
+  const getPopDataFromDB = async () => {
+    const docRef = doc(db, "LegalContents", idPop);
+    const snapshot = await getDoc(docRef);
+    if (snapshot.exists()) {
+      setPopData({ ...snapshot.data() });
+    }
+  };
 
   const getAboutDataFromDB = async () => {
     const docRef = doc(db, "AboutDetails", id);
@@ -23,7 +37,7 @@ const Footer = () => {
     }
   };
 
-  console.log(data);
+  console.log(popData?.Pop);
   return (
     <>
       <footer>
@@ -40,17 +54,12 @@ const Footer = () => {
           expires={300}
         >
           <div className="wrapper">
-            <p className="cookie-text">
-              We use essential cookies to make our site work. By clicking
-              “Accept,“ you agree to our website's cookie use as described in
-              our &nbsp;
-              <a
-                style={{ color: "white", textDecoration: "underline" }}
-                href="/cookies"
-              >
-                Cookie Policy.
-              </a>
-            </p>
+            <p
+              className="cookie-text"
+              dangerouslySetInnerHTML={{
+                __html: popData?.Pop,
+              }}
+            />
           </div>
         </CookieConsent>
         <div className="wrapper">
@@ -79,6 +88,9 @@ const Footer = () => {
             <div className="col-md-3 footer-details">
               <div className="heading">Useful links</div>
               <ul>
+                <Link to="/resources">
+                  <li>Resources</li>
+                </Link>
                 <Link to="/policy">
                   <li>Privacy policy</li>
                 </Link>
@@ -92,7 +104,7 @@ const Footer = () => {
             </div>
             <div className="hide-large pt-90"></div>
             <div className="col-md-3 footer-details">
-              <div className="heading">Stay connected with us on:</div>
+              <div className="heading">Stay connected with us on</div>
               <div className="social-links">
                 <br />
                 <a className="social-ico" href={data?.instagram}>

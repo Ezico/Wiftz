@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import Header from "../components/Header";
 import apple from "../assets/images/apple_small.png";
 import google from "../assets/images/google_small.png";
@@ -18,7 +25,6 @@ const PodcastDetails = () => {
   const { id } = useParams();
   const [podcast, setPodcast] = useState();
   const [active, setActive] = useState(null);
-
   const mystyle = {
     top: "-80px",
     backgroundImage: `url(${
@@ -30,8 +36,23 @@ const PodcastDetails = () => {
 
   useEffect(() => {
     setActive("Podcasts");
-    id && getPodcastDetails();
+    // id && getPodcastDetails();
   }, [id]);
+
+  useEffect(() => {
+    const getData = async (e) => {
+      let data = [];
+      const PodcastData = query(
+        collection(db, "Podcasts"),
+        where("url", "==", id)
+      );
+      const querySnapshot = await getDocs(PodcastData);
+      querySnapshot.forEach((doc) => {
+        setPodcast({ ...doc.data() });
+      });
+    };
+    getData();
+  }, []);
 
   useEffect(() => {
     if (window.screen.availWidth < 760) {
@@ -40,11 +61,12 @@ const PodcastDetails = () => {
       setScreen("DesKtop");
     }
   });
-  const getPodcastDetails = async () => {
-    const docRef = doc(db, "Podcasts", id);
-    const podcastDetail = await getDoc(docRef);
-    setPodcast(podcastDetail.data());
-  };
+  console.log(podcast);
+  // const getPodcastDetails = async () => {
+  //   const docRef = doc(db, "Podcasts", id);
+  //   const podcastDetail = await getDoc(docRef);
+  //   setPodcast(podcastDetail.data());
+  // };
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -73,14 +95,14 @@ const PodcastDetails = () => {
               <div className="podcast">
                 <h3 className="podcast-title text-light">{podcast?.title}</h3>
                 <p className="podcast-desc">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{
                       __html: podcast?.shortDescription.substring(0, 210),
                     }}
-                  />
+                  /> */}
                 </p>
                 <br />
-                <button class=" secondary featured">Listen or Watch on</button>
+                <button class=" secondary featured">Listen or watch on</button>
                 <br />
                 <div className="medias row">
                   {podcast?.sportify ? (

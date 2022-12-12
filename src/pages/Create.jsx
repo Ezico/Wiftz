@@ -65,6 +65,11 @@ const Create = ({ user, handleLogout }) => {
 
     const formatedDescrition = "<div>" + descriptionvalue + "</div>";
     const formatedResources = "<div>" + resourcesvalue + "</div>";
+    var urlspc = title
+      .replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-")
+      .toLowerCase();
+    var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
+    var url = nospc.replaceAll(/--/g, "-");
     let newDoc = {
       description: formatedDescrition,
       resources: formatedResources,
@@ -75,6 +80,7 @@ const Create = ({ user, handleLogout }) => {
       try {
         await addDoc(collection(db, "Podcasts"), {
           ...newDoc,
+          url: url,
           timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,

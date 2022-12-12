@@ -40,7 +40,7 @@ function Hero({ data, loading }) {
                   />
                 </h2>
               </div>
-
+              <br />
               <p>{data?.heroSubHeading}</p>
               <div className="row btn-container">
                 <div className="col-4 ">

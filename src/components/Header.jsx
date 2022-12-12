@@ -40,6 +40,11 @@ const Header = ({ active }) => {
               </a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" href="/resources">
+                RESOURCES
+              </a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="/about">
                 ABOUT
               </a>
@@ -84,6 +89,15 @@ const Header = ({ active }) => {
                     }`}
                   >
                     BLOG
+                  </li>
+                </a>
+                <a href="/resources">
+                  <li
+                    className={`nav-item ${
+                      active === "Resources" ? "activenav" : ""
+                    }`}
+                  >
+                    RESOURCES
                   </li>
                 </a>
                 <a href="/about">

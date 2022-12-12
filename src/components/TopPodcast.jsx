@@ -49,7 +49,7 @@ const TopPodcast = ({ topList, data }) => {
                     <div className="col-4">
                       <Link
                         className="nol"
-                        to={`/podcast/${items.id}`}
+                        to={`/podcast/${items.url}`}
                         key={items.id}
                       >
                         <div className="pod-content">
@@ -62,14 +62,14 @@ const TopPodcast = ({ topList, data }) => {
                               className="pod-content-img"
                             />
                           </div>
-                          <Link className="nol" to={`/podcast/${items.id}`}>
+                          <Link className="nol" to={`/podcast/${items.url}`}>
                             <h3 className="title">{items.title}</h3>
                           </Link>
                           <p className="podcast-desc">
                             {items.shortDescription.substring(0, 140)}
                           </p>
                           <img className="play-ico" src={Play} alt="" />
-                          <Link className="ptx-10" to={`/podcast/${items.id}`}>
+                          <Link className="ptx-10" to={`/podcast/${items.url}`}>
                             Listen to this podcast
                           </Link>
                         </div>
@@ -82,7 +82,7 @@ const TopPodcast = ({ topList, data }) => {
                   {topList.map((item) => (
                     <Link
                       className="nol"
-                      to={`/podcast/${item.id}`}
+                      to={`/podcast/${item.url}`}
                       key={item.id}
                     >
                       <div className="pod-content">
@@ -95,14 +95,14 @@ const TopPodcast = ({ topList, data }) => {
                             className="pod-content-img"
                           />
                         </div>
-                        <Link className="nol" to={`/podcast/${item.id}`}>
+                        <Link className="nol" to={`/podcast/${item.url}`}>
                           <h3 className="title">{item.title}</h3>
                         </Link>
                         <p className="podcast-desc">
                           {item.shortDescription.substring(0, 140)}
                         </p>
                         <img className="play-ico" src={Play} alt="" />
-                        <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                        <Link className="ptx-10" to={`/podcast/${item.url}`}>
                           Listen to this podcast
                         </Link>
                       </div>
@@ -117,7 +117,7 @@ const TopPodcast = ({ topList, data }) => {
                   <div className="pod-content">
                     <div className="image-container">
                       <span className="green-overlay"></span>
-                      <Link className="nol" to={`/podcast/${item.id}`}>
+                      <Link className="nol" to={`/podcast/${item.url}`}>
                         <img
                           src={item.FeatureImage}
                           alt={item.title}
@@ -125,14 +125,14 @@ const TopPodcast = ({ topList, data }) => {
                         />
                       </Link>
                     </div>
-                    <Link className="nol" to={`/podcast/${item.id}`}>
+                    <Link className="nol" to={`/podcast/${item.url}`}>
                       <h3 className="title">{item.title}</h3>
                     </Link>
                     <p className="podcast-desc">
                       {item.shortDescription.substring(0, 140)}
                     </p>
                     <img className="play-ico" src={Play} alt="" />{" "}
-                    <Link className="ptx-10" to={`/podcast/${item.id}`}>
+                    <Link className="ptx-10" to={`/podcast/${item.url}`}>
                       Listen to this podcast
                     </Link>
                   </div>

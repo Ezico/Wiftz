@@ -22,8 +22,6 @@ const initialState = {
   date: "",
 };
 
-const categoryOptions = ["Self growth", "Health care", "Health", "Climate"];
-
 const EditBlog = ({ user, handleLogout }) => {
   const { id } = useParams();
   const [form, setForm] = useState(initialState);
@@ -71,19 +69,19 @@ const EditBlog = ({ user, handleLogout }) => {
     setForm({ ...form, trending: e.target.value });
   };
 
-  const onCategoryChange = (e) => {
-    setForm({ ...form, category: e.target.value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formatedDescrition = "<div>" + descriptionvalue + "</div>";
-
+    var urlspc = title
+      .replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-")
+      .toLowerCase();
+    var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
+    var url = nospc.replaceAll(/--/g, "-");
     let newDoc = {
       ...form,
+      url: url,
       description: formatedDescrition,
     };
-
     console.log(newDoc);
     if (category && tags && title && trending && timestamp) {
       try {
