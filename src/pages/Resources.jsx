@@ -100,7 +100,9 @@ const Resources = () => {
         <img className="ico-img" src={Ico} alt="" />
       </div>
       <ResourceCategory data={data} />
-      <Subscribe />
+      <div className="" style={{ margin: "20px" }}>
+        <Subscribe />
+      </div>
       <Footer />
     </>
   );

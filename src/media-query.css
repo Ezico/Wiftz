@@ -212,6 +212,9 @@
   .spotifym {
     width: 160px;
   }
+  .list-itema {
+    text-align: right;
+  }
   .col-md-4 {
     width: 100%;
   }
