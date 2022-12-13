@@ -1,14 +1,15 @@
-import ReactTagInput from "@pathofdev/react-tag-input";
 import {
   addDoc,
   collection,
   doc,
   getDoc,
-  getDocs,
-  orderBy,
+  where,
+  onSnapshot,
   query,
   serverTimestamp,
   updateDoc,
+  deleteDoc,
+  orderBy,
 } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
@@ -31,38 +32,49 @@ const EditResource = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
   const [linkList, setLinkList] = useState(input);
   const [descriptionvalue, setDescriptionValue] = useState();
-  const [listx, setListx] = useState();
   const { title, Category, list, FeaturedImage, timestamp } = form;
   const { Text, Link } = linkList;
+  const [linksfromDb, setLinksfromDb] = useState();
+
+  // format url
+  var urlspc = title.replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-").toLowerCase();
+  var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
+  var url = nospc.replaceAll(/--/g, "-");
+
   // get existng data
   useEffect(() => {
+    const getResourceDetail = async () => {
+      const docRef = doc(db, "Resources", id);
+      const snapshot = await getDoc(docRef);
+      if (snapshot.exists()) {
+        setDescriptionValue(snapshot.data().description);
+        setForm({ ...snapshot.data() });
+      }
+    };
+
+    getLinks();
     id && getResourceDetail();
-    // getData();
-  }, [id]);
+    console.log(linksfromDb, 1);
+  }, [id, url]);
 
-  const getResourceDetail = async () => {
-    const docRef = doc(db, "Resources", id);
-    const snapshot = await getDoc(docRef);
-    if (snapshot.exists()) {
-      setDescriptionValue(snapshot.data().description);
-      setForm({ ...snapshot.data() });
-    }
+  const getLinks = async () => {
+    const collectionRef = collection(db, "ResourcesItems");
+    const topQuerry = query(collectionRef, where("id", "==", url));
+    onSnapshot(
+      topQuerry,
+      (snapshot) => {
+        let topList = [];
+        snapshot.docs.forEach((doc) => {
+          topList.push({ id: doc.id, ...doc.data().data });
+          setLinksfromDb(topList);
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   };
-
-  // get all tags from db
-  // populate tags with data from db
-  // const getData = async (e) => {
-  //   let tagList = [];
-  //   const Item = query(
-  //     collection(db, "ResourcesItems"),
-  //     orderBy("date", "desc")
-  //   );
-  //   const querySnapshot = await getDocs(Item);
-  //   querySnapshot.forEach((doc) => {
-  //     list.push({ ...doc.data() });
-  //   });
-  // };
-
+  console.log(linkList);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -76,13 +88,8 @@ const EditResource = ({ user, handleLogout }) => {
     setForm({ ...form, list });
   };
   const handleSubmitData = async (e) => {
-    var urlspc = title
-      .replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-")
-      .toLowerCase();
-    var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
-    var url = nospc.replaceAll(/--/g, "-");
-
     var formated = Text.charAt(0).toLocaleUpperCase();
+
     e.preventDefault();
     // console.log(nospc);
     try {
@@ -96,9 +103,15 @@ const EditResource = ({ user, handleLogout }) => {
     } catch (err) {
       console.log(err);
     }
-    // window.location.reload();
   };
-
+  const handleLinkDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, "ResourcesItems", id));
+      toast.success("Link Deleted Successfully");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formatedDescrition = "<div>" + descriptionvalue + "</div>";
@@ -123,8 +136,9 @@ const EditResource = ({ user, handleLogout }) => {
     } else {
       return toast.error("all fields are required");
     }
-    // navigate("/admin/blogs");
+    navigate(`/admin/edit-resources/${id}`);
   };
+
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
@@ -219,7 +233,6 @@ const EditResource = ({ user, handleLogout }) => {
           <div class="d-flex flex-column flex-lg-row-fluid w-lg-25 p-5 order-2 order-lg-2">
             <div class="card card-custom">
               <div class="card-header">
-                <h3 class="card-title">ADD NEW PODCAST</h3>
                 <div class="card-toolbar">
                   <button
                     type="button"
@@ -277,6 +290,20 @@ const EditResource = ({ user, handleLogout }) => {
                       <div class="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                   </div>
+                </div>
+                <h3>Links</h3>
+                <div class="row rem">
+                  {linksfromDb?.map((item) => (
+                    <span class="col-6">
+                      {item?.Text}
+                      <span
+                        className="remove"
+                        onClick={() => handleLinkDelete(item.id)}
+                      >
+                        X
+                      </span>
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
