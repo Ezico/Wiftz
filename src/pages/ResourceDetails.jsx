@@ -507,7 +507,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>{`Apply >`}</a>
+                            <a target="blank" href={item?.Link}>{`Link >`}</a>
                           </li>
                         </div>
                       ))}
@@ -531,7 +531,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -554,7 +554,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -577,7 +577,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -600,7 +600,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -623,7 +623,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -646,7 +646,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -669,7 +669,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -692,7 +692,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -715,7 +715,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -738,7 +738,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -761,7 +761,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -784,7 +784,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -807,7 +807,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -830,7 +830,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -853,7 +853,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -876,7 +876,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -899,7 +899,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -922,7 +922,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -945,7 +945,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -968,7 +968,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -991,7 +991,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -1014,7 +1014,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -1037,7 +1037,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -1060,7 +1060,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
@@ -1083,7 +1083,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Apply >`}</a>
+                            <a href={item?.Link}>{`Link >`}</a>
                           </li>
                         </li>
                       ))}
