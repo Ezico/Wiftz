@@ -33,7 +33,7 @@ const EditResource = ({ user, handleLogout }) => {
   const [form, setForm] = useState(initialState);
   const [linkList, setLinkList] = useState(input);
   const [descriptionvalue, setDescriptionValue] = useState();
-  const { title, Category, list, FeaturedImage, timestamp } = form;
+  const { title, Category, FeaturedImage, timestamp } = form;
   const { Text, Link, buttonName } = linkList;
   const [linksfromDb, setLinksfromDb] = useState();
 
@@ -56,7 +56,7 @@ const EditResource = ({ user, handleLogout }) => {
     getLinks();
     id && getResourceDetail();
     console.log(linksfromDb, 1);
-  }, [id, url]);
+  }, [id]);
 
   const getLinks = async () => {
     const collectionRef = collection(db, "ResourcesItems");
@@ -75,7 +75,7 @@ const EditResource = ({ user, handleLogout }) => {
       }
     );
   };
-  console.log(linkList);
+  // console.log(linkList);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -121,7 +121,7 @@ const EditResource = ({ user, handleLogout }) => {
       description: formatedDescrition,
     };
     console.log(newDoc);
-    if (Category && list && title) {
+    if (Category && title) {
       try {
         await updateDoc(doc(db, "Resources", id), {
           ...newDoc,
@@ -137,10 +137,9 @@ const EditResource = ({ user, handleLogout }) => {
     } else {
       return toast.error("all fields are required");
     }
-    navigate(`/admin/edit-resources/${id}`);
+    navigate(`/admin/resources/`);
   };
 
-  console.log(linksfromDb);
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
@@ -153,7 +152,7 @@ const EditResource = ({ user, handleLogout }) => {
                   <h1 class="fw-bolder mb-3">Edit Resource</h1>
                 </div>
                 <div class="card-toolbar">
-                  <Linkx to={"/admin"}>
+                  <Linkx to={"/admin/resources"}>
                     <button type="button" class="btn btn-sm btn-primary">
                       CANCEL
                     </button>

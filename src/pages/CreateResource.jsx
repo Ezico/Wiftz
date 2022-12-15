@@ -42,8 +42,8 @@ const CreateResource = ({ user, handleLogout }) => {
       ...form,
       description: formatedDescrition,
     };
-    console.log(newDoc);
-    if (Category && title && FeaturedImage) {
+    // console.log(newDoc);
+    if (Category && title) {
       try {
         await addDoc(collection(db, "Resources"), {
           ...newDoc,
