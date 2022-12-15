@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import Behind from "../assets/images/behind.png";
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../firebase";
-
+import { Link } from "react-scroll";
 const ResourceDetails = ({ resourceId }) => {
   const [screen, setScreen] = useState();
   const { id } = useParams();
@@ -37,8 +36,7 @@ const ResourceDetails = ({ resourceId }) => {
   const [x, setX] = useState();
   const [y, setY] = useState();
   const [z, setZ] = useState();
-  const [getId, setGetId] = useState();
-  const [data, setData] = useState();
+  const [sort, setSort] = useState();
   const [active, setActive] = useState(null);
   const mystyle = {
     top: "-80px",
@@ -65,13 +63,50 @@ const ResourceDetails = ({ resourceId }) => {
       querySnapshot.forEach((doc) => {
         topList.push({ id: doc.id, ...doc.data() });
       });
-      setGetId(resources);
+      // setGetId(resources);
       setResources(...topList);
     };
     getData();
   }, []);
 
   useEffect(() => {
+    const sort = async (e) => {
+      let topList = [];
+      const Resources = query(
+        collection(db, "ResourcesItems"),
+        where("id", "==", id)
+      );
+      const querySnapshot = await getDocs(Resources);
+      querySnapshot.forEach((doc) => {
+        topList.push(...doc.data().class);
+      });
+      const uniqueTags = [...new Set(topList)];
+      uniqueTags.sort();
+      setSort(uniqueTags);
+      // console.log(uniqueTags);
+    };
+    sort();
+
+    //  const getData = async (e) => {
+    //    let topList = [];
+    //    let tags = [];
+    //    const Podcasts = query(
+    //      collection(db, "Podcasts"),
+    //      orderBy("date", "desc")
+    //    );
+    //    const querySnapshot = await getDocs(Podcasts);
+    //    querySnapshot.forEach((doc) => {
+    //      topList.push({ id: doc.id, ...doc.data() });
+    //      tags.push(doc.data().category);
+    //    });
+    //    const uniqueTags = [...new Set(tags)];
+
+    //    setData(topList);
+    //    setSelected(uniqueTags[0]);
+    //    setTags(uniqueTags);
+    //  };
+    //  sortItem();
+
     const getA = async (e) => {
       let topList = [];
       const Resources = query(
@@ -438,7 +473,7 @@ const ResourceDetails = ({ resourceId }) => {
     };
     getZ();
   }, []);
-
+  // console.log(sort);
   return (
     <>
       <Header active={active} />
@@ -458,9 +493,8 @@ const ResourceDetails = ({ resourceId }) => {
             src={resources?.featuredImage}
           />
           <div className="pt-200"></div>
-          <div className="hero-contentP">
-            <h2>{resources?.PodcastheadLine}</h2>
-            <p className="text-light">{resources?.PodcastsubHeading}</p>
+          <div className="hero-content">
+            <h2>{resources?.title}</h2>
           </div>
         </div>
       </div>
@@ -482,22 +516,32 @@ const ResourceDetails = ({ resourceId }) => {
 
         <section className="latest-resource">
           <div className="pt-50">
-            <h3 className="heading text-light ">A - Z Directory</h3>
+            <h3 id="" className="heading text-light ">
+              A - Z Directory
+            </h3>
             <div className="sort-list">
-              <span>A</span> <span>B</span> <span>C</span> <span>D</span>{" "}
-              <span>E</span> <span>F</span> <span>G</span> <span>H</span>{" "}
-              <span>I</span> <span>J</span> <span>K</span> <span>L</span>{" "}
-              <span>M</span> <span>N</span> <span>O</span> <span>P</span>{" "}
-              <span>Q</span> <span>R</span> <span>S</span> <span>T</span>{" "}
-              <span>U</span> <span>V</span> <span>W</span> <span>X</span>{" "}
-              <span>Y</span> <span>Z</span>
+              {sort?.map((item, index) => (
+                <span>
+                  <Link
+                    to={item}
+                    duration={50}
+                    offset={-200}
+                    spy={true}
+                    smooth={true}
+                  >
+                    {item}
+                  </Link>
+                </span>
+              ))}
             </div>
             <br />
             <div className="row pt-20" style={{ padding: "0 20px" }}>
               {a?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">A</h3>
+                    <h3 id="A" className="text-light">
+                      A
+                    </h3>
                     <ul className="resource-list">
                       {a?.map((item, index) => (
                         <div className="row" key={index}>
@@ -507,7 +551,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>{`Link >`}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </div>
                       ))}
@@ -521,7 +567,9 @@ const ResourceDetails = ({ resourceId }) => {
               {b?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">B</h3>
+                    <h3 id="B" className="text-light">
+                      B
+                    </h3>
                     <ul className="resource-list">
                       {b?.map((item, index) => (
                         <li className="row" key={index}>
@@ -531,7 +579,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -544,7 +592,9 @@ const ResourceDetails = ({ resourceId }) => {
               {c?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">C</h3>
+                    <h3 id="C" className="text-light">
+                      C
+                    </h3>
                     <ul className="resource-list">
                       {c?.map((item, index) => (
                         <li className="row" key={index}>
@@ -554,7 +604,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -567,7 +617,9 @@ const ResourceDetails = ({ resourceId }) => {
               {d?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">D</h3>
+                    <h3 id="D" className="text-light">
+                      D
+                    </h3>
                     <ul className="resource-list">
                       {d?.map((item, index) => (
                         <li className="row" key={index}>
@@ -577,7 +629,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -590,7 +642,9 @@ const ResourceDetails = ({ resourceId }) => {
               {e?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">E</h3>
+                    <h3 id="E" className="text-light">
+                      E
+                    </h3>
                     <ul className="resource-list">
                       {e?.map((item, index) => (
                         <li className="row" key={index}>
@@ -600,7 +654,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -613,7 +667,9 @@ const ResourceDetails = ({ resourceId }) => {
               {f?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">F</h3>
+                    <h3 id="F" className="text-light">
+                      F
+                    </h3>
                     <ul className="resource-list">
                       {f?.map((item, index) => (
                         <li className="row" key={index}>
@@ -623,7 +679,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -636,7 +692,9 @@ const ResourceDetails = ({ resourceId }) => {
               {g?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">G</h3>
+                    <h3 id="G" className="text-light">
+                      G
+                    </h3>
                     <ul className="resource-list">
                       {g?.map((item, index) => (
                         <li className="row" key={index}>
@@ -646,7 +704,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -659,7 +717,9 @@ const ResourceDetails = ({ resourceId }) => {
               {h?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">H</h3>
+                    <h3 id="H" className="text-light">
+                      H
+                    </h3>
                     <ul className="resource-list">
                       {h?.map((item, index) => (
                         <li className="row" key={index}>
@@ -669,7 +729,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -682,7 +742,9 @@ const ResourceDetails = ({ resourceId }) => {
               {i?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">I</h3>
+                    <h3 id="I" className="text-light">
+                      I
+                    </h3>
                     <ul className="resource-list">
                       {i?.map((item, index) => (
                         <li className="row" key={index}>
@@ -692,7 +754,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -705,7 +767,9 @@ const ResourceDetails = ({ resourceId }) => {
               {j?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">J</h3>
+                    <h3 id="J" className="text-light">
+                      J
+                    </h3>
                     <ul className="resource-list">
                       {j?.map((item, index) => (
                         <li className="row" key={index}>
@@ -715,7 +779,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -728,7 +792,9 @@ const ResourceDetails = ({ resourceId }) => {
               {k?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">K</h3>
+                    <h3 id="K" className="text-light">
+                      K
+                    </h3>
                     <ul className="resource-list">
                       {k?.map((item, index) => (
                         <li className="row" key={index}>
@@ -738,7 +804,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -751,7 +817,9 @@ const ResourceDetails = ({ resourceId }) => {
               {l?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">L</h3>
+                    <h3 id="L" className="text-light">
+                      L
+                    </h3>
                     <ul className="resource-list">
                       {l?.map((item, index) => (
                         <li className="row" key={index}>
@@ -761,7 +829,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -774,7 +842,9 @@ const ResourceDetails = ({ resourceId }) => {
               {m?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">M</h3>
+                    <h3 id="M" className="text-light">
+                      M
+                    </h3>
                     <ul className="resource-list">
                       {m?.map((item, index) => (
                         <li className="row" key={index}>
@@ -784,7 +854,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -797,7 +867,9 @@ const ResourceDetails = ({ resourceId }) => {
               {n?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">N</h3>
+                    <h3 id="N" className="text-light">
+                      N
+                    </h3>
                     <ul className="resource-list">
                       {n?.map((item, index) => (
                         <li className="row" key={index}>
@@ -807,7 +879,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -820,7 +892,9 @@ const ResourceDetails = ({ resourceId }) => {
               {o?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">O</h3>
+                    <h3 id="O" className="text-light">
+                      O
+                    </h3>
                     <ul className="resource-list">
                       {o?.map((item, index) => (
                         <li className="row" key={index}>
@@ -830,7 +904,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -843,7 +917,9 @@ const ResourceDetails = ({ resourceId }) => {
               {p?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">P</h3>
+                    <h3 id="P" className="text-light">
+                      P
+                    </h3>
                     <ul className="resource-list">
                       {p?.map((item, index) => (
                         <li className="row" key={index}>
@@ -853,7 +929,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -866,7 +942,9 @@ const ResourceDetails = ({ resourceId }) => {
               {q?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">Q</h3>
+                    <h3 id="Q" className="text-light">
+                      Q
+                    </h3>
                     <ul className="resource-list">
                       {q?.map((item, index) => (
                         <li className="row" key={index}>
@@ -876,7 +954,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -889,7 +967,9 @@ const ResourceDetails = ({ resourceId }) => {
               {r?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">R</h3>
+                    <h3 id="R" className="text-light">
+                      R
+                    </h3>
                     <ul className="resource-list">
                       {r?.map((item, index) => (
                         <li className="row" key={index}>
@@ -899,7 +979,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -912,7 +992,9 @@ const ResourceDetails = ({ resourceId }) => {
               {s?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">S</h3>
+                    <h3 id="S" className="text-light">
+                      S
+                    </h3>
                     <ul className="resource-list">
                       {s?.map((item, index) => (
                         <li className="row" key={index}>
@@ -922,7 +1004,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -935,7 +1017,9 @@ const ResourceDetails = ({ resourceId }) => {
               {t?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">T</h3>
+                    <h3 id="T" className="text-light">
+                      T
+                    </h3>
                     <ul className="resource-list">
                       {t?.map((item, index) => (
                         <li className="row" key={index}>
@@ -945,7 +1029,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -958,7 +1042,9 @@ const ResourceDetails = ({ resourceId }) => {
               {u?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">U</h3>
+                    <h3 id="U" className="text-light">
+                      U
+                    </h3>
                     <ul className="resource-list">
                       {u?.map((item, index) => (
                         <li className="row" key={index}>
@@ -968,7 +1054,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -981,7 +1067,9 @@ const ResourceDetails = ({ resourceId }) => {
               {v?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">V</h3>
+                    <h3 id="V" className="text-light">
+                      V
+                    </h3>
                     <ul className="resource-list">
                       {f?.map((item, index) => (
                         <li className="row" key={index}>
@@ -991,7 +1079,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -1004,7 +1092,9 @@ const ResourceDetails = ({ resourceId }) => {
               {w?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">W</h3>
+                    <h3 id="W" className="text-light">
+                      W
+                    </h3>
                     <ul className="resource-list">
                       {w?.map((item, index) => (
                         <li className="row" key={index}>
@@ -1014,7 +1104,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -1027,7 +1117,9 @@ const ResourceDetails = ({ resourceId }) => {
               {x?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">X</h3>
+                    <h3 id="X" className="text-light">
+                      X
+                    </h3>
                     <ul className="resource-list">
                       {x?.map((item, index) => (
                         <li className="row" key={index}>
@@ -1037,7 +1129,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -1050,7 +1142,9 @@ const ResourceDetails = ({ resourceId }) => {
               {y?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">Y</h3>
+                    <h3 id="Y" className="text-light">
+                      Y
+                    </h3>
                     <ul className="resource-list">
                       {y?.map((item, index) => (
                         <li className="row" key={index}>
@@ -1060,7 +1154,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}
@@ -1073,7 +1167,9 @@ const ResourceDetails = ({ resourceId }) => {
               {z?.length > 0 ? (
                 <>
                   <div className=" mb-20 col-md-6 col-s-12">
-                    <h3 className="text-light">Z</h3>
+                    <h3 id="Z" className="text-light">
+                      Z
+                    </h3>
                     <ul className="resource-list">
                       {z?.map((item, index) => (
                         <li className="row" key={index}>
@@ -1083,7 +1179,7 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{`Link >`}</a>
+                            <a href={item?.Link}>{item?.buttonName}</a>
                           </li>
                         </li>
                       ))}

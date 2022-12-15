@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { db } from "../firebase";
+import { Link as Linkx } from "react-router-dom";
 const initialState = {
   title: "",
   list: [],
@@ -33,7 +34,7 @@ const EditResource = ({ user, handleLogout }) => {
   const [linkList, setLinkList] = useState(input);
   const [descriptionvalue, setDescriptionValue] = useState();
   const { title, Category, list, FeaturedImage, timestamp } = form;
-  const { Text, Link } = linkList;
+  const { Text, Link, buttonName } = linkList;
   const [linksfromDb, setLinksfromDb] = useState();
 
   // format url
@@ -139,6 +140,7 @@ const EditResource = ({ user, handleLogout }) => {
     navigate(`/admin/edit-resources/${id}`);
   };
 
+  console.log(linksfromDb);
   return (
     <>
       <AdminHeader user={user} handleLogout={handleLogout} />
@@ -151,11 +153,18 @@ const EditResource = ({ user, handleLogout }) => {
                   <h1 class="fw-bolder mb-3">Edit Resource</h1>
                 </div>
                 <div class="card-toolbar">
-                  <a href="/admin">
+                  <Linkx to={"/admin"}>
                     <button type="button" class="btn btn-sm btn-primary">
                       CANCEL
                     </button>
-                  </a>
+                  </Linkx>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary"
+                    onClick={handleSubmit}
+                  >
+                    UPDATE
+                  </button>
                 </div>
               </div>
               <div class="card-scroll">
@@ -203,17 +212,15 @@ const EditResource = ({ user, handleLogout }) => {
                         onChange={handleChange}
                       />
                       <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-
-                    <div class="fv-row mb-8 fv-plugins-icon-container">
                       <div class="mb-10">
                         <label>Image</label>
+                        <br />
                         {FeaturedImage ? (
-                          <img className="w-100" src={FeaturedImage} />
+                          <img className="" src={FeaturedImage} />
                         ) : (
                           ""
                         )}
-                        <div class="row"></div>
+                        <br />
                         <div class="react-tag-input">
                           <input
                             class="react-tag-input__input"
@@ -229,88 +236,114 @@ const EditResource = ({ user, handleLogout }) => {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="d-flex flex-column flex-lg-row-fluid w-lg-25 p-5 order-2 order-lg-2">
             <div class="card card-custom">
-              <div class="card-header">
-                <div class="card-toolbar">
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-primary"
-                    onClick={handleSubmit}
-                  >
-                    UPDATE
-                  </button>
-                </div>
-              </div>
               <div class="card-body card-scroll h-500px">
                 <div class="d-flex flex-center flex-column flex-lg-row-fluid">
                   <div class="w-100 p-10">
                     <div class="text-center mb-11">
-                      <h1 class="fw-bolder mb-3">Text & Links</h1>
+                      <h1 class="fw-bolder text-center mb-3">Text & Links</h1>
                     </div>
                     <div class="fv-row mb-8 fv-plugins-icon-container">
-                      <div class="mb-10">
-                        <label class="text-gray-500" for="apple">
-                          Text
-                        </label>
-                        <input
-                          type="text"
-                          name="Text"
-                          class="form-control form-control-solid"
-                          value={Text}
-                          onChange={handleAddData}
-                        />
+                      <div class="mb-10 row">
+                        <div className="col-sm-12 col-md-3 col">
+                          <label class="text-gray-500" for="apple">
+                            Text
+                          </label>
+                          <input
+                            type="text"
+                            name="Text"
+                            class="form-control form-control-solid"
+                            value={Text}
+                            onChange={handleAddData}
+                          />
+                        </div>
+                        <div class="col-sm-12 col-md-3 col">
+                          <label class="text-gray-500" for="apple">
+                            Link
+                          </label>
+                          <input
+                            type="text"
+                            name="Link"
+                            class="form-control form-control-solid"
+                            value={Link}
+                            onChange={handleAddData}
+                          />
+                        </div>
+                        <div class="col-sm-12 col-md-3 col">
+                          <label class="text-gray-500" for="apple">
+                            Link Text
+                          </label>
+                          <input
+                            type="text"
+                            name="buttonName"
+                            class="form-control form-control-solid"
+                            value={buttonName}
+                            onChange={handleAddData}
+                          />
+                        </div>
+
+                        <div class="col-sm-12 col-md-3 col">
+                          <br />
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-primary"
+                            onClick={handleSubmitData}
+                          >
+                            ADD
+                          </button>
+                        </div>
                       </div>
-                      <div class="mb-10">
-                        <label class="text-gray-500" for="apple">
-                          Link
-                        </label>
-                        <input
-                          type="text"
-                          name="Link"
-                          class="form-control form-control-solid"
-                          value={Link}
-                          onChange={handleAddData}
-                        />
-                      </div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
-                    </div>
-                    <div class="fv-row mb-8 fv-plugins-icon-container">
-                      <div class="mb-10">
-                        <button
-                          style={{ width: "100%" }}
-                          type="button"
-                          class="btn btn-sm btn-primary"
-                          onClick={handleSubmitData}
-                        >
-                          ADD
-                        </button>
-                      </div>
-                      <div class="fv-plugins-message-container invalid-feedback"></div>
                     </div>
                   </div>
                 </div>
                 <h3>Links</h3>
-                <div class="row rem">
-                  {linksfromDb?.map((item) => (
-                    <span class="col-6">
-                      {item?.Text}
-                      <span
-                        className="remove"
-                        onClick={() => handleLinkDelete(item.id)}
-                      >
-                        X
-                      </span>
-                    </span>
-                  ))}
-                </div>
+                <table className=" table table-hover table-rounded table-striped border gy-7 gs-7">
+                  <thead className="hide-small">
+                    <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
+                      <th>Title</th>
+                      <th>Link</th>
+                      <th>Link Text</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {linksfromDb?.map((item, index) => (
+                      <tr key={item.index}>
+                        <td className="hide-small">
+                          <div className="text-start w-75">
+                            <h6 className="">{item?.Text}</h6>
+                          </div>
+                        </td>
+                        <td className="list-title">
+                          <div className="text-start w-75">
+                            <h6 className="">{item?.Link}</h6>
+                          </div>
+                        </td>
+                        <td className="list-title">
+                          <div className="text-start w-75">
+                            <h6 className="">{item?.buttonName}</h6>
+                          </div>
+                        </td>
+                        <td className="list-title">
+                          <div className="text-start w-75">
+                            <button
+                              type="button"
+                              class="btn btn-sm btn-primary"
+                              onClick={() => handleLinkDelete(item.id)}
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <AdminContent user={user} />
     </>
   );

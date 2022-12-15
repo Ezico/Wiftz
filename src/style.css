@@ -425,10 +425,16 @@ a {
   color: white;
   font-size: 20px;
 }
-.sort-list span {
+.sort-list span a {
   margin: 5px;
+  padding: 5px;
   cursor: pointer;
-  color: #abadd3;
+  color: #abadd3 !important;
+  font-size: 24px;
+  font-weight: 500;
+}
+.sort-list span a:hover {
+  text-decoration: none !important;
 }
 .list-item {
   color: white;
