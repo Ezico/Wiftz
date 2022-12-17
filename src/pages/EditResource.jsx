@@ -34,7 +34,7 @@ const EditResource = ({ user, handleLogout }) => {
   const [linkList, setLinkList] = useState(input);
   const [descriptionvalue, setDescriptionValue] = useState();
   const { title, Category, FeaturedImage, timestamp } = form;
-  const { Text, Link, buttonName } = linkList;
+  const { Text, Link, buttonName, sort } = linkList;
   const [linksfromDb, setLinksfromDb] = useState();
 
   // format url
@@ -55,12 +55,15 @@ const EditResource = ({ user, handleLogout }) => {
 
     getLinks();
     id && getResourceDetail();
-    console.log(linksfromDb, 1);
-  }, [id]);
+  }, [id, url]);
 
   const getLinks = async () => {
     const collectionRef = collection(db, "ResourcesItems");
-    const topQuerry = query(collectionRef, where("id", "==", url));
+    const topQuerry = query(
+      collectionRef,
+      where("id", "==", url),
+      orderBy("sort", "asc")
+    );
     onSnapshot(
       topQuerry,
       (snapshot) => {
@@ -75,7 +78,7 @@ const EditResource = ({ user, handleLogout }) => {
       }
     );
   };
-  // console.log(linkList);
+  console.log(linkList);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -90,14 +93,15 @@ const EditResource = ({ user, handleLogout }) => {
   };
   const handleSubmitData = async (e) => {
     var formated = Text.charAt(0).toLocaleUpperCase();
-
+    const formatedTextForSorting = Text.toUpperCase();
     e.preventDefault();
-    // console.log(nospc);
+    console.log(formatedTextForSorting);
     try {
       await addDoc(collection(db, "ResourcesItems"), {
         data: linkList,
         id: url,
         class: formated,
+        sort: formatedTextForSorting,
         date: serverTimestamp(),
       });
       toast.success("Added!");
@@ -120,7 +124,7 @@ const EditResource = ({ user, handleLogout }) => {
       ...form,
       description: formatedDescrition,
     };
-    console.log(newDoc);
+    // console.log(newDoc);
     if (Category && title) {
       try {
         await updateDoc(doc(db, "Resources", id), {

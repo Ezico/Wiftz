@@ -37,7 +37,6 @@ const Footer = () => {
     }
   };
 
-  console.log(popData?.Pop);
   return (
     <>
       <footer>

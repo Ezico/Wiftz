@@ -74,7 +74,8 @@ const ResourceDetails = ({ resourceId }) => {
       let topList = [];
       const Resources = query(
         collection(db, "ResourcesItems"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -92,7 +93,7 @@ const ResourceDetails = ({ resourceId }) => {
     //    let tags = [];
     //    const Podcasts = query(
     //      collection(db, "Podcasts"),
-    //      orderBy("date", "desc")
+    //      orderBy("date", "asc")
     //    );
     //    const querySnapshot = await getDocs(Podcasts);
     //    querySnapshot.forEach((doc) => {
@@ -112,6 +113,7 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "A"),
+        orderBy("sort", "asc"),
         where("id", "==", id)
       );
       const querySnapshot = await getDocs(Resources);
@@ -127,7 +129,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "B"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -141,7 +144,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "C"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -155,7 +159,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "D"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -169,7 +174,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "E"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -183,7 +189,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "F"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -197,7 +204,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "G"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -211,7 +219,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "H"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -225,7 +234,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "I"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -239,7 +249,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "J"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -253,7 +264,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "K"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -267,7 +279,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "L"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -281,7 +294,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "M"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -295,7 +309,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "N"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -309,7 +324,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "O"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -323,7 +339,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "P"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -337,7 +354,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "Q"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -351,7 +369,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "R"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -365,7 +384,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "S"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -379,7 +399,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "T"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -393,7 +414,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "U"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -407,7 +429,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "V"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -421,7 +444,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "W"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -435,7 +459,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "X"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -449,7 +474,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "Y"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -463,7 +489,8 @@ const ResourceDetails = ({ resourceId }) => {
       const Resources = query(
         collection(db, "ResourcesItems"),
         where("class", "==", "Z"),
-        where("id", "==", id)
+        where("id", "==", id),
+        orderBy("sort", "asc")
       );
       const querySnapshot = await getDocs(Resources);
       querySnapshot.forEach((doc) => {
@@ -473,7 +500,7 @@ const ResourceDetails = ({ resourceId }) => {
     };
     getZ();
   }, []);
-  // console.log(sort);
+  console.log(resources);
   return (
     <>
       <Header active={active} />
@@ -515,7 +542,9 @@ const ResourceDetails = ({ resourceId }) => {
         </div>
 
         <section className="latest-resource">
+          <br />
           <div className="pt-50">
+            <br />
             <h3 id="" className="heading text-light ">
               A - Z Directory
             </h3>
@@ -523,6 +552,7 @@ const ResourceDetails = ({ resourceId }) => {
               {sort?.map((item, index) => (
                 <span>
                   <Link
+                    key={index}
                     to={item}
                     duration={50}
                     offset={-200}
@@ -546,7 +576,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {a?.map((item, index) => (
                         <div className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Text}`}>
+                            <a target="blank" href={`${item?.Link}`}>
                               {item?.Text}
                             </a>
                           </li>
@@ -574,7 +604,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {b?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -599,7 +629,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {c?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -624,7 +654,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {d?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -649,7 +679,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {e?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -674,7 +704,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {f?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -699,7 +729,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {g?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -724,7 +754,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {h?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -749,7 +779,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {i?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -774,7 +804,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {j?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -799,7 +829,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {k?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -824,7 +854,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {l?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -849,7 +879,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {m?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -874,7 +904,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {n?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -899,7 +929,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {o?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -924,7 +954,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {p?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -949,7 +979,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {q?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -974,7 +1004,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {r?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -999,7 +1029,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {s?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1024,7 +1054,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {t?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1049,7 +1079,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {u?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1074,7 +1104,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {f?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1099,7 +1129,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {w?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1124,7 +1154,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {x?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1149,7 +1179,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {y?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
@@ -1174,7 +1204,7 @@ const ResourceDetails = ({ resourceId }) => {
                       {z?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a target="blank" href={item?.Link}>
                               {item?.Text}
                             </a>
                           </li>
