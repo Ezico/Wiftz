@@ -1145,3 +1145,9 @@ span.remove {
 .rem span.col-6 {
   padding: 4px;
 }
+
+.sct a {
+  color: #abace8;
+  text-decoration: underline;
+  font-size: 16px;
+}

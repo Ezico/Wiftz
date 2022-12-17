@@ -1101,7 +1101,7 @@ const ResourceDetails = ({ resourceId }) => {
                       V
                     </h3>
                     <ul className="resource-list">
-                      {f?.map((item, index) => (
+                      {v?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
                             <a target="blank" href={item?.Link}>

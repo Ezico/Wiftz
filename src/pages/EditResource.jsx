@@ -19,6 +19,7 @@ import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { db } from "../firebase";
 import { Link as Linkx } from "react-router-dom";
+// import Import from "../components/CsvImport";
 const initialState = {
   title: "",
   list: [],
@@ -300,6 +301,7 @@ const EditResource = ({ user, handleLogout }) => {
                   </div>
                 </div>
                 <h3>Links</h3>
+                {/* <Import /> */}
                 <table className=" table table-hover table-rounded table-striped border gy-7 gs-7">
                   <thead className="hide-small">
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">

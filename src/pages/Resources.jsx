@@ -87,7 +87,7 @@ const Resources = () => {
               </div>
               <br />
               <div
-                className="text-content text-light"
+                className="text-content text-light sct"
                 dangerouslySetInnerHTML={{
                   __html: pageData?.subtitle,
                 }}
