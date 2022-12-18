@@ -19,6 +19,8 @@ import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { db } from "../firebase";
 import { Link as Linkx } from "react-router-dom";
+import Papa from "papaparse";
+import ImportPopUp from "../components/ImportPopUp";
 // import Import from "../components/CsvImport";
 const initialState = {
   title: "",
@@ -37,6 +39,8 @@ const EditResource = ({ user, handleLogout }) => {
   const { title, Category, FeaturedImage, timestamp } = form;
   const { Text, Link, buttonName, sort } = linkList;
   const [linksfromDb, setLinksfromDb] = useState();
+  const [parsedData, setParsedData] = useState([]);
+  const [openModal, setOpenModel] = useState(false);
 
   // format url
   var urlspc = title.replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-").toLowerCase();
@@ -79,7 +83,7 @@ const EditResource = ({ user, handleLogout }) => {
       }
     );
   };
-  console.log(linkList);
+  // console.log(linkList);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -96,7 +100,7 @@ const EditResource = ({ user, handleLogout }) => {
     var formated = Text.charAt(0).toLocaleUpperCase();
     const formatedTextForSorting = Text.toUpperCase();
     e.preventDefault();
-    console.log(formatedTextForSorting);
+    // console.log(formatedTextForSorting);
     try {
       await addDoc(collection(db, "ResourcesItems"), {
         data: linkList,
@@ -144,9 +148,69 @@ const EditResource = ({ user, handleLogout }) => {
     }
     navigate(`/admin/resources/`);
   };
+  const changeHandler = (event) => {
+    // alert("helo");
+    Papa.parse(event.target.files[0], {
+      header: true,
+      skipEmptyLines: true,
+      complete: function (results) {
+        setParsedData(results.data);
+      },
+    });
+  };
 
+  const handleImportDataToDb = async (e) => {
+    e.preventDefault();
+    setOpenModel(!openModal);
+    parsedData.forEach((doc) => {
+      //   // console.log({
+      //   //   data: [doc],
+      //   //   id: url,
+      //   //   date: serverTimestamp(),
+      //   //   class: doc.Text.charAt(0).toLocaleUpperCase(),
+      //   //   sort: doc.Text.toUpperCase(),
+      //   // });
+      try {
+        addDoc(collection(db, "ResourcesItems"), {
+          data: doc,
+          id: url,
+          date: serverTimestamp(),
+          class: doc.Text.charAt(0).toLocaleUpperCase(),
+          sort: doc.Text.toUpperCase(),
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+    toast.success("Imported Successfully");
+
+    linksfromDb.forEach((index) => {
+      try {
+        deleteDoc(doc(db, "ResourcesItems", index.id));
+      } catch (err) {
+        console.log(err);
+      }
+      // console.log(index.id, 1);
+    });
+
+    navigate(`/admin/resources/`);
+  };
+
+  const handleImportButton = (e) => {
+    if (parsedData.length === 0) {
+      alert("Select a file first");
+    } else {
+      setOpenModel(!openModal);
+    }
+  };
+  // console.log(linksfromDb);
   return (
     <>
+      <ImportPopUp
+        upload={handleImportDataToDb}
+        open={openModal}
+        onClose={() => setOpenModel(false)}
+      />
       <AdminHeader user={user} handleLogout={handleLogout} />
       <div class="wrapperx d-flex flex-column flex-row-fluid" id="kt_wrapper">
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
@@ -301,6 +365,19 @@ const EditResource = ({ user, handleLogout }) => {
                   </div>
                 </div>
                 <h3>Links</h3>
+                {/* File Uploader */}
+
+                <div style={{ magin: "0px auto" }} className="col">
+                  <input
+                    type="file"
+                    name="file"
+                    accept=".csv"
+                    onChange={changeHandler}
+                    style={{ margin: "10px auto" }}
+                  />
+                  <button onClick={handleImportButton}>Bulk Update</button>
+                </div>
+
                 {/* <Import /> */}
                 <table className=" table table-hover table-rounded table-striped border gy-7 gs-7">
                   <thead className="hide-small">
