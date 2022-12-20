@@ -194,7 +194,12 @@ const BlogPage = ({ loading }) => {
                 </p>
                 <br />
                 <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
-                  <button className="btn primary cta">Read more</button>
+                  <button
+                    className="btn primary cta"
+                    style={{ width: "fit-content" }}
+                  >
+                    Read more
+                  </button>
                 </a>
                 <br />
               </div>

@@ -609,7 +609,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -634,7 +636,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -659,7 +663,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -684,7 +690,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -709,7 +717,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -734,7 +744,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -759,7 +771,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -784,7 +798,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -809,7 +825,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -834,7 +852,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -859,7 +879,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -884,7 +906,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -909,7 +933,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -934,7 +960,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -959,7 +987,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -984,7 +1014,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1009,7 +1041,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1034,7 +1068,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1059,7 +1095,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1084,7 +1122,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1109,7 +1149,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1134,7 +1176,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1159,7 +1203,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1184,7 +1230,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
@@ -1209,7 +1257,9 @@ const ResourceDetails = ({ resourceId }) => {
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a href={item?.Link}>{item?.buttonName}</a>
+                            <a target="blank" href={item?.Link}>
+                              {item?.buttonName}
+                            </a>
                           </li>
                         </li>
                       ))}
