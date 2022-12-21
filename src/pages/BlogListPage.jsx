@@ -2,6 +2,8 @@ import { React, useEffect } from "react";
 import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { Link } from "react-router-dom";
+import fratured from "../assets/images/featured.png";
+import unfratured from "../assets/images/unfeatured.png";
 
 const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
   // push to top page after loading
@@ -27,6 +29,7 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                       <th>Title</th>
                       <th>View</th>
                       <th>Date</th>
+                      <th>Featured</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -57,6 +60,22 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                           <Link to={`/blog/${item.id}`}>View</Link>
                         </td>
                         <td>{item.timestamp}</td>
+                        <td>
+                          {item.trending == "yes" ? (
+                            <img
+                              className="thumbnail-small"
+                              style={{ width: "20px" }}
+                              src={fratured}
+                              alt={item.title}
+                            />
+                          ) : (
+                            <img
+                              className="thumbnail-small"
+                              style={{ width: "20px" }}
+                              src={unfratured}
+                            />
+                          )}
+                        </td>
 
                         <td>
                           <div className="row">

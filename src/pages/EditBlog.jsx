@@ -99,7 +99,7 @@ const EditBlog = ({ user, handleLogout }) => {
     } else {
       return toast.error("all fields are required");
     }
-    navigate("/admin/blogs");
+    navigate("/admin");
   };
   return (
     <>
@@ -119,7 +119,7 @@ const EditBlog = ({ user, handleLogout }) => {
                       <h1 className=" fw-bolder mb-3">Update Post</h1>
                     </div>
                     <div className="card-toolbar">
-                      <Link to="/admin">
+                      <Link to="/admin/blogs">
                         <button type="button" className="btn btn-sm btn-dark">
                           CANCEL
                         </button>

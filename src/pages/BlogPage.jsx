@@ -16,7 +16,7 @@ import Subscribe from "../components/Subscribe";
 import { db } from "../firebase";
 import Skeleton from "../components/Skeleton";
 
-const BlogPage = ({ loading }) => {
+const BlogPage = () => {
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -63,33 +63,52 @@ const BlogPage = ({ loading }) => {
   }, []);
 
   // get one post
+  // useEffect(() => {
+  //   const collectionRef = collection(db, "Posts");
+  //   const featuredQuerry = query(
+  //     collectionRef,
+  //     orderBy("date", "asc"),
+  //     // where("featured", "==", "yes"),
+  //
+  //   );
+
+  //   const unsubx = onSnapshot(
+  //     featuredQuerry,
+  //     (snapshot) => {
+  //       let featuredList = [];
+  //       snapshot.docs.forEach((doc) => {
+  //         featuredList.push({ id: doc.id, ...doc.data() });
+  //       });
+  //       setFeatured(featuredList);
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+
+  //   return () => {
+  //     unsubx();
+  //   };
+  // }, []);
+
   useEffect(() => {
-    const collectionRef = collection(db, "Posts");
-    const featuredQuerry = query(
-      collectionRef,
-      orderBy("date", "asc"),
-      limit(1)
-    );
-
-    const unsubx = onSnapshot(
-      featuredQuerry,
-      (snapshot) => {
-        let featuredList = [];
-        snapshot.docs.forEach((doc) => {
-          featuredList.push({ id: doc.id, ...doc.data() });
-        });
-        setFeatured(featuredList[0]);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-
-    return () => {
-      unsubx();
+    const getData = async (e) => {
+      let data = [];
+      const FeaturedData = query(
+        collection(db, "Posts"),
+        where("trending", "==", "yes")
+        // limit(1)
+      );
+      const querySnapshot = await getDocs(FeaturedData);
+      querySnapshot.forEach((doc) => {
+        data.push({ ...doc.data() });
+      });
+      setFeatured(data[0]);
     };
+    getData();
   }, []);
 
+  console.log(featured);
   const handleTagSelect = async (e) => {
     const targetText = e.target.innerText;
     setSelected(targetText);
@@ -185,12 +204,12 @@ const BlogPage = ({ loading }) => {
                   {featured?.title}
                 </h3>
                 <p className="podcast-desc">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{
                       __html:
                         featured?.shortDescription.substring(0, 200) + "...",
                     }}
-                  />
+                  /> */}
                 </p>
                 <br />
                 <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
