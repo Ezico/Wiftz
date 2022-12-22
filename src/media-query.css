@@ -205,6 +205,17 @@
 
 /* portrait tablets, portrait  landscape */
 @media (max-width: 769px) {
+  .sort-list span {
+    display: inline-table;
+  }
+  .sort-list span a {
+    margin: 3px;
+    padding: 3px;
+    cursor: pointer;
+    color: #abadd3 !important;
+    font-size: 20px;
+    font-weight: 500;
+  }
   .row {
     display: flex;
     flex-direction: row;
