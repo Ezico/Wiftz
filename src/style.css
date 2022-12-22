@@ -386,7 +386,7 @@ a {
 .pod-content-img {
   width: 100%;
   object-fit: fill;
-  max-height: 250px;
+  /* max-height: 250px; */
   border-radius: 10px;
 }
 .green-overlay {

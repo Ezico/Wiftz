@@ -41,6 +41,7 @@ const EditResource = ({ user, handleLogout }) => {
   const [linksfromDb, setLinksfromDb] = useState();
   const [parsedData, setParsedData] = useState([]);
   const [openModal, setOpenModel] = useState(false);
+  const [csvError, setCsvError] = useState("");
 
   // format url
   var urlspc = title.replace(/[&\/\\ #,+()$~%.'":*?<>{}]/g, "-").toLowerCase();
@@ -158,42 +159,46 @@ const EditResource = ({ user, handleLogout }) => {
       },
     });
   };
-
   const handleImportDataToDb = async (e) => {
     e.preventDefault();
+    // console.log(parsedData);
     setOpenModel(!openModal);
     parsedData.forEach((doc) => {
-      //   // console.log({
-      //   //   data: [doc],
-      //   //   id: url,
-      //   //   date: serverTimestamp(),
-      //   //   class: doc.Text.charAt(0).toLocaleUpperCase(),
-      //   //   sort: doc.Text.toUpperCase(),
-      //   // });
-      try {
-        addDoc(collection(db, "ResourcesItems"), {
-          data: doc,
-          id: url,
-          date: serverTimestamp(),
-          class: doc.Text.charAt(0).toLocaleUpperCase(),
-          sort: doc.Text.toUpperCase(),
-        });
-      } catch (err) {
-        console.log(err);
+      if (doc.Link && doc.Text && doc.buttonName) {
+        // setCsvError("hide");
+        // console.log(doc);
+        try {
+          addDoc(collection(db, "ResourcesItems"), {
+            data: doc,
+            id: url,
+            date: serverTimestamp(),
+            class: doc.Text.charAt(0).toLocaleUpperCase(),
+            sort: doc.Text.toUpperCase(),
+          });
+        } catch (err) {
+          toast.error(err);
+        }
+      } else {
       }
     });
-    toast.success("Imported Successfully");
-
-    linksfromDb.forEach((index) => {
-      try {
-        deleteDoc(doc(db, "ResourcesItems", index.id));
-      } catch (err) {
-        console.log(err);
-      }
-      // console.log(index.id, 1);
-    });
-
-    navigate(`/admin/resources/`);
+    if ((parsedData[0].Link, parsedData[0].Text, parsedData[0].buttonName)) {
+      toast.success("Imported Successfully");
+    } else {
+      toast.error(
+        `Import not completed! Please make sure the CSV file is in the right format and try again.`
+      );
+    }
+    if ((parsedData[0].Link, parsedData[0].Text, parsedData[0].buttonName)) {
+      linksfromDb.forEach((index) => {
+        try {
+          deleteDoc(doc(db, "ResourcesItems", index.id));
+        } catch (err) {
+          console.log(err);
+        }
+        // console.log(index.id, 1);
+      });
+    }
+    // navigate(`/admin/resources/`);
   };
 
   const handleImportButton = (e) => {

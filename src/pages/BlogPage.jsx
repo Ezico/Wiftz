@@ -204,12 +204,12 @@ const BlogPage = () => {
                   {featured?.title}
                 </h3>
                 <p className="podcast-desc">
-                  {/* <div
+                  <div
                     dangerouslySetInnerHTML={{
                       __html:
                         featured?.shortDescription.substring(0, 200) + "...",
                     }}
-                  /> */}
+                  />
                 </p>
                 <br />
                 <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
