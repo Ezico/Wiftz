@@ -99,7 +99,7 @@ const EditBlog = ({ user, handleLogout }) => {
     } else {
       return toast.error("all fields are required");
     }
-    navigate("/admin");
+    navigate("/admin/blogs");
   };
   return (
     <>

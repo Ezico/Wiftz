@@ -576,12 +576,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {a?.map((item, index) => (
                         <div className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={`${item?.Link}`}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={`${item?.Link}`}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -604,12 +612,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {b?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -631,12 +647,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {c?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -658,12 +682,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {d?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -685,12 +717,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {e?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -712,12 +752,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {f?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -739,12 +787,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {g?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -766,12 +822,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {h?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -793,12 +857,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {i?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -820,12 +892,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {j?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -847,12 +927,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {k?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -874,12 +962,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {l?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -901,12 +997,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {m?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -928,12 +1032,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {n?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -955,12 +1067,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {o?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -982,12 +1102,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {p?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1009,12 +1137,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {q?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1036,12 +1172,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {r?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1063,12 +1207,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {s?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1090,12 +1242,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {t?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1117,12 +1277,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {u?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1144,12 +1312,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {v?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1171,12 +1347,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {w?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1198,12 +1382,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {x?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1225,12 +1417,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {y?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>
@@ -1252,12 +1452,20 @@ const ResourceDetails = ({ resourceId }) => {
                       {z?.map((item, index) => (
                         <li className="row" key={index}>
                           <li className="col list-item">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.Text}
                             </a>
                           </li>
                           <li className="col list-itema">
-                            <a target="blank" href={item?.Link}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item?.Link}
+                            >
                               {item?.buttonName}
                             </a>
                           </li>

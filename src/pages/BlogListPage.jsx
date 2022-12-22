@@ -1,14 +1,31 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import AdminContent from "../components/AdminContent";
 import AdminHeader from "../components/AdminHeader";
 import { Link } from "react-router-dom";
 import fratured from "../assets/images/featured.png";
 import unfratured from "../assets/images/unfeatured.png";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../firebase";
 
-const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
+const BlogListPage = ({ user, handleLogout, handleBlogDelete }) => {
+  const [data, setData] = useState([]);
   // push to top page after loading
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const getData = async (e) => {
+      let topList = [];
+      const Posts = query(collection(db, "Posts"), orderBy("date", "desc"));
+      const querySnapshot = await getDocs(Posts);
+      querySnapshot.forEach((doc) => {
+        topList.push({ id: doc.id, ...doc.data() });
+      });
+
+      setData(topList);
+    };
+    getData();
   }, []);
 
   return (
@@ -35,7 +52,7 @@ const BlogListPage = ({ user, handleLogout, blogs, handleBlogDelete }) => {
                   </thead>
 
                   <tbody>
-                    {blogs.map((item) => (
+                    {data.map((item) => (
                       <tr key={item.index}>
                         <td className="hide-small">
                           {item.FeaturedImage ? (
