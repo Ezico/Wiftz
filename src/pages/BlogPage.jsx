@@ -206,8 +206,7 @@ const BlogPage = () => {
                 <p className="podcast-desc">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html:
-                        featured?.shortDescription.substring(0, 200) + "...",
+                      __html: featured?.shortDescription,
                     }}
                   />
                 </p>

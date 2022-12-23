@@ -97,7 +97,7 @@ const AboutPageEditor = ({ user, handleLogout }) => {
       bannerB: formatedBannerB,
     };
 
-    console.log(newDoc);
+    // console.log(newDoc);
     try {
       await updateDoc(doc(db, "AboutDetails", id), {
         ...newDoc,
