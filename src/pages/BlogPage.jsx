@@ -191,37 +191,41 @@ const BlogPage = () => {
                 />
               </div>
             </div>
-            <div className="col-md-6 col-sm-12">
-              <div className="article pt-20">
-                <button className="btn date featured">
-                  <span>{featured?.category}</span> &nbsp;|&nbsp;
-                  <span>{featured?.timestamp}</span>
-                </button>
-                <h3
-                  className="podcast-title text-light"
-                  style={{ marginTop: "20px" }}
-                >
-                  {featured?.title}
-                </h3>
-                <p className="podcast-desc">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: featured?.shortDescription,
-                    }}
-                  />
-                </p>
-                <br />
-                <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
-                  <button
-                    className="btn primary cta"
-                    style={{ width: "fit-content" }}
-                  >
-                    Read more
+            {featured ? (
+              <div className="col-md-6 col-sm-12">
+                <div className="article pt-20">
+                  <button className="btn date featured">
+                    <span>{featured?.category}</span> &nbsp;|&nbsp;
+                    <span>{featured?.timestamp}</span>
                   </button>
-                </a>
-                <br />
+                  <h3
+                    className="podcast-title text-light"
+                    style={{ marginTop: "20px" }}
+                  >
+                    {featured?.title}
+                  </h3>
+                  <p className="podcast-desc">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: featured?.shortDescription,
+                      }}
+                    />
+                  </p>
+                  <br />
+                  <a href={"/blog/" + featured?.url} style={{ width: "131px" }}>
+                    <button
+                      className="btn primary cta"
+                      style={{ width: "fit-content" }}
+                    >
+                      Read more
+                    </button>
+                  </a>
+                  <br />
+                </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </section>
