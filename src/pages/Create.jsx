@@ -75,12 +75,25 @@ const Create = ({ user, handleLogout }) => {
       resources: formatedResources,
       ...form,
     };
-    // console.log(newDoc);
+    // remove (-) from urls
+    var lastData = url[url.length - 1];
+    if (
+      lastData == "-" ||
+      lastData == "--" ||
+      lastData == "---" ||
+      lastData == "----"
+    ) {
+      var newUrl = url.slice(0, -1);
+    } else {
+      newUrl = url;
+    }
+
+    console.log(newUrl);
     if (title && featured && timestamp) {
       try {
         await addDoc(collection(db, "Podcasts"), {
           ...newDoc,
-          url: url,
+          url: newUrl,
           timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,

@@ -66,16 +66,30 @@ const CreateBlog = ({ user, handleLogout }) => {
       .toLowerCase();
     var nospc = urlspc.replace(/[|&\/\\#,+()$~%.'":*?<>{}]/g, "").toLowerCase();
     var url = nospc.replaceAll(/--/g, "-");
+
     let newDoc = {
       ...form,
       description: formatedDescrition,
     };
-    console.log(newDoc);
+    // remove (-) from urls
+    var lastData = url[url.length - 1];
+    if (
+      lastData == "-" ||
+      lastData == "--" ||
+      lastData == "---" ||
+      lastData == "----"
+    ) {
+      var newUrl = url.slice(0, -1);
+    } else {
+      newUrl = url;
+    }
+
+    // console.log(newUrl);
     if (category && tags && title && FeaturedImage && trending && timestamp) {
       try {
         await addDoc(collection(db, "Posts"), {
           ...newDoc,
-          url: url,
+          url: newUrl,
           timestamp: timestamp,
           author: user.displayName,
           userId: user.uid,

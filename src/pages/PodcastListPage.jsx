@@ -30,7 +30,6 @@ const PodcastListPage = ({
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>View</th>
                       <th>Date</th>
                       <th>Action</th>
                     </tr>
@@ -57,9 +56,7 @@ const PodcastListPage = ({
                             <h6 className="title">{item.title}</h6>
                           </div>
                         </td>
-                        <td>
-                          <Link to={`/podcast/${item.id}`}>View</Link>
-                        </td>
+
                         <td>{item.timestamp}</td>
 
                         <td>

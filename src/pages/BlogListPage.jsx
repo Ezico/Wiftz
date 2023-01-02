@@ -44,7 +44,7 @@ const BlogListPage = ({ user, handleLogout, handleBlogDelete }) => {
                     <tr className="fw-bold fs-6 text-gray-800 border-bottom-2 border-gray-200">
                       <th>Thumbnail</th>
                       <th>Title</th>
-                      <th>View</th>
+
                       <th>Date</th>
                       <th>Featured</th>
                       <th>Action</th>
@@ -73,9 +73,7 @@ const BlogListPage = ({ user, handleLogout, handleBlogDelete }) => {
                             <h6 className="title">{item.title}</h6>
                           </div>
                         </td>
-                        <td>
-                          <Link to={`/blog/${item.id}`}>View</Link>
-                        </td>
+
                         <td>{item.timestamp}</td>
                         <td>
                           {item.trending == "yes" ? (
